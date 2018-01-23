@@ -3,23 +3,23 @@ import { Helpers } from '../../../helpers';
 
 declare let mLayout: any;
 @Component({
-selector: "app-aside-nav",
-templateUrl: "./aside-nav.component.html",
-encapsulation: ViewEncapsulation.None,
+    selector: "app-aside-nav",
+    templateUrl: "./aside-nav.component.html",
+    encapsulation: ViewEncapsulation.None,
 })
 export class AsideNavComponent implements OnInit, AfterViewInit {
 
 
-constructor()  {
+    constructor() {
 
-}
-ngOnInit()  {
+    }
+    ngOnInit() {
 
-}
-ngAfterViewInit()  {
+    }
+    ngAfterViewInit() {
 
-mLayout.initAside();
+        mLayout.initAside();
 
-}
+    }
 
 }

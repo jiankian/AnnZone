@@ -4,23 +4,23 @@ import { ScriptLoaderService } from '../../../../_services/script-loader.service
 
 
 @Component({
-selector: "app-index",
-templateUrl: "./index.component.html",
-encapsulation: ViewEncapsulation.None,
+    selector: "app-index",
+    templateUrl: "./index.component.html",
+    encapsulation: ViewEncapsulation.None,
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 
 
-constructor(private _script: ScriptLoaderService)  {
+    constructor(private _script: ScriptLoaderService) {
 
-}
-ngOnInit()  {
+    }
+    ngOnInit() {
 
-}
-ngAfterViewInit()  {
-this._script.loadScripts('app-index',
-['assets/app/js/dashboard.js']);
+    }
+    ngAfterViewInit() {
+        this._script.loadScripts('app-index',
+            ['assets/app/js/dashboard.js']);
 
-}
+    }
 
 }

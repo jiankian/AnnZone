@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ThemeComponent } from './theme.component';
-import {Routes, RouterModule} from '@angular/router';
-import {AuthGuard} from "../auth/_guards/auth.guard";
+import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from "../auth/_guards/auth.guard";
 
 const routes: Routes = [
     {
@@ -40,7 +40,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
-export class ThemeRoutingModule {}
+export class ThemeRoutingModule { }

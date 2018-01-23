@@ -4,23 +4,23 @@ import { ScriptLoaderService } from '../../../../_services/script-loader.service
 
 
 @Component({
-selector: "app-inner",
-templateUrl: "./inner.component.html",
-encapsulation: ViewEncapsulation.None,
+    selector: "app-inner",
+    templateUrl: "./inner.component.html",
+    encapsulation: ViewEncapsulation.None,
 })
 export class InnerComponent implements OnInit, AfterViewInit {
 
 
-constructor(private _script: ScriptLoaderService)  {
+    constructor(private _script: ScriptLoaderService) {
 
-}
-ngOnInit()  {
+    }
+    ngOnInit() {
 
-}
-ngAfterViewInit()  {
-this._script.loadScripts('app-inner',
-['assets/app/js/dashboard.js']);
+    }
+    ngAfterViewInit() {
+        this._script.loadScripts('app-inner',
+            ['assets/app/js/dashboard.js']);
 
-}
+    }
 
 }

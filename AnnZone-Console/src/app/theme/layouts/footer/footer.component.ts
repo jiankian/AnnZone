@@ -3,18 +3,18 @@ import { Helpers } from '../../../helpers';
 
 
 @Component({
-selector: "app-footer",
-templateUrl: "./footer.component.html",
-encapsulation: ViewEncapsulation.None,
+    selector: "app-footer",
+    templateUrl: "./footer.component.html",
+    encapsulation: ViewEncapsulation.None,
 })
 export class FooterComponent implements OnInit {
 
 
-constructor()  {
+    constructor() {
 
-}
-ngOnInit()  {
+    }
+    ngOnInit() {
 
-}
+    }
 
 }

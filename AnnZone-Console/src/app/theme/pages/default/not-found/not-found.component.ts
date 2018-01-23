@@ -1,15 +1,15 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: '.m-wrapper',
-  templateUrl: './not-found.component.html',
-  encapsulation: ViewEncapsulation.None,
+    selector: '.m-wrapper',
+    templateUrl: './not-found.component.html',
+    encapsulation: ViewEncapsulation.None,
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 }

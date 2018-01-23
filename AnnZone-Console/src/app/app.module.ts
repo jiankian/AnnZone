@@ -11,19 +11,19 @@ import { ThemeRoutingModule } from "./theme/theme-routing.module";
 import { AuthModule } from "./auth/auth.module";
 
 @NgModule({
-  declarations: [
-ThemeComponent,
-    AppComponent,
-  ],
-  imports: [
-LayoutModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    ThemeRoutingModule,
-    AuthModule,
-  ],
-  providers: [ScriptLoaderService],
-  bootstrap: [AppComponent]
+    declarations: [
+        ThemeComponent,
+        AppComponent,
+    ],
+    imports: [
+        LayoutModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        ThemeRoutingModule,
+        AuthModule,
+    ],
+    providers: [ScriptLoaderService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
