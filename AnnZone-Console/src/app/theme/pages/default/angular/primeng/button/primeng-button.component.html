@@ -1,0 +1,179 @@
+<div class="m-subheader">
+	<div class="d-flex align-items-center">
+		<div class="mr-auto">
+			<h3 class="m-subheader__title m-subheader__title--separator">
+				PrimeNG
+			</h3>
+			<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+				<li class="m-nav__item m-nav__item--home">
+					<a href="#" class="m-nav__link m-nav__link--icon">
+						<i class="m-nav__link-icon la la-home"></i>
+					</a>
+				</li>
+				<li class="m-nav__separator">
+					-
+				</li>
+				<li class="m-nav__item">
+					<a class="m-nav__link">
+						<span class="m-nav__link-text">
+							PrimeNG
+						</span>
+					</a>
+				</li>
+				<li class="m-nav__separator">
+					-
+				</li>
+				<li class="m-nav__item">
+					<a class="m-nav__link">
+						<span class="m-nav__link-text">
+							Button
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+				<a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+					<i class="la la-plus m--hide"></i>
+					<i class="la la-ellipsis-h"></i>
+				</a>
+				<div class="m-dropdown__wrapper">
+					<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+					<div class="m-dropdown__inner">
+						<div class="m-dropdown__body">
+							<div class="m-dropdown__content">
+								<ul class="m-nav">
+									<li class="m-nav__section m-nav__section--first m--hide">
+										<span class="m-nav__section-text">
+											Quick Actions
+										</span>
+									</li>
+									<li class="m-nav__item">
+										<a class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-share"></i>
+											<span class="m-nav__link-text">
+												Activity
+											</span>
+										</a>
+									</li>
+									<li class="m-nav__item">
+										<a class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-chat-1"></i>
+											<span class="m-nav__link-text">
+												Messages
+											</span>
+										</a>
+									</li>
+									<li class="m-nav__item">
+										<a class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-info"></i>
+											<span class="m-nav__link-text">
+												FAQ
+											</span>
+										</a>
+									</li>
+									<li class="m-nav__item">
+										<a class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+											<span class="m-nav__link-text">
+												Support
+											</span>
+										</a>
+									</li>
+									<li class="m-nav__separator m-nav__separator--fit"></li>
+									<li class="m-nav__item">
+										<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
+											Submit
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+	<div class="alert alert-brand m-alert m-alert--icon m-alert--air m-alert--square m--margin-bottom-30" role="alert">
+		<div class="m-alert__icon">
+			<i class="flaticon-exclamation-1"></i>
+		</div>
+		<div class="m-alert__text">
+			<b>PrimeNG</b> is an open source collection of rich UI components for Angular. Here are some components from PrimeNG.
+			For more info please check out <a class="m-link m-link--warning m--font-bold" href="https://www.primefaces.org/primeng/#/" target="_blank">the official documentation.</a>
+		</div>
+		<div class="m-alert__close">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Buttons
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div class="m-section">
+						<div class="m-section__content">
+							<button pButton type="button" (click)="onclickCount()" label="Click"></button>
+							<button pButton type="button" (click)="onclickCount()" icon="fa-check" label="Click"></button>
+							<button pButton type="button" (click)="onclickCount()" icon="fa-check" iconPos="right" label="Click"></button>
+							<button pButton type="button" (click)="onclickCount()" icon="fa-check"></button>
+							<button pButton type="button" (click)="onclickCount()" icon="fa-check" [disabled]="true" label="Disabled"></button>
+						</div>
+						<div class="m-section__sub">Severity Buttons</div>
+						<div class="m-section__content">
+							<button pButton type="button" (click)="onclickCount()" label="Primary"></button>
+							<button pButton type="button" (click)="onclickCount()" label="Secondary" class="ui-button-secondary"></button>
+							<button pButton type="button" (click)="onclickCount()" label="Success" class="ui-button-success"></button>
+							<button pButton type="button" (click)="onclickCount()" label="Info" class="ui-button-info"></button>
+							<button pButton type="button" (click)="onclickCount()" label="Warning" class="ui-button-warning"></button>
+							<button pButton type="button" (click)="onclickCount()" label="Danger" class="ui-button-danger"></button>
+						</div>
+						Number of clicks: {{clicks}}
+					</div>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+		</div>
+		<div class="col-lg-6">
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Split Buttons
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div class="m-section">
+						<div class="m-section__content">
+							<p-growl [value]="msgs"></p-growl>
+							<p-splitButton label="Save" icon="fa-check" (onClick)="save()" [model]="items"></p-splitButton>
+						</div>
+					</div>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+		</div>
+	</div>
+</div>

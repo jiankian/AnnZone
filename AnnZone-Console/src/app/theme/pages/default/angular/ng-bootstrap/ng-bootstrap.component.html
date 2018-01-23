@@ -1,0 +1,573 @@
+<!-- BEGIN: Subheader -->
+<div class="m-subheader">
+	<div class="d-flex align-items-center">
+		<div class="mr-auto">
+			<h3 class="m-subheader__title">
+				NG Bootstrap
+			</h3>
+		</div>
+	</div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+	<div class="alert alert-brand m-alert m-alert--icon m-alert--air m-alert--square m--margin-bottom-30" role="alert">
+		<div class="m-alert__icon">
+			<i class="flaticon-exclamation-1"></i>
+		</div>
+		<div class="m-alert__text">
+			<b>ng-bootstrap</b> is a Bootstrap 4 components, powered by Angular. Here are some components from ng-bootstrap.
+			For more info please check out <a class="m-link m-link--warning m--font-bold" href="https://ng-bootstrap.github.io/#/home/" target="_blank">the official documentation.</a>
+		</div>
+		<div class="m-alert__close">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Accordion
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div class="m-section__content">
+						<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+							<ngb-panel title="Simple">
+								<ng-template ngbPanelContent>
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+									officia
+									aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+									tempor,
+									sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+									helvetica,
+									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+									Leggings
+									occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+									accusamus
+									labore sustainable VHS.
+								</ng-template>
+							</ngb-panel>
+							<ngb-panel>
+								<ng-template ngbPanelTitle>
+									<span>&#9733; <b>Fancy</b> title &#9733;</span>
+								</ng-template>
+								<ng-template ngbPanelContent>
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+									officia
+									aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+									tempor,
+									sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+									helvetica,
+									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+									Leggings
+									occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+									accusamus
+									labore sustainable VHS.
+								</ng-template>
+							</ngb-panel>
+							<ngb-panel title="Disabled" [disabled]="true">
+								<ng-template ngbPanelContent>
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+									officia
+									aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+									tempor,
+									sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+									helvetica,
+									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+									Leggings
+									occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+									accusamus
+									labore sustainable VHS.
+								</ng-template>
+							</ngb-panel>
+						</ngb-accordion>
+					</div>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Closeable Alert
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<p *ngFor="let alert of alerts">
+						<ngb-alert [type]="alert.type" (close)="alertClose(alert)">{{ alert.message }}</ngb-alert>
+					</p>
+					<p>
+						<button type="button" class="btn btn-primary" (click)="alertReset()">Reset</button>
+					</p>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Collapse
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<p>
+						<button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+								[attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Toggle
+						</button>
+					</p>
+					<div id="collapseExample" [ngbCollapse]="isCollapsed">
+						<div class="card">
+							<div class="card-block">
+								You can collapse this card by clicking Toggle
+							</div>
+						</div>
+					</div>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Datepicker
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<ngb-datepicker #dp [(ngModel)]="datepickerModel" (navigate)="date = $event.next"></ngb-datepicker>
+					<hr/>
+					<button class="btn btn-sm btn-outline-primary" (click)="datepickerToday()">Select Today</button>
+					<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+					<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+					<hr/>
+					<pre>Month: {{ date.month }}.{{ date.year }}</pre>
+					<pre>Model: {{ datepickerModel | json }}</pre>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Rating
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<ngb-rating [(rate)]="ratingSelected" (hover)="ratingHovered=$event" (leave)="hovered=0"
+								[readonly]="ratingReadonly"></ngb-rating>
+					<p>
+						Selected: <b>{{ratingSelected}}</b>
+						Hovered: <b>{{ratingHovered}}</b>
+					</p>
+					<button class="btn btn-sm btn-outline-{{ratingReadonly ? 'danger' : 'success'}}" (click)="ratingReadonly = !ratingReadonly">
+						{{ ratingReadonly ? "readonly" : "editable"}}
+					</button>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Tabset
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<ngb-tabset>
+						<ngb-tab title="Simple">
+							<ng-template ngbTabContent>
+								<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+									master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
+									keffiyeh
+									dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia
+									cillum
+									iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+							</ng-template>
+						</ngb-tab>
+						<ngb-tab>
+							<ng-template ngbTabTitle><b>Fancy</b> title</ng-template>
+							<ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+								<p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+									farm-to-table
+									craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+									vinyl
+									cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+									salvia
+									yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable
+									jean
+									shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
+									vero
+									sint qui sapiente accusamus tattooed echo park.</p>
+							</ng-template>
+						</ngb-tab>
+						<ngb-tab title="Disabled" [disabled]="true">
+							<ng-template ngbTabContent>
+								<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+									master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
+									keffiyeh
+									dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia
+									cillum
+									iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+							</ng-template>
+						</ngb-tab>
+					</ngb-tabset>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Timepicker
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<ngb-timepicker [(ngModel)]="timepickerTime" [meridian]="timepickerMeridian"></ngb-timepicker>
+					<button class="btn btn-sm btn-outline-{{timepickerMeridian ? 'success' : 'danger'}}" (click)="timepickerToggle()">
+						Meridian - {{timepickerMeridian ? "ON" : "OFF"}}
+					</button>
+					<pre>Selected time: {{timepickerTime | json}}</pre>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+		</div>
+		<div class="col-lg-6">
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Checkbox buttons
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn-primary" ngbButtonLabel>
+							<input type="checkbox" ngbButton [(ngModel)]="checkboxModel.left"> Left
+						</label>
+						<label class="btn-primary" ngbButtonLabel>
+							<input type="checkbox" ngbButton [(ngModel)]="checkboxModel.middle"> Middle
+						</label>
+						<label class="btn-primary" ngbButtonLabel>
+							<input type="checkbox" ngbButton [(ngModel)]="checkboxModel.right"> Right
+						</label>
+					</div>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Quick and easy popovers
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<button type="button" class="btn btn-secondary" placement="top"
+							ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">
+						Popover on top
+					</button>
+					<button type="button" class="btn btn-secondary" placement="right"
+							ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right">
+						Popover on right
+					</button>
+					<button type="button" class="btn btn-secondary" placement="bottom"
+							ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on bottom">
+						Popover on bottom
+					</button>
+					<button type="button" class="btn btn-secondary" placement="left"
+							ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on left">
+						Popover on left
+					</button>
+					<hr>
+					<p>
+						Popovers can contain any arbitrary HTML, Angular bindings and even directives!
+						Simply enclose desired content in a <code>&lt;ng-template&gt;</code> element.
+					</p>
+					<ng-template #popContent>Hello, <b>{{name}}</b>!</ng-template>
+					<button type="button" class="btn btn-secondary" [ngbPopover]="popContent" popoverTitle="Fancy content">
+						I've got markup and bindings in my popover!
+					</button>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Progress bars with custom labels
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<p>
+						<ngb-progressbar type="success" [value]="25">25</ngb-progressbar>
+					</p>
+					<p>
+						<ngb-progressbar type="info" [value]="50">Copying file <b>2 of 4</b>...</ngb-progressbar>
+					</p>
+					<p>
+						<ngb-progressbar type="warning" [value]="75" [striped]="true" [animated]="true"><i>50%</i></ngb-progressbar>
+					</p>
+					<p>
+						<ngb-progressbar type="danger" [value]="100" [striped]="true">Completed!</ngb-progressbar>
+					</p>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Carousel
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<ngb-carousel>
+						<ng-template ngbSlide>
+							<img src="https://lorempixel.com/900/500/city?r=1" alt="Random first slide">
+							<div class="carousel-caption">
+								<h3>First slide label</h3>
+								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							</div>
+						</ng-template>
+						<ng-template ngbSlide>
+							<img src="https://lorempixel.com/900/500/city?r=2" alt="Random second slide">
+							<div class="carousel-caption">
+								<h3>Second slide label</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</ng-template>
+						<ng-template ngbSlide>
+							<img src="https://lorempixel.com/900/500/city?r=3" alt="Random third slide">
+							<div class="carousel-caption">
+								<h3>Third slide label</h3>
+								<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+							</div>
+						</ng-template>
+					</ngb-carousel>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Dropdown
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div class="row">
+						<div class="col">
+							<div ngbDropdown class="d-inline-block">
+								<button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+								<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+									<button class="dropdown-item">Action - 1</button>
+									<button class="dropdown-item">Another Action</button>
+									<button class="dropdown-item">Something else is here</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="col text-right">
+							<div ngbDropdown placement="top-right" class="d-inline-block">
+								<button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Toggle dropup</button>
+								<div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+									<button class="dropdown-item">Action - 1</button>
+									<button class="dropdown-item">Another Action</button>
+									<button class="dropdown-item">Something else is here</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p>You can easily control dropdowns programmatically using the exported dropdown instance.</p>
+					<div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+						<button class="btn btn-outline-primary" id="dropdownManual" ngbDropdownToggle>Toggle dropdown</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownManual">
+							<button class="dropdown-item">Action - 1</button>
+							<button class="dropdown-item">Another Action</button>
+							<button class="dropdown-item">Something else is here</button>
+						</div>
+						<button class="btn btn-outline-success" (click)="$event.stopPropagation(); myDrop.open();">Open from outside</button>
+						<button class="btn btn-outline-danger" (click)="$event.stopPropagation(); myDrop.close();">Close from outside</button>
+					</div>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Modal
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<ng-template #content let-c="close" let-d="dismiss">
+						<div class="modal-header">
+							<h4 class="modal-title">Modal title</h4>
+							<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>One fine body&hellip;</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+						</div>
+					</ng-template>
+					<button class="btn btn-lg btn-outline-primary" (click)="modalOpen(content)">Launch demo modal</button>
+					<pre>{{modalClose}}</pre>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Pagination
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div>Default pagination</div>
+					<ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+					<div>directionLinks = false</div>
+					<ngb-pagination [collectionSize]="70" [(page)]="page" [directionLinks]="false"></ngb-pagination>
+					<div>boundaryLinks = true</div>
+					<ngb-pagination [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+					<hr>
+					<pre>Current page: {{page}}</pre>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+			<!--begin::Portlet-->
+			<div class="m-portlet">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title">
+							<h3 class="m-portlet__head-text">
+								Tooltips
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<!--begin::Section-->
+					<div class="m-section">
+						<div class="m-section__content">
+							<button type="button" class="btn btn-secondary" placement="top" ngbTooltip="Tooltip on top">
+								Tooltip on top
+							</button>
+							<button type="button" class="btn btn-secondary" placement="right" ngbTooltip="Tooltip on right">
+								Tooltip on right
+							</button>
+							<button type="button" class="btn btn-secondary" placement="bottom" ngbTooltip="Tooltip on bottom">
+								Tooltip on bottom
+							</button>
+							<button type="button" class="btn btn-secondary" placement="left" ngbTooltip="Tooltip on left">
+								Tooltip on left
+							</button>
+						</div>
+						<div class="m-section__sub">
+							Tooltips can contain any arbitrary HTML, Angular bindings and even directives!
+							Simply enclose desired content in a <code>&lt;ng-template&gt;</code> element.
+						</div>
+						<div class="m-section__content">
+							<ng-template #tipContent>Hello, <b>{{name}}</b>!</ng-template>
+							<button type="button" class="btn btn-secondary" [ngbTooltip]="tipContent">
+								I've got markup and bindings in my tooltip!
+							</button>
+						</div>
+					</div>
+					<!--end::Section-->
+				</div>
+			</div>
+			<!--end::Portlet-->
+		</div>
+	</div>
+</div>
