@@ -205,17 +205,17 @@
       <version>${act-ebean2.version}</version>
     </dependency>
     <!--使用MongoDb数据库-->
-    <dependency>
-      <groupId>org.actframework</groupId>
-      <artifactId>act-morphia</artifactId>
-      <version>${act-morphia.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.actframework</groupId>-->
+      <!--<artifactId>act-morphia</artifactId>-->
+      <!--<version>${act-morphia.version}</version>-->
+    <!--</dependency>-->
     <!--使用ArangoDb数据库驱动-->
-    <dependency>
-      <groupId>com.arangodb</groupId>
-      <artifactId>arangodb-java-driver</artifactId>
-      <version>${arangodb-java-driver}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>com.arangodb</groupId>-->
+      <!--<artifactId>arangodb-java-driver</artifactId>-->
+      <!--<version>${arangodb-java-driver}</version>-->
+    <!--</dependency>-->
     <!-- GraphQL JAVA实现 -->
     <dependency>
       <groupId>com.graphql-java</groupId>
@@ -321,11 +321,11 @@
     <!--</dependency>-->
 
     <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
-    <dependency>
-      <groupId>com.auth0</groupId>
-      <artifactId>java-jwt</artifactId>
-      <version>${java-jwt.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>com.auth0</groupId>-->
+      <!--<artifactId>java-jwt</artifactId>-->
+      <!--<version>${java-jwt.version}</version>-->
+    <!--</dependency>-->
 
     <!--https://github.com/jwtk/jjwt-->
     <dependency>
@@ -335,11 +335,11 @@
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-    <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>${gson.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>com.google.code.gson</groupId>-->
+      <!--<artifactId>gson</artifactId>-->
+      <!--<version>${gson.version}</version>-->
+    <!--</dependency>-->
     <dependency>
       <groupId>io.reactivex.rxjava2</groupId>
       <artifactId>rxjava</artifactId>
