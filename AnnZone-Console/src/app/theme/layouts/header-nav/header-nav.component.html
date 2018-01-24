@@ -39,7 +39,7 @@
 							<a  href="#" class="m-menu__link m-menu__toggle">
 								<span class="m-menu__item-here"></span>
 								<span class="m-menu__link-text">
-									Dashboard
+									仪表盘
 								</span>
 								<i class="m-menu__hor-arrow la la-angle-down"></i>
 								<i class="m-menu__ver-arrow la la-angle-right"></i>
@@ -49,11 +49,11 @@
 								<ul class="m-menu__subnav">
 									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 										<a  routerLink="/index" class="m-menu__link">
-											<i class="m-menu__link-icon flaticon-diagram"></i>
+											<i class="m-menu__link-icon flaticon-dashboard"></i>
 											<span class="m-menu__link-title">
 												<span class="m-menu__link-wrap">
 													<span class="m-menu__link-text">
-														Generate Reports
+														概览
 													</span>
 													<span class="m-menu__link-badge">
 														<span class="m-badge m-badge--success">
@@ -64,68 +64,19 @@
 											</span>
 										</a>
 									</li>
-									<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
-										<a  href="#" class="m-menu__link m-menu__toggle">
-											<i class="m-menu__link-icon flaticon-business"></i>
-											<span class="m-menu__link-text">
-												Manage Orders
-											</span>
-											<i class="m-menu__hor-arrow la la-angle-right"></i>
-											<i class="m-menu__ver-arrow la la-angle-right"></i>
-										</a>
-										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
-											<span class="m-menu__arrow"></span>
-											<ul class="m-menu__subnav">
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Latest Orders
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Pending Orders
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Processed Orders
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Delivery Reports
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Payments
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Customers
-														</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
+									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
+											<a  routerLink="/inner" class="m-menu__link">
+												<i class="m-menu__link-icon flaticon-analytics"></i>
+												<span class="m-menu__link-text">
+													访问量
+												</span>
+											</a>
+										</li>
 									<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
 										<a  href="#" class="m-menu__link m-menu__toggle">
 											<i class="m-menu__link-icon flaticon-chat-1"></i>
 											<span class="m-menu__link-text">
-												Customer Feedbacks
+												评论
 											</span>
 											<i class="m-menu__hor-arrow la la-angle-right"></i>
 											<i class="m-menu__ver-arrow la la-angle-right"></i>
@@ -136,46 +87,26 @@
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
 														<span class="m-menu__link-text">
-															Customer Feedbacks
+															微博评论
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
 														<span class="m-menu__link-text">
-															Supplier Feedbacks
+															博客评论
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Reviewed Feedbacks
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Resolved Feedbacks
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Feedback Reports
-														</span>
-													</a>
-												</li>
+												
 											</ul>
 										</div>
 									</li>
 									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 										<a  routerLink="/inner" class="m-menu__link">
-											<i class="m-menu__link-icon flaticon-users"></i>
+											<i class="m-menu__link-icon flaticon-support"></i>
 											<span class="m-menu__link-text">
-												Register Member
+												用户反馈
 											</span>
 										</a>
 									</li>
@@ -186,7 +117,7 @@
 							<a  href="#" class="m-menu__link m-menu__toggle">
 								<span class="m-menu__item-here"></span>
 								<span class="m-menu__link-text">
-									Reports
+									文章
 								</span>
 								<i class="m-menu__hor-arrow la la-angle-down"></i>
 								<i class="m-menu__ver-arrow la la-angle-right"></i>
@@ -198,382 +129,133 @@
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" >
 											<h3 class="m-menu__heading m-menu__toggle">
 												<span class="m-menu__link-text">
-													Finance Reports
+													查看所有文章
 												</span>
 												<i class="m-menu__ver-arrow la la-angle-right"></i>
 											</h3>
 											<ul class="m-menu__inner">
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-map"></i>
+														<i class="m-menu__link-icon flaticon-speech-bubble"></i>
 														<span class="m-menu__link-text">
-															Annual Reports
+															微博
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-user"></i>
+														<i class="m-menu__link-icon flaticon-list-3"></i>
 														<span class="m-menu__link-text">
-															HR Reports
+															博客
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-clipboard"></i>
+														<i class="m-menu__link-icon flaticon-list-1"></i>
 														<span class="m-menu__link-text">
-															IPO Reports
+															笔记
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-graphic-1"></i>
-														<span class="m-menu__link-text">
-															Finance Margins
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-graphic-2"></i>
-														<span class="m-menu__link-text">
-															Revenue Reports
-														</span>
-													</a>
-												</li>
+												
 											</ul>
 										</li>
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" >
 											<h3 class="m-menu__heading m-menu__toggle">
+												<i class="m-menu__link-icon flaticon-edit-1"></i>
 												<span class="m-menu__link-text">
-													Project Reports
+													发布
 												</span>
 												<i class="m-menu__ver-arrow la la-angle-right"></i>
 											</h3>
 											<ul class="m-menu__inner">
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
+														<i class="m-menu__link-icon flaticon-plus">
 															<span></span>
 														</i>
 														<span class="m-menu__link-text">
-															Coca Cola CRM
+															微博
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
+														<i class="m-menu__link-icon flaticon-plus">
 															<span></span>
 														</i>
 														<span class="m-menu__link-text">
-															Delta Airlines Booking Site
+															博客
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
+														<i class="m-menu__link-icon flaticon-plus">
 															<span></span>
 														</i>
 														<span class="m-menu__link-text">
-															Malibu Accounting
+															笔记
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Vineseed Website Rewamp
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Zircon Mobile App
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Mercury CMS
-														</span>
-													</a>
-												</li>
+												
 											</ul>
 										</li>
 									</ul>
 								</div>
 							</div>
 						</li>
-						<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
+						<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel"  data-menu-submenu-toggle="click" data-redirect="true" aria-haspopup="true">
 							<a  href="#" class="m-menu__link m-menu__toggle">
 								<span class="m-menu__item-here"></span>
 								<span class="m-menu__link-text">
-									Orders
+									文件
 								</span>
 								<i class="m-menu__hor-arrow la la-angle-down"></i>
 								<i class="m-menu__ver-arrow la la-angle-right"></i>
 							</a>
-							<div class="m-menu__submenu  m-menu__submenu--fixed-xl m-menu__submenu--center" >
+							<div class="m-menu__submenu  m-menu__submenu--classic m-menu__submenu--left" >
 								<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 								<div class="m-menu__subnav">
 									<ul class="m-menu__content">
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" >
 											<h3 class="m-menu__heading m-menu__toggle">
 												<span class="m-menu__link-text">
-													Finance Reports
+													我的资源
 												</span>
 												<i class="m-menu__ver-arrow la la-angle-right"></i>
 											</h3>
 											<ul class="m-menu__inner">
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-map"></i>
+														<i class="m-menu__link-icon flaticon-folder-1"></i>
 														<span class="m-menu__link-text">
-															Annual Reports
+															私人网盘
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-user"></i>
+														<i class="m-menu__link-icon flaticon-folder-1"></i>
 														<span class="m-menu__link-text">
-															HR Reports
+															我的相册
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-clipboard"></i>
+														<i class="m-menu__link-icon flaticon-folder-1"></i>
 														<span class="m-menu__link-text">
-															IPO Reports
+															我的视频
 														</span>
 													</a>
 												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-graphic-1"></i>
-														<span class="m-menu__link-text">
-															Finance Margins
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-graphic-2"></i>
-														<span class="m-menu__link-text">
-															Revenue Reports
-														</span>
-													</a>
-												</li>
+												
 											</ul>
 										</li>
-										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" >
-											<h3 class="m-menu__heading m-menu__toggle">
-												<span class="m-menu__link-text">
-													Project Reports
-												</span>
-												<i class="m-menu__ver-arrow la la-angle-right"></i>
-											</h3>
-											<ul class="m-menu__inner">
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Coca Cola CRM
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Delta Airlines Booking Site
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Malibu Accounting
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Vineseed Website Rewamp
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Zircon Mobile App
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--line">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Mercury CMS
-														</span>
-													</a>
-												</li>
-											</ul>
-										</li>
-										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" >
-											<h3 class="m-menu__heading m-menu__toggle">
-												<span class="m-menu__link-text">
-													HR Reports
-												</span>
-												<i class="m-menu__ver-arrow la la-angle-right"></i>
-											</h3>
-											<ul class="m-menu__inner">
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--dot">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Staff Directory
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--dot">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Client Directory
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--dot">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Salary Reports
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--dot">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Staff Payslips
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--dot">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Corporate Expenses
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-bullet m-menu__link-bullet--dot">
-															<span></span>
-														</i>
-														<span class="m-menu__link-text">
-															Project Expenses
-														</span>
-													</a>
-												</li>
-											</ul>
-										</li>
-										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" >
-											<h3 class="m-menu__heading m-menu__toggle">
-												<span class="m-menu__link-text">
-													Reporting Apps
-												</span>
-												<i class="m-menu__ver-arrow la la-angle-right"></i>
-											</h3>
-											<ul class="m-menu__inner">
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Report Adjusments
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Sources & Mediums
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Reporting Settings
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Conversions
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Report Flows
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<span class="m-menu__link-text">
-															Audit & Logs
-														</span>
-													</a>
-												</li>
-											</ul>
-										</li>
+										
 									</ul>
 								</div>
 							</div>
@@ -589,17 +271,17 @@
 								<ul class="m-menu__subnav">
 									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 										<a  routerLink="/inner" class="m-menu__link">
-											<i class="m-menu__link-icon flaticon-business"></i>
+											<i class="m-menu__link-icon flaticon-open-box"></i>
 											<span class="m-menu__link-text">
-												eCommerce
+												附件管理
 											</span>
 										</a>
 									</li>
 									<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
 										<a  routerLink="/crud/datatable_v1" class="m-menu__link m-menu__toggle">
-											<i class="m-menu__link-icon flaticon-computer"></i>
+											<i class="m-menu__link-icon flaticon-coins"></i>
 											<span class="m-menu__link-text">
-												Audience
+												数据库
 											</span>
 											<i class="m-menu__hor-arrow la la-angle-right"></i>
 											<i class="m-menu__ver-arrow la la-angle-right"></i>
@@ -609,41 +291,41 @@
 											<ul class="m-menu__subnav">
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-users"></i>
+														<i class="m-menu__link-icon flaticon-signs"></i>
 														<span class="m-menu__link-text">
-															Active Users
+															数据表
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-interface-1"></i>
+														<i class="m-menu__link-icon flaticon-logout"></i>
 														<span class="m-menu__link-text">
-															User Explorer
+															导出
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-lifebuoy"></i>
+														<i class="m-menu__link-icon flaticon-multimedia-1"></i>
 														<span class="m-menu__link-text">
-															Users Flows
+															导入
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-graphic-1"></i>
+														<i class="m-menu__link-icon flaticon-interface-4"></i>
 														<span class="m-menu__link-text">
-															Market Segments
+															备份
 														</span>
 													</a>
 												</li>
 												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-graphic"></i>
+														<i class="m-menu__link-icon flaticon-multimedia"></i>
 														<span class="m-menu__link-text">
-															User Reports
+															恢复
 														</span>
 													</a>
 												</li>
@@ -652,85 +334,13 @@
 									</li>
 									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
 										<a  routerLink="/inner" class="m-menu__link">
-											<i class="m-menu__link-icon flaticon-map"></i>
+											<i class="m-menu__link-icon flaticon-time-1"></i>
 											<span class="m-menu__link-text">
-												Marketing
+												测试
 											</span>
 										</a>
 									</li>
-									<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-										<a  routerLink="/inner" class="m-menu__link">
-											<i class="m-menu__link-icon flaticon-graphic-2"></i>
-											<span class="m-menu__link-title">
-												<span class="m-menu__link-wrap">
-													<span class="m-menu__link-text">
-														Campaigns
-													</span>
-													<span class="m-menu__link-badge">
-														<span class="m-badge m-badge--success">
-															3
-														</span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</li>
-									<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
-										<a  href="#" class="m-menu__link m-menu__toggle">
-											<i class="m-menu__link-icon flaticon-infinity"></i>
-											<span class="m-menu__link-text">
-												Cloud Manager
-											</span>
-											<i class="m-menu__hor-arrow la la-angle-right"></i>
-											<i class="m-menu__ver-arrow la la-angle-right"></i>
-										</a>
-										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
-											<span class="m-menu__arrow"></span>
-											<ul class="m-menu__subnav">
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-add"></i>
-														<span class="m-menu__link-title">
-															<span class="m-menu__link-wrap">
-																<span class="m-menu__link-text">
-																	File Upload
-																</span>
-																<span class="m-menu__link-badge">
-																	<span class="m-badge m-badge--danger">
-																		3
-																	</span>
-																</span>
-															</span>
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-signs-1"></i>
-														<span class="m-menu__link-text">
-															File Attributes
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-folder"></i>
-														<span class="m-menu__link-text">
-															Folders
-														</span>
-													</a>
-												</li>
-												<li class="m-menu__item"  data-redirect="true" aria-haspopup="true">
-													<a  routerLink="/inner" class="m-menu__link">
-														<i class="m-menu__link-icon flaticon-cogwheel-2"></i>
-														<span class="m-menu__link-text">
-															System Settings
-														</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
+									
 								</ul>
 							</div>
 						</li>
@@ -746,7 +356,7 @@
 									<i class="flaticon-search"></i>
 								</span>
 								<span class="m-header-search__input-wrapper">
-									<input autocomplete="off" type="text" name="q" class="m-header-search__input" value="" placeholder="Search..." id="m_quicksearch_input">
+									<input autocomplete="off" type="text" name="q" class="m-header-search__input" value="" placeholder="输入关键字搜索..." id="m_quicksearch_input">
 								</span>
 								<span class="m-header-search__icon-close" id="m_quicksearch_close">
 									<i class="la la-remove"></i>
@@ -785,10 +395,10 @@
 									<div class="m-dropdown__inner">
 										<div class="m-dropdown__header m--align-center">
 											<span class="m-dropdown__header-title">
-												9 New
+												9 个
 											</span>
 											<span class="m-dropdown__header-subtitle">
-												User Notifications
+												新通知
 											</span>
 										</div>
 										<div class="m-dropdown__body">
@@ -796,17 +406,17 @@
 												<ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" role="tablist">
 													<li class="nav-item m-tabs__item">
 														<a class="nav-link m-tabs__link active" data-toggle="tab" href="#topbar_notifications_notifications" role="tab">
-															Alerts
+															报告
 														</a>
 													</li>
 													<li class="nav-item m-tabs__item">
 														<a class="nav-link m-tabs__link" data-toggle="tab" href="#topbar_notifications_events" role="tab">
-															Events
+															事件
 														</a>
 													</li>
 													<li class="nav-item m-tabs__item">
 														<a class="nav-link m-tabs__link" data-toggle="tab" href="#topbar_notifications_logs" role="tab">
-															Logs
+															日志
 														</a>
 													</li>
 												</ul>
@@ -966,13 +576,85 @@
 														</div>
 													</div>
 													<div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
-														<div class="m-stack m-stack--ver m-stack--general" style="min-height: 180px;">
-															<div class="m-stack__item m-stack__item--center m-stack__item--middle">
-																<span class="">
-																	All caught up!
-																	<br>
-																	No new logs.
-																</span>
+														<div class="m-scrollable" data-scrollable="true" data-max-height="250" data-mobile-max-height="200">
+															<div class="m-list-timeline m-list-timeline--skin-light">
+																<div class="m-list-timeline__items">
+																	<div class="m-list-timeline__item">
+																		<span class="m-list-timeline__badge"></span>
+																		<span class="m-list-timeline__text">
+																			System shutdown
+																			<span class="m-badge m-badge--success m-badge--wide">
+																				pending
+																			</span>
+																		</span>
+																		<span class="m-list-timeline__time">
+																			14 mins
+																		</span>
+																	</div>
+																	<div class="m-list-timeline__item">
+																		<span class="m-list-timeline__badge"></span>
+																		<span class="m-list-timeline__text">
+																			New invoice received
+																		</span>
+																		<span class="m-list-timeline__time">
+																			20 mins
+																		</span>
+																	</div>
+																	<div class="m-list-timeline__item">
+																		<span class="m-list-timeline__badge"></span>
+																		<span class="m-list-timeline__text">
+																			DB overloaded 80%
+																			<span class="m-badge m-badge--info m-badge--wide">
+																				settled
+																			</span>
+																		</span>
+																		<span class="m-list-timeline__time">
+																			1 hr
+																		</span>
+																	</div>
+																	<div class="m-list-timeline__item">
+																		<span class="m-list-timeline__badge"></span>
+																		<span class="m-list-timeline__text">
+																			System error -
+																			<a href="#" class="m-link">
+																				Check
+																			</a>
+																		</span>
+																		<span class="m-list-timeline__time">
+																			2 hrs
+																		</span>
+																	</div>
+																	<div class="m-list-timeline__item m-list-timeline__item--read">
+																		<span class="m-list-timeline__badge"></span>
+																		<span href="" class="m-list-timeline__text">
+																			New order received
+																			<span class="m-badge m-badge--danger m-badge--wide">
+																				urgent
+																			</span>
+																		</span>
+																		<span class="m-list-timeline__time">
+																			7 hrs
+																		</span>
+																	</div>
+																	<div class="m-list-timeline__item m-list-timeline__item--read">
+																		<span class="m-list-timeline__badge"></span>
+																		<span class="m-list-timeline__text">
+																			Production server down
+																		</span>
+																		<span class="m-list-timeline__time">
+																			3 hrs
+																		</span>
+																	</div>
+																	<div class="m-list-timeline__item">
+																		<span class="m-list-timeline__badge"></span>
+																		<span class="m-list-timeline__text">
+																			Production server up
+																		</span>
+																		<span class="m-list-timeline__time">
+																			5 hrs
+																		</span>
+																	</div>
+																</div>
 															</div>
 														</div>
 													</div>
@@ -996,10 +678,10 @@
 									<div class="m-dropdown__inner">
 										<div class="m-dropdown__header m--align-center">
 											<span class="m-dropdown__header-title">
-												Quick Actions
+												快捷菜单
 											</span>
 											<span class="m-dropdown__header-subtitle">
-												Shortcuts
+												快速创建
 											</span>
 										</div>
 										<div class="m-dropdown__body m-dropdown__body--paddingless">
@@ -1010,13 +692,13 @@
 															<a href="#" class="m-nav-grid__item">
 																<i class="m-nav-grid__icon flaticon-file"></i>
 																<span class="m-nav-grid__text">
-																	Generate Report
+																	写博客
 																</span>
 															</a>
 															<a href="#" class="m-nav-grid__item">
 																<i class="m-nav-grid__icon flaticon-time"></i>
 																<span class="m-nav-grid__text">
-																	Add New Event
+																	记账
 																</span>
 															</a>
 														</div>
@@ -1024,13 +706,13 @@
 															<a href="#" class="m-nav-grid__item">
 																<i class="m-nav-grid__icon flaticon-folder"></i>
 																<span class="m-nav-grid__text">
-																	Create New Task
+																	添加文件
 																</span>
 															</a>
 															<a href="#" class="m-nav-grid__item">
-																<i class="m-nav-grid__icon flaticon-clipboard"></i>
+																<i class="m-nav-grid__icon flaticon-app"></i>
 																<span class="m-nav-grid__text">
-																	Completed Tasks
+																	添加项目
 																</span>
 															</a>
 														</div>
@@ -1052,7 +734,7 @@
 										</span>
 									</span>
 									<span class="m-topbar__username m--hide">
-										Nick
+										绿血贵族
 									</span>
 								</a>
 								<div class="m-dropdown__wrapper">
@@ -1065,10 +747,10 @@
 												</div>
 												<div class="m-card-user__details">
 													<span class="m-card-user__name m--font-weight-500">
-														Mark Andre
+														绿血贵族
 													</span>
 													<a href="" class="m-card-user__email m--font-weight-300 m-link">
-														mark.andre@gmail.com
+														Jiankian
 													</a>
 												</div>
 											</div>
@@ -1087,7 +769,7 @@
 															<span class="m-nav__link-title">
 																<span class="m-nav__link-wrap">
 																	<span class="m-nav__link-text">
-																		My Profile
+																		个人信息
 																	</span>
 																	<span class="m-nav__link-badge">
 																		<span class="m-badge m-badge--success">
@@ -1102,7 +784,7 @@
 														<a routerLink="/profile" class="m-nav__link">
 															<i class="m-nav__link-icon flaticon-share"></i>
 															<span class="m-nav__link-text">
-																Activity
+																访问日志
 															</span>
 														</a>
 													</li>
@@ -1110,7 +792,7 @@
 														<a routerLink="/profile" class="m-nav__link">
 															<i class="m-nav__link-icon flaticon-chat-1"></i>
 															<span class="m-nav__link-text">
-																Messages
+																信息
 															</span>
 														</a>
 													</li>
@@ -1125,16 +807,16 @@
 													</li>
 													<li class="m-nav__item">
 														<a routerLink="/profile" class="m-nav__link">
-															<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+															<i class="m-nav__link-icon flaticon-lock-1"></i>
 															<span class="m-nav__link-text">
-																Support
+																修改密码
 															</span>
 														</a>
 													</li>
 													<li class="m-nav__separator m-nav__separator--fit"></li>
 													<li class="m-nav__item">
 														<a routerLink="/snippets/pages/user/login-1" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder" routerLink="/logout">
-															Logout
+															注销
 														</a>
 													</li>
 												</ul>

@@ -36,9 +36,9 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven-assemply-plugin.version>3.1.0</maven-assemply-plugin.version>
-    <act.version>1.6.4</act.version>
-    <act-ebean2.version>1.2.1</act-ebean2.version>
-    <act-ebean.version>1.3.1</act-ebean.version>
+    <act.version>1.6.6</act.version>
+    <act-ebean2.version>1.3.0</act-ebean2.version>
+    <act-ebean.version>1.3.2</act-ebean.version>
     <act-morphia.version>1.3.0</act-morphia.version>
     <act-storage.version>0.12.0</act-storage.version>
     <act-aaa.version>1.3.0</act-aaa.version>
@@ -48,14 +48,14 @@
     <logback-classic.version>1.2.3</logback-classic.version>
     <act-mustache.version>1.3.0</act-mustache.version>
     <act-beetl.version>1.2.2</act-beetl.version>
-    <act-beetlsql.version>1.3.0</act-beetlsql.version>
+    <act-beetlsql.version>1.3.1</act-beetlsql.version>
     <act-freemarker.version>1.2.0</act-freemarker.version>
     <act-thymeleaf.version>1.2.0</act-thymeleaf.version>
     <act-velocity.version>1.2.0</act-velocity.version>
     <act-jfinal.version>1.0</act-jfinal.version>
     <act-excel.version>1.3.0</act-excel.version>
     <act-social-link.version>0.11.0</act-social-link.version>
-    <act-sql-common.version>1.2.0</act-sql-common.version>
+    <act-sql-common.version>1.2.1</act-sql-common.version>
     <mysql.version>6.0.6</mysql.version>
     <arangodb-java-driver>4.3.0</arangodb-java-driver>
     <HikariCP.version>2.7.6</HikariCP.version>
