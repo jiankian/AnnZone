@@ -6,5 +6,9 @@ import { User } from "../_models/index";
 @Injectable()
 export class UserService {
     constructor(private http: Http) {
+
+    }
+    tokenVerify(): boolean{
+        return true;
     }
 }

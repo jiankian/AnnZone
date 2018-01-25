@@ -24,7 +24,7 @@
   <artifactId>AnnZone-Serve</artifactId>
   <version>1.0.0</version>
 
-  <name>Anline Server App</name>
+  <name>Anline AnnZone Server App</name>
   <description>RestAPI Server for Anline APP</description>
   <url>http://www.anline.cn/</url>
 

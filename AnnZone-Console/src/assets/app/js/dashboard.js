@@ -1301,13 +1301,13 @@ var Dashboard = function() {
             var range = '';
 
             if ((end - start) < 100) {
-                title = 'Today:';
-                range = start.format('MMM D');
-            } else if (label == 'Yesterday') {
-                title = 'Yesterday:';
-                range = start.format('MMM D');
+                title = '今天:';
+                range = start.format('Y年M月D日');
+            } else if (label == '昨天') {
+                title = '昨天:';
+                range = start.format('Y年M月D日');
             } else {
-                range = start.format('MMM D') + ' - ' + end.format('MMM D');
+                range = start.format('Y年M月D日') + ' - ' + end.format('Y年M月D日');
             }
 
             picker.find('.m-subheader__daterange-date').html(range);
@@ -1319,12 +1319,13 @@ var Dashboard = function() {
             endDate: end,
             opens: 'left',
             ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                '今天': [moment(), moment()],
+                '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '近一周': [moment().subtract(6, 'days'), moment()],
+                '近一个月': [moment().subtract(29, 'days'), moment()],
+                '上一个月': [moment().startOf('month'), moment().endOf('month')],
+                '今年': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                '所有': [moment().subtract(100, 'year').startOf('year'), moment()]
             }
         }, cb);
 

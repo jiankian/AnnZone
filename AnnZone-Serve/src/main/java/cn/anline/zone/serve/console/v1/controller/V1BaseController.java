@@ -2,12 +2,20 @@ package cn.anline.zone.serve.console.v1.controller;
 
 import act.controller.Controller;
 import cn.anline.zone.serve.AnnBase;
+import cn.anline.zone.serve.console.v1.bean.UserBean;
 import cn.anline.zone.serve.console.v1.bean.V1BaseBean;
+import cn.anline.zone.serve.console.v1.config.Constant;
+import cn.anline.zone.serve.console.v1.model.Ann_user;
 import cn.anline.zone.serve.console.v1.service.UserService;
 import com.alibaba.fastjson.JSON;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import org.apache.commons.codec.binary.Base64;
 import org.osgl.mvc.annotation.Before;
+import org.osgl.util.C;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
 
 /**
  * API 基类 所有请求地址 继承到 /api/console/v1下面
@@ -20,18 +28,55 @@ public class V1BaseController extends AnnBase {
 
     @Inject UserService userService;
 
+    /**
+     * 用户ID 从Token获取
+     */
+    protected String __uid;
+    /**
+     * 用户名 从Token获取
+     */
+    protected String __username;
 
-    //登录和注册的接口不拦截 Token验证
-    @Before(except = {"signin","signup"})
-    public void   __init__(String user){
-//        拦截登录 此处可做Token判断
-        if (userService.tokenVerify()){
-            v1BaseBean.setMsg("你好"+user);
-        }else {
-            v1BaseBean.setStatus(-1);
+    /**
+     * 用户Bean
+     */
+    protected UserBean __user;
+
+
+    /**
+     * 登录和注册的接口不拦截 Token验证 写方法名。。。
+     */
+    @Before(except = {"signin","signup","verify","token"})
+    public void   __init__(){
+        //拦截登录 此处可做Token判断
+        String token = context.req().header("ann_token");
+        System.out.println("token获取值："+token);
+        if ( null == token || token.trim().equals("")){
+            v1BaseBean.setStatus(1);
             v1BaseBean.setResult(0);
-            v1BaseBean.setMsg("token无效,请重新登录！");
+            v1BaseBean.setMsg("Token不能为空！");
             throw Controller.Util.json(v1BaseBean);
+        }
+        try {
+            Claims jwt = Jwts.parser()
+                    .setSigningKey(Base64.encodeBase64(Constant.key.getBytes()))
+                    .parseClaimsJws(token.trim())
+                    .getBody();
+            System.out.println("全局验证的过期时间！");
+            System.out.println(jwt.getExpiration());
+            System.out.println(jwt.get("username").toString());
+            System.out.println("全局装载的对象：");
+            System.out.println(JSON.toJSONString(jwt.get("user")));
+            this.__username = String.valueOf(jwt.get("username")).trim();
+            this.__uid = String.valueOf(jwt.getId());
+            this.__user = JSON.parseObject(JSON.toJSONString(jwt.get("user")),UserBean.class);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            v1BaseBean.setStatus(5);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("您的Token无效，请检查或重新登录获取！");
+            throw  Controller.Util.json(v1BaseBean);
         }
     }
 }

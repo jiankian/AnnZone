@@ -10,6 +10,6 @@ export class AuthGuard implements CanActivate {
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-        return true;
+        return this._userService.tokenVerify();
     }
 }

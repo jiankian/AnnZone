@@ -1,12 +1,12 @@
 package cn.anline.zone.serve.console.v1.bean;
 
 
-import java.io.Serializable;
+import javax.persistence.MappedSuperclass;
 
 /**
  * Bean基类
  */
-public class V1BaseBean implements Serializable {
+public class V1BaseBean {
 
     protected int status;
 
@@ -17,6 +17,10 @@ public class V1BaseBean implements Serializable {
     protected Object data;
 
     public V1BaseBean() {
+        this.status = -1;
+        this.result = 0;
+        this.msg = "空白的接口请求结果！";
+        this.data = new Object();
     }
 
     public V1BaseBean(int status, int result, String msg, Object data) {

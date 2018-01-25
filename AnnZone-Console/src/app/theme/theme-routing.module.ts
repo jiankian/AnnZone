@@ -22,6 +22,10 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/default\/profile\/profile.module#ProfileModule"
             },
             {
+                "path": "user",
+                "loadChildren": ".\/pages\/user\/profile\/profile.module#ProfileModule"
+            },
+            {
                 "path": "404",
                 "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"
             },

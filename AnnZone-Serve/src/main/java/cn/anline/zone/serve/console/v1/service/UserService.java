@@ -8,8 +8,5 @@ import cn.anline.zone.serve.AnnBase;
  */
 public class UserService extends AnnBase {
 
-    public boolean tokenVerify(){
-        if (null == context.req().paramVal("token")) return false;
-        return context.req().paramVal("token").equals("fake-jwt-token");
-    }
+
 }
