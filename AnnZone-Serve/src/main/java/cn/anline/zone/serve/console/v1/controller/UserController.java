@@ -1,6 +1,7 @@
 package cn.anline.zone.serve.console.v1.controller;
 
 import act.controller.Controller;
+import act.db.DbBind;
 import act.db.ebean2.EbeanDao;
 import cn.anline.zone.serve.console.v1.bean.LoginBean;
 import cn.anline.zone.serve.console.v1.bean.TokenBean;
@@ -11,14 +12,12 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.apache.commons.codec.binary.Base64;
-import org.osgl.mvc.annotation.Action;
-import org.osgl.mvc.annotation.GetAction;
 import org.osgl.mvc.annotation.PostAction;
 import org.osgl.mvc.result.RenderJSON;
 import org.osgl.util.Crypto;
 
 import javax.inject.Inject;
-import java.text.SimpleDateFormat;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 import static act.controller.Controller.Util.*;
@@ -36,12 +35,12 @@ public class UserController extends V1BaseController{
     EbeanDao<Long,Ann_user> userEbeanDao;
 
     /**
-     * 登录接口 暂定@Action 支持get和post数据
+     * 登录接口 暂定@PostAction 支持get和post数据
      * @param username
      * @param password
      * @return
      */
-    @Action("signin")
+    @PostAction("signin")
     public RenderJSON signin(String username, String password){
         if (null == username || null == password){
             v1BaseBean.setStatus(1);
@@ -102,7 +101,7 @@ public class UserController extends V1BaseController{
      * 注册接口
      * @return
      */
-    @Action("signup")
+    @PostAction("signup")
     public RenderJSON signup(Ann_user ann_user){
         if (null == ann_user || null == ann_user.getUsername() || String.valueOf(ann_user.getUsername()).equals("")){
             v1BaseBean.setStatus(1);
@@ -136,26 +135,36 @@ public class UserController extends V1BaseController{
         }
         ann_user.setPassword(Crypto.passwordHash(ann_user.getPassword().trim()));
         ann_user.setStatus(Long.valueOf(0));
-        Ann_user newUser = userEbeanDao.save(ann_user);
-        if (null != newUser){
-            v1BaseBean.setStatus(0);
-            v1BaseBean.setResult(1);
-            v1BaseBean.setMsg("新用户注册成功");
-            v1BaseBean.setData(newUser);
-            return json(v1BaseBean);
-        }else {
+        ann_user.setCreate_time(new Date().getTime());
+        ann_user.setUpdate_time(new Date().getTime());
+        try {
+            Ann_user newUser = userEbeanDao.save(ann_user);
+            if (null != newUser){
+                v1BaseBean.setStatus(0);
+                v1BaseBean.setResult(1);
+                v1BaseBean.setMsg("新用户注册成功");
+                v1BaseBean.setData(newUser);
+                return json(v1BaseBean);
+            }else {
+                v1BaseBean.setStatus(7);
+                v1BaseBean.setResult(0);
+                v1BaseBean.setMsg("新用户注册失败！请检查填写的数据是否完整");
+                return json(v1BaseBean);
+            }
+        }catch (Exception e){
             v1BaseBean.setStatus(7);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("新用户注册失败！请检查填写的数据是否完整");
             return json(v1BaseBean);
         }
+
     }
 
     /**
      * 注销接口
      * @return
      */
-    @Action("signout")
+    @PostAction("signout")
     public RenderJSON logout(){
         //测试下全局的用户信息是否获取到了
         this.set__uid(null);
@@ -171,7 +180,7 @@ public class UserController extends V1BaseController{
      * Token验证接口
      * @return
      */
-    @Action("verify")
+    @PostAction("verify")
     public RenderJSON verify(String username, String token){
         if (null == username || username.trim().equals("") || null == token || token.trim().equals("")){
             v1BaseBean.setStatus(1);
@@ -214,7 +223,7 @@ public class UserController extends V1BaseController{
      * 刷新Token 返回最新Token回去
      * @return
      */
-    @Action("token")
+    @PostAction("token")
     public RenderJSON  token(String username,String token){
         if (null == username || username.trim().equals("") || null == token ||token.trim().equals("")){
             v1BaseBean.setStatus(1);
@@ -261,6 +270,50 @@ public class UserController extends V1BaseController{
             v1BaseBean.setStatus(5);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("Token解析失败,Token无效或者已经过期，请检查Token或重新获取！");
+            return json(v1BaseBean);
+        }
+
+    }
+
+    /**
+     * 更新用户信息
+     * @param user 需要更新的用户 传id主键
+     * @param ann_user 新的用户信息
+     * @return
+     */
+    @PostAction("update")
+    public RenderJSON update(@DbBind @NotNull Ann_user user,Ann_user ann_user){
+        if (null == user || user.equals("") || null == ann_user){
+            v1BaseBean.setStatus(2);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("更新参数不正确，请检查数据以重试！");
+            throw json(v1BaseBean);
+        }
+
+        //写入需要的更新项 具体更新项目具体去开发....
+        user.setNickname(ann_user.getNickname());
+        user.setUpdate_time(new Date().getTime());
+        user.setUsername(ann_user.getUsername());
+        user.setEmail(ann_user.getEmail());
+        user.setPassword(Crypto.passwordHash(ann_user.getPassword()));
+        try{
+            Ann_user afterUser = userEbeanDao.save(user);
+            if (null != afterUser){
+                v1BaseBean.setStatus(0);
+                v1BaseBean.setResult(1);
+                v1BaseBean.setMsg("用户信息更新成功！");
+                v1BaseBean.setData(afterUser);
+                return json(v1BaseBean);
+            }else {
+                v1BaseBean.setStatus(7);
+                v1BaseBean.setResult(0);
+                v1BaseBean.setMsg("用户信息数据库更新失败，请检查数据！");
+                return json(v1BaseBean);
+            }
+        }catch (Exception e){
+            v1BaseBean.setStatus(7);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("用户更新数据写入数据库失败，请检查数据是否正确！");
             return json(v1BaseBean);
         }
 
