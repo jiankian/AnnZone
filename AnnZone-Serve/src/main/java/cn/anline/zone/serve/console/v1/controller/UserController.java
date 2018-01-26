@@ -21,6 +21,8 @@ import javax.inject.Inject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static act.controller.Controller.Util.*;
+
 /**
  * 用户接口
  */
@@ -45,14 +47,14 @@ public class UserController extends V1BaseController{
             v1BaseBean.setStatus(1);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("用户名或者密码不能为空！");
-            throw Controller.Util.json(v1BaseBean);
+            throw json(v1BaseBean);
         }
         Ann_user annUser = userEbeanDao.findOneBy("username",username);
         if (null == annUser){
             v1BaseBean.setStatus(4);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("登录的账号不存在或已封号，请检查用户名！");
-            throw Controller.Util.json(v1BaseBean);
+            throw json(v1BaseBean);
         }
         if (annUser.getPassword().equals(Crypto.passwordHash(password.trim()))){
             v1BaseBean.setStatus(0);
@@ -86,12 +88,12 @@ public class UserController extends V1BaseController{
                  token
             );
             v1BaseBean.setData(loginBean);
-            return Controller.Util.json(v1BaseBean);
+            return json(v1BaseBean);
         }else {
             v1BaseBean.setStatus(2);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("您的密码不正确，请检查密码！");
-            return Controller.Util.json(v1BaseBean);
+            return json(v1BaseBean);
         }
 
     }
@@ -101,8 +103,52 @@ public class UserController extends V1BaseController{
      * @return
      */
     @Action("signup")
-    public RenderJSON signup(){
-        return Controller.Util.json(v1BaseBean);
+    public RenderJSON signup(Ann_user ann_user){
+        if (null == ann_user || null == ann_user.getUsername() || String.valueOf(ann_user.getUsername()).equals("")){
+            v1BaseBean.setStatus(1);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("用户名不能为空，请输入用户名！");
+            throw json(v1BaseBean);
+        }
+        if (null == ann_user || null == ann_user.getEmail() || String.valueOf(ann_user.getEmail()).equals("")){
+            v1BaseBean.setStatus(1);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("邮箱号不能为空，请输入邮箱！");
+            throw json(v1BaseBean);
+        }
+        if (null == ann_user || null == ann_user.getPassword() || String.valueOf(ann_user.getPassword()).equals("")){
+            v1BaseBean.setStatus(1);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("密码不能为空，请输入密码！");
+            throw json(v1BaseBean);
+        }
+        if (null != userEbeanDao.findOneBy("username",ann_user.getUsername())){
+            v1BaseBean.setStatus(6);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("用户"+String.valueOf(ann_user.getUsername())+"已注册,请换一个用户名！");
+            throw json(v1BaseBean);
+        }
+        if (null != userEbeanDao.findOneBy("email",ann_user.getEmail())){
+            v1BaseBean.setStatus(6);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("邮箱号"+String.valueOf(ann_user.getEmail())+"已注册,请换一个邮箱号！");
+            throw json(v1BaseBean);
+        }
+        ann_user.setPassword(Crypto.passwordHash(ann_user.getPassword().trim()));
+        ann_user.setStatus(Long.valueOf(0));
+        Ann_user newUser = userEbeanDao.save(ann_user);
+        if (null != newUser){
+            v1BaseBean.setStatus(0);
+            v1BaseBean.setResult(1);
+            v1BaseBean.setMsg("新用户注册成功");
+            v1BaseBean.setData(newUser);
+            return json(v1BaseBean);
+        }else {
+            v1BaseBean.setStatus(7);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setMsg("新用户注册失败！请检查填写的数据是否完整");
+            return json(v1BaseBean);
+        }
     }
 
     /**
@@ -112,7 +158,13 @@ public class UserController extends V1BaseController{
     @Action("signout")
     public RenderJSON logout(){
         //测试下全局的用户信息是否获取到了
-        return Controller.Util.json(__user);
+        this.set__uid(null);
+        this.set__user(null);
+        this.set__username(null);
+        v1BaseBean.setStatus(0);
+        v1BaseBean.setResult(1);
+        v1BaseBean.setMsg("已注销当前登录");
+        return json(v1BaseBean);
     }
 
     /**
@@ -125,7 +177,7 @@ public class UserController extends V1BaseController{
             v1BaseBean.setStatus(1);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("用户名或Token不能为空！");
-            throw Controller.Util.json(v1BaseBean);
+            throw json(v1BaseBean);
         }
         try {
             Claims jwt = Jwts.parser()
@@ -141,19 +193,19 @@ public class UserController extends V1BaseController{
                 v1BaseBean.setStatus(0);
                 v1BaseBean.setResult(1);
                 v1BaseBean.setMsg("Token验证成功：合法！");
-                return Controller.Util.json(v1BaseBean);
+                return json(v1BaseBean);
             }else {
                 v1BaseBean.setStatus(2);
                 v1BaseBean.setResult(0);
                 v1BaseBean.setMsg("Token与用户名不匹配！");
-                return Controller.Util.json(v1BaseBean);
+                return json(v1BaseBean);
             }
         }catch (Exception e)
         {
             v1BaseBean.setStatus(5);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("Token解析失败,Token无效或者已经过期，请检查Token或重新获取！");
-            return Controller.Util.json(v1BaseBean);
+            return json(v1BaseBean);
         }
 
     }
@@ -168,7 +220,7 @@ public class UserController extends V1BaseController{
             v1BaseBean.setStatus(1);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("用户名或Token不能为空");
-            throw Controller.Util.json(v1BaseBean);
+            throw json(v1BaseBean);
         }
 
         try {
@@ -197,19 +249,19 @@ public class UserController extends V1BaseController{
                         .setHeaderParam("app","AnnZone")//头部参数
                         .compact();
                 v1BaseBean.setData(new TokenBean(jws));
-                return Controller.Util.json(v1BaseBean);
+                return json(v1BaseBean);
             }else {
                 v1BaseBean.setStatus(2);
                 v1BaseBean.setResult(0);
                 v1BaseBean.setMsg("Token与用户名不匹配！");
-                return Controller.Util.json(v1BaseBean);
+                return json(v1BaseBean);
             }
         }catch (Exception e)
         {
             v1BaseBean.setStatus(5);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("Token解析失败,Token无效或者已经过期，请检查Token或重新获取！");
-            return Controller.Util.json(v1BaseBean);
+            return json(v1BaseBean);
         }
 
     }

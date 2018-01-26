@@ -1,5 +1,6 @@
 package cn.anline.zone.serve.console.v1.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,10 +9,12 @@ public class Ann_user {
   @Id
   private Long id;
   private Long role_id;
+  @Column(unique = true)
   private String username;
   private String password;
   private String avatar;
   private String nickname;
+  @Column(unique = true)
   private String email;
   private Long gender;
   private String profile;
