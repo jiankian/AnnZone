@@ -10,6 +10,12 @@ export class AuthGuard implements CanActivate {
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-        return this._userService.tokenVerify();
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if(currentUser && currentUser.token){
+            return true
+        }else{
+            this._router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+                return false;
+        }
     }
 }

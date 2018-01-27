@@ -5,51 +5,51 @@
 				<div class="m-login__wrapper">
 					<div class="m-login__logo">
 						<a href="#">
-							<img src="./assets/app/media/img//logos/logo-2.png">
+							<img src="./assets/app/media/img/logos/logo-2.png">
 						</a>
 					</div>
 					<div class="m-login__signin">
 						<div class="m-login__head">
 							<h3 class="m-login__title">
-								Sign In To Admin
+								登录控制台
 							</h3>
 							<div class="m--margin-top-40 m-alert m-alert--outline m-alert--outline-2x alert alert-success fade show" role="alert">
-								Use username
+								用户名
 								<span style="font-weight: 500;">
-									demo@demo.com
+									admin
 								</span>
-								and password
+								用户密码
 								<span style="font-weight: 500;">
-									demo
+									admin888
 								</span>
-								to continue or singup.
+								继续或者注册新账号.
 							</div>
 						</div>
 						<form (ngSubmit)="f.form.valid && signin()" #f="ngForm" class="m-login__form m-form" action="">
 							<ng-template #alertSignin></ng-template>
 							<div class="form-group m-form__group">
-								<input class="form-control m-input" type="text" placeholder="Email" name="email" [(ngModel)]="model.email" #email="ngModel" autocomplete="off">
+								<input class="form-control m-input" type="text" placeholder="请输入用户名" name="username" [(ngModel)]="model.username" #username="ngModel" autocomplete="off" required>
 							</div>
 							<div class="form-group m-form__group">
-								<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel">
+								<input class="form-control m-input m-login__form-input--last" type="password" placeholder="请输入密码" name="password" [(ngModel)]="model.password" #password="ngModel" required>
 							</div>
 							<div class="row m-login__form-sub">
 								<div class="col m--align-left">
 									<label class="m-checkbox m-checkbox--focus">
 										<input type="checkbox" name="remember" [(ngModel)]="model.remember" #remember="ngModel">
-										Remember me
+										记住账号
 										<span></span>
 									</label>
 								</div>
 								<div class="col m--align-right">
 									<a href="javascript:;" id="m_login_forget_password" class="m-link">
-										Forget Password ?
+										忘记密码 ?
 									</a>
 								</div>
 							</div>
 							<div class="m-login__form-action">
 								<button [disabled]="loading" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">
-									Sign In
+									登 录
 								</button>
 							</div>
 						</form>
@@ -57,10 +57,10 @@
 					<div class="m-login__signup">
 						<div class="m-login__head">
 							<h3 class="m-login__title">
-								Sign Up
+								注 册
 							</h3>
 							<div class="m-login__desc">
-								Enter your details to create your account:
+								请输入您的详细信息以注册新账号:
 							</div>
 						</div>
 						<form (ngSubmit)="f.form.valid && signup()" #f="ngForm" class="m-login__form m-form" action="">
@@ -81,9 +81,9 @@
 								<div class="col m--align-left">
 									<label class="m-checkbox m-checkbox--focus">
 										<input type="checkbox" name="agree" [(ngModel)]="model.agree" #agree="ngModel">
-										I Agree the
+										阅读并同意
 										<a href="#" class="m-link m-link--focus">
-											terms and conditions
+											用户注册协议
 										</a>
 										.
 										<span></span>
@@ -93,10 +93,10 @@
 							</div>
 							<div class="m-login__form-action">
 								<button [disabled]="loading" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" id="m_login_signup_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">
-									Sign Up
+									注 册
 								</button>
 								<button [disabled]="loading"  id="m_login_signup_cancel" class="btn btn-outline-focus  m-btn m-btn--pill m-btn--custom">
-									Cancel
+									取 消
 								</button>
 							</div>
 						</form>
@@ -104,10 +104,10 @@
 					<div class="m-login__forget-password">
 						<div class="m-login__head">
 							<h3 class="m-login__title">
-								Forgotten Password ?
+								忘记密码 ?
 							</h3>
 							<div class="m-login__desc">
-								Enter your email to reset your password:
+								输入邮箱以重置密码 :
 							</div>
 						</div>
 						<form (ngSubmit)="f.form.valid && forgotPass()" #f="ngForm" class="m-login__form m-form" action="">
@@ -117,10 +117,10 @@
 							</div>
 							<div class="m-login__form-action">
 								<button [disabled]="loading" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" id="m_login_forget_password_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">
-									Request
+									申请重置
 								</button>
 								<button [disabled]="loading"  id="m_login_forget_password_cancel" class="btn btn-outline-focus m-btn m-btn--pill m-btn--custom">
-									Cancel
+									取 消
 								</button>
 							</div>
 						</form>
@@ -130,11 +130,11 @@
 			<div class="m-stack__item m-stack__item--center">
 				<div class="m-login__account">
 					<span class="m-login__account-msg">
-						Don't have an account yet ?
+						还没有账号 ?
 					</span>
 					&nbsp;&nbsp;
 					<a href="javascript:;" id="m_login_signup" class="m-link m-link--focus m-login__account-link">
-						Sign Up
+						注册
 					</a>
 				</div>
 			</div>
@@ -143,12 +143,12 @@
 	<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" style="background-image: url(./assets/app/media/img//bg/bg-4.jpg)">
 		<div class="m-grid__item m-grid__item--middle">
 			<h3 class="m-login__welcome">
-				Join Our Community
+				安浪个人工作台
 			</h3>
 			<p class="m-login__msg">
-				Lorem ipsum dolor sit amet, coectetuer adipiscing
+				属于自己的云端数据创作与发布、管理平台
 				<br>
-				elit sed diam nonummy et nibh euismod
+				Ann Zone!一个开发者应该拥有的属于自己的内容发布管理平台！
 			</p>
 		</div>
 	</div>

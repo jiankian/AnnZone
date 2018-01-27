@@ -58,7 +58,25 @@ export class AuthComponent implements OnInit {
     }
 
     signin() {
-        this.loading = true;
+        // this.loading = true;
+        this._authService.login(this.model.username, this.model.password).subscribe(
+            data => {
+                console.log("回调数据")
+                console.log(data)
+                if(data){
+                    this._router.navigate([this.returnUrl]);
+                }else{
+                    this.showAlert('alertSignin');
+                    this._alertService.error("登录失败，请检查输入信息是否正确！");
+                    this.loading = false;
+                }
+                
+            },
+            error => {
+                this.showAlert('alertSignin');
+                this._alertService.error(error);
+                this.loading = false;
+            });
     }
 
     signup() {

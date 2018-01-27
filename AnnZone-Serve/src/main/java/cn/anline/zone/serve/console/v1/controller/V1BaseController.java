@@ -68,6 +68,13 @@ public class V1BaseController extends AnnBase {
         this.__user = __user;
     }
 
+    //API下的统一响应头处理
+    @Before
+    public void __header__(){
+        //配置API下的请求允许跨域 后边指定的域名可以访问跨域资源
+        context.resp().addHeader("Access-Control-Allow-Origin","*");
+        context.resp().addHeader("Access-Control-Allow-Methods","POST");
+    }
     /**
      * 登录和注册的接口不拦截 Token验证 写方法名。。。
      */
