@@ -71,6 +71,7 @@
     <rxjava.version>2.1.8</rxjava.version>
     <kotlin.version>1.2.10</kotlin.version>
     <graphql-java.version>7.0</graphql-java.version>
+    <emoji-java.version>4.0.0</emoji-java.version>
     <webjars-bootstrap.version>3.3.7</webjars-bootstrap.version>
     <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
     <app.entry>cn.anline.zone.serve.Ann</app.entry>
@@ -344,6 +345,11 @@
       <groupId>io.reactivex.rxjava2</groupId>
       <artifactId>rxjava</artifactId>
       <version>${rxjava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.vdurmont</groupId>
+      <artifactId>emoji-java</artifactId>
+      <version>${emoji-java.version}</version>
     </dependency>
 
   </dependencies>

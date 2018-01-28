@@ -10,12 +10,19 @@ export class AuthGuard implements CanActivate {
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser && currentUser.token) {
-            return true
-        } else {
+        try {
+            let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (currentUser && currentUser.token) {
+                return true
+            } else {
+                this._router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+                return false;
+            }
+        } catch (error) {
+            console.log("解析本地用户信息失败！")
             this._router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
             return false;
         }
+        
     }
 }

@@ -27,7 +27,7 @@ import { ElModule } from 'element-angular'
         AuthModule,
         HttpModule,
         ElModule.forRoot(),
-        
+
     ],
     providers: [
         ScriptLoaderService,
