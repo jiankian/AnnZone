@@ -63,14 +63,14 @@ export class AuthComponent implements OnInit {
             data => {
                 console.log("回调数据")
                 console.log(data)
-                if(data){
+                if (data) {
                     this._router.navigate([this.returnUrl]);
-                }else{
+                } else {
                     this.showAlert('alertSignin');
                     this._alertService.error("登录失败，请检查输入信息是否正确！");
                     this.loading = false;
                 }
-                
+
             },
             error => {
                 this.showAlert('alertSignin');
@@ -81,12 +81,12 @@ export class AuthComponent implements OnInit {
 
     signup() {
         this.loading = true;
-        
+
     }
 
     forgotPass() {
         this.loading = true;
-        
+
     }
 
     showAlert(target) {

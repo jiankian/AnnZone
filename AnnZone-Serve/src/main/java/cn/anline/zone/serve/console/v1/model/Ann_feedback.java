@@ -13,7 +13,7 @@ public class Ann_feedback {
   private String tel;
   private String type;
   private String content;
-  private String from;
+  private String origin;
   private String version;
   private String ua;
   private Long is_read;
@@ -76,12 +76,12 @@ public class Ann_feedback {
     this.content = content;
   }
 
-  public String getFrom() {
-    return from;
+  public String getOrigin() {
+    return origin;
   }
 
-  public void setFrom(String from) {
-    this.from = from;
+  public void setOrigin(String origin) {
+    this.origin = origin;
   }
 
   public String getVersion() {

@@ -8,9 +8,9 @@ export class UserService {
     constructor(private http: Http) {
 
     }
-    token(){
+    token() {
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser && currentUser.token){
+        if (currentUser && currentUser.token) {
             return currentUser
         }
     }

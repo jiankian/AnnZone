@@ -1,3 +1,4 @@
+import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ThemeComponent } from './theme/theme.component';
@@ -22,8 +23,12 @@ import { AuthModule } from "./auth/auth.module";
         AppRoutingModule,
         ThemeRoutingModule,
         AuthModule,
+        HttpModule
     ],
-    providers: [ScriptLoaderService],
+    providers: [
+        ScriptLoaderService,
+        BaseRequestOptions
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

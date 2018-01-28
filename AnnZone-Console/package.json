@@ -27,6 +27,7 @@
         "@types/jquery": "^3.2.6",
         "classlist.js": "^1.1.20150312",
         "core-js": "^2.4.1",
+        "element-angular": "^0.5.4",
         "enhanced-resolve": "^3.3.0",
         "jquery": "^3.2.1",
         "ng-recaptcha": "^3.0.0",

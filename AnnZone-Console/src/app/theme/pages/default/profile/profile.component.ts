@@ -3,18 +3,18 @@ import { Helpers } from '../../../../helpers';
 
 
 @Component({
-selector: "app-profile",
-templateUrl: "./profile.component.html",
-encapsulation: ViewEncapsulation.None,
+    selector: "app-profile",
+    templateUrl: "./profile.component.html",
+    encapsulation: ViewEncapsulation.None,
 })
 export class ProfileComponent implements OnInit {
 
 
-constructor()  {
+    constructor() {
 
-}
-ngOnInit()  {
+    }
+    ngOnInit() {
 
-}
+    }
 
 }

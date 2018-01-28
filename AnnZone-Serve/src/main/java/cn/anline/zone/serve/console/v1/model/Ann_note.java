@@ -15,7 +15,7 @@ public class Ann_note {
   private Double lat;
   private String address;
   private String poi;
-  private Long from;
+  private Long origin;
   private String http_info;
   private String ip;
   private String images;
@@ -101,12 +101,12 @@ public class Ann_note {
     this.poi = poi;
   }
 
-  public Long getFrom() {
-    return from;
+  public Long getOrigin() {
+    return origin;
   }
 
-  public void setFrom(Long from) {
-    this.from = from;
+  public void setOrigin(Long origin) {
+    this.origin = origin;
   }
 
   public String getHttp_info() {

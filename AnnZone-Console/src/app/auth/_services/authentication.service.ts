@@ -17,7 +17,7 @@ export class AuthenticationService {
         console.log(param)
         // 如需get方式登录
         //let getParams= '?username='+username+'&password='+password;
-        return this.http.post(Config.api_url+'user/signin', param)
+        return this.http.post(Config.api_url + 'user/signin', param)
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 console.log("登录服务器请求结果打印：")
@@ -28,7 +28,7 @@ export class AuthenticationService {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user.data));
                     return true
-                }else{
+                } else {
                     return false
                 }
             });

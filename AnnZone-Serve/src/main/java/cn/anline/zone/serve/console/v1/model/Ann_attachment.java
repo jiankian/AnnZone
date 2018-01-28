@@ -20,7 +20,7 @@ public class Ann_attachment {
   private String sha1;
   private String driver;
   private Long download;
-  private Long from;
+  private Long origin;
   private String ua;
   private String version;
   private String http_info;
@@ -141,12 +141,12 @@ public class Ann_attachment {
     this.download = download;
   }
 
-  public Long getFrom() {
-    return from;
+  public Long getOrigin() {
+    return origin;
   }
 
-  public void setFrom(Long from) {
-    this.from = from;
+  public void setOrigin(Long origin) {
+    this.origin = origin;
   }
 
   public String getUa() {

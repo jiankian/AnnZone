@@ -18,12 +18,52 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/default\/inner\/inner.module#InnerModule"
             },
             {
-                "path": "profile",
-                "loadChildren": ".\/pages\/default\/profile\/profile.module#ProfileModule"
+                "path": "account",
+                "loadChildren": ".\/pages\/account\/account.module#AccountModule"
+            },
+            {
+                "path": "album",
+                "loadChildren": ".\/pages\/album\/album.module#AlbumModule"
+            },
+            {
+                "path": "blog",
+                "loadChildren": ".\/pages\/blog\/blog.module#BlogModule"
+            },
+            {
+                "path": "health",
+                "loadChildren": ".\/pages\/health\/health.module#HealthModule"
+            },
+            {
+                "path": "microblog",
+                "loadChildren": ".\/pages\/microblog\/microblog.module#MicroBlogModule"
+            },
+            {
+                "path": "note",
+                "loadChildren": ".\/pages\/note\/note.module#NoteModule"
+            },
+            {
+                "path": "project",
+                "loadChildren": ".\/pages\/project\/project.module#ProjectModule"
+            },
+            {
+                "path": "space",
+                "loadChildren": ".\/pages\/space\/space.module#SpaceModule"
+            },
+            {
+                "path": "system",
+                "loadChildren": ".\/pages\/system\/system.module#SystemModule"
+            },
+            {
+                "path": "task",
+                "loadChildren": ".\/pages\/task\/task.module#TaskModule"
             },
             {
                 "path": "user",
-                "loadChildren": ".\/pages\/user\/profile\/profile.module#ProfileModule"
+                "loadChildren": ".\/pages\/user\/user.module#UserModule"
+            },
+            {
+                "path": "video",
+                "loadChildren": ".\/pages\/video\/video.module#VideoModule"
             },
             {
                 "path": "404",
