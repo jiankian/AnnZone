@@ -32,7 +32,7 @@ public class MicroblogController extends V1BaseController {
      * 微博读取接口
      * @return
      */
-    @GetAction()
+    @GetAction("list")
     public RenderJSON list(){
         v1BaseBean.setStatus(0);
         v1BaseBean.setMsg("微博列表请求成功");

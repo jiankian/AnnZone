@@ -35,43 +35,46 @@ export class PublishComponent implements OnInit, AfterViewInit {
         this.options = new RequestOptions({ headers: this.headers });
     }
 
-    message(type: string,msg: string): void {
+    message(type: string, msg: string): void {
         this._message[type](msg)
     }
 
     publish() {
         console.log(this.ann_microblog)
-        if(!this.ann_microblog.content || this.ann_microblog.content.trim() == ""){
+        if (!this.ann_microblog.content || this.ann_microblog.content.trim() == "") {
             this.showAlert('alertPublish');
             this._alertService.error("微博不能为空！");
             return false;
         }
         //console.log(this.headers)
         return this._http.post(Config.api_url + 'microblog/publish', { ann_microblog: this.ann_microblog }, this.options)
-        .toPromise()
-        .then(
+            .toPromise()
+            .then(
             (response: Response) => {
-            console.log("发布请求结果：")
-            console.log(response)
-            console.log(response.json())
-            let res = response.json()
-            if(res && res.status == 0){
-                this.message("success","微博发布成功！")
+                console.log("发布请求结果：")
+                console.log(response)
+                console.log(response.json())
+                let res = response.json()
+                if (res && res.status == 0) {
+                    this.message("success", "微博发布成功！")
+                    this.showAlert('alertPublish');
+                    this._alertService.success("微博发布成功！");
+                    // 清空表单输入
+                    this.ann_microblog = {}
+                    this._router.navigate(['../'])
+                } else {
+                    this.message("error", "微博发布失败！")
+                    this.showAlert('alertPublish');
+                    this._alertService.error("微博发布失败！" + res.msg);
+                }
+
+            })
+            .catch((err) => {
+                console.log(err);
+                this.message("error", "微博发布失败！")
                 this.showAlert('alertPublish');
-                this._alertService.success("微博发布成功！");
-            }else{
-                this.message("error","微博发布失败！")
-                this.showAlert('alertPublish');
-                this._alertService.error("微博发布失败！"+res.msg);
-            }
-            
-        })
-        .catch((err)=>{
-            console.log(err);
-            this.message("error","微博发布失败！")
-            this.showAlert('alertPublish');
-            this._alertService.error("微博发布失败！"+err);
-        });
+                this._alertService.error("微博发布失败！" + err);
+            });
         // this._http.post(Config.api_url + "microblog/publish",{ann_microblog: this.ann_microblog},this.options).toPromise().then((res) =>{
         //     console.log(res);
 

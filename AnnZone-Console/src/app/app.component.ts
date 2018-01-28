@@ -21,12 +21,14 @@ export class AppComponent implements OnInit {
         console.log("构造函数：")
         console.log(this._http)
         let http: Http = this._http
-        setInterval(()=>{
+        //刷新Token 根据需求去刷新 Token过期时间越短 这里就设置的越快一点吧 
+        setInterval(() => {
             this.refreshToken(http)
-        }, 3000);
+        }, 1000*60*10);
+        // 10分钟请求一次新Token 服务器上的过期时间为2小时
     }
 
-    refreshToken(http: Http):void {
+    refreshToken(http: Http): void {
         console.log("Token❤️心跳：")
         console.log(new Date().toLocaleTimeString())
         try {
@@ -40,17 +42,17 @@ export class AppComponent implements OnInit {
                 http.post(Config.api_url + 'user/token', { username: localUser.username, token: localUser.token })
                     .toPromise()
                     .then(
-                        (response: Response) => {
-                            console.log("Token刷新请求返回：")
-                            console.log(response)
-                            let resData = response.json()
-                            console.log(resData)
-                            if(resData && resData.status == 0 && resData.data.token){
-                                localStorage.setItem('currentUser',JSON.stringify(resData.data))
-                            }
+                    (response: Response) => {
+                        console.log("Token刷新请求返回：")
+                        console.log(response)
+                        let resData = response.json()
+                        console.log(resData)
+                        if (resData && resData.status == 0 && resData.data.token) {
+                            localStorage.setItem('currentUser', JSON.stringify(resData.data))
                         }
+                    }
                     )
-                    .catch((err)=>{
+                    .catch((err) => {
                         console.log("心跳刷新Token请求失败：")
                         console.log(err)
                     });
@@ -58,7 +60,7 @@ export class AppComponent implements OnInit {
         } catch (error) {
             console.log("解析本地LocalStorage Token失败")
         }
-        
+
     }
 
     ngOnInit() {
@@ -71,6 +73,6 @@ export class AppComponent implements OnInit {
                 Helpers.setLoading(false);
             }
         });
-       
+
     }
 }

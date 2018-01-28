@@ -15,9 +15,9 @@
 					-
 				</li>
 				<li class="m-nav__item">
-					<a href="" class="m-nav__link">
+					<a href="#" class="m-nav__link">
 						<span class="m-nav__link-text">
-							一级菜单
+							微博
 						</span>
 					</a>
 				</li>
@@ -25,22 +25,13 @@
 					-
 				</li>
 				<li class="m-nav__item">
-					<a href="" class="m-nav__link">
+					<a href="#" class="m-nav__link">
 						<span class="m-nav__link-text">
-							二级菜单
+							所有微博
 						</span>
 					</a>
 				</li>
-				<li class="m-nav__separator">
-					-
-				</li>
-				<li class="m-nav__item">
-					<a href="" class="m-nav__link">
-						<span class="m-nav__link-text">
-							内页
-						</span>
-					</a>
-				</li>
+				
 			</ul>
 		</div>
 		<div>
@@ -61,18 +52,18 @@
 										</span>
 									</li>
 									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
+										<a routerLink="publish" href="" class="m-nav__link">
 											<i class="m-nav__link-icon flaticon-share"></i>
 											<span class="m-nav__link-text">
-												Activity
+												发微博
 											</span>
 										</a>
 									</li>
 									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
+										<a routerLink="comment" href="" class="m-nav__link">
 											<i class="m-nav__link-icon flaticon-chat-1"></i>
 											<span class="m-nav__link-text">
-												Messages
+												评论
 											</span>
 										</a>
 									</li>
@@ -94,8 +85,8 @@
 									</li>
 									<li class="m-nav__separator m-nav__separator--fit"></li>
 									<li class="m-nav__item">
-										<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
-											提交
+										<a (click)="refresh()" href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
+											刷新
 										</a>
 									</li>
 								</ul>
@@ -109,5 +100,202 @@
 </div>
 <!-- END: Subheader -->
 <div class="m-content">
-	Inner page content goes here
+	<div class="m-portlet m-portlet--mobile">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<h3 class="m-portlet__head-text">
+						所有微博
+					</h3>
+				</div>
+			</div>
+			<div class="m-portlet__head-tools">
+				<ul class="m-portlet__nav">
+					<li class="m-portlet__nav-item">
+						<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+							<a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+								<i class="la la-ellipsis-h m--font-brand"></i>
+							</a>
+							<div class="m-dropdown__wrapper">
+								<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+								<div class="m-dropdown__inner">
+									<div class="m-dropdown__body">
+										<div class="m-dropdown__content">
+											<ul class="m-nav">
+												<li class="m-nav__section m-nav__section--first">
+													<span class="m-nav__section-text">
+														Quick Actions
+													</span>
+												</li>
+												<li class="m-nav__item">
+													<a href="" class="m-nav__link">
+														<i class="m-nav__link-icon flaticon-share"></i>
+														<span class="m-nav__link-text">
+															Create Post
+														</span>
+													</a>
+												</li>
+												<li class="m-nav__item">
+													<a href="" class="m-nav__link">
+														<i class="m-nav__link-icon flaticon-chat-1"></i>
+														<span class="m-nav__link-text">
+															Send Messages
+														</span>
+													</a>
+												</li>
+												<li class="m-nav__item">
+													<a href="" class="m-nav__link">
+														<i class="m-nav__link-icon flaticon-multimedia-2"></i>
+														<span class="m-nav__link-text">
+															Upload File
+														</span>
+													</a>
+												</li>
+												<li class="m-nav__section">
+													<span class="m-nav__section-text">
+														Useful Links
+													</span>
+												</li>
+												<li class="m-nav__item">
+													<a href="" class="m-nav__link">
+														<i class="m-nav__link-icon flaticon-info"></i>
+														<span class="m-nav__link-text">
+															FAQ
+														</span>
+													</a>
+												</li>
+												<li class="m-nav__item">
+													<a href="" class="m-nav__link">
+														<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+														<span class="m-nav__link-text">
+															Support
+														</span>
+													</a>
+												</li>
+												<li class="m-nav__separator m-nav__separator--fit m--hide"></li>
+												<li class="m-nav__item m--hide">
+													<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
+														Submit
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<!--begin: Search Form -->
+			<div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
+				<div class="row align-items-center">
+					<div class="col-xl-8 order-2 order-xl-1">
+						<div class="form-group m-form__group row align-items-center">
+							<div class="col-md-4">
+								<div class="m-input-icon m-input-icon--left">
+									<input type="text" class="form-control m-input m-input--solid" placeholder="Search..." id="generalSearch">
+									<span class="m-input-icon__icon m-input-icon__icon--left">
+												<span>
+													<i class="la la-search"></i>
+												</span>
+											</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 order-1 order-xl-2 m--align-right">
+						<a routerLink="publish" href="#" class="btn btn-accent m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">
+									<span>
+										<i class="la la-send"></i>
+										<span>
+											发布
+										</span>
+									</span>
+						</a>
+						<div class="m-separator m-separator--dashed d-xl-none"></div>
+					</div>
+				</div>
+			</div>
+			<!--end: Search Form -->  		<!--begin: Datatable -->
+			<table class="m-datatable" id="html_table" width="100%">
+				<thead>
+				<tr>
+					<th title="Field #1">
+						微博ID
+					</th>
+					<th title="Field #2">
+						用户ID
+					</th>
+					<th title="Field #3">
+						内容
+					</th>
+					<th title="Field #4">
+						地址
+					</th>
+					<th title="Field #5">
+						更新时间
+					</th>
+					<th title="Field #6">
+						操作
+					</th>
+
+				</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let data of listData">
+						<td>
+							{{data.id}}
+						</td>
+						<td>
+							{{data.uid}}
+						</td>
+						<td>
+							{{data.content}}
+						</td>
+						<td>
+							{{data.address}}
+						</td>
+						<td>
+							{{data.update_time|date:"y年M月d日 H时m分"}}
+						</td>
+						<td>
+							<span style="overflow: visible; width: 110px;">
+								<span>
+									<div class="dropdown">
+										<a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="false">
+											<i class="la la-ellipsis-h"></i>
+										</a>
+										<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-115px, 33px, 0px); top: 0px; left: 0px; will-change: transform;">
+											<a class="dropdown-item" href="#">
+												<i class="la la-edit"></i>
+												Edit Details
+											</a>
+											<a class="dropdown-item" href="#">
+												<i class="la la-leaf"></i>
+												Update Status</a>
+											<a class="dropdown-item" href="#">
+												<i class="la la-print"></i>
+												Generate Report
+											</a>
+										</div>
+									</div>
+									<span class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="编辑">
+										<i (click)="editItem(data)" class="la la-edit"></i>
+									</span>
+									<span class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" title="删除">
+										<i (click)="deleteItem(data)" class="la la-trash"></i>
+									</span>
+								</span>
+							</span>
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
+			<!--end: Datatable -->
+		</div>
+	</div>
 </div>
