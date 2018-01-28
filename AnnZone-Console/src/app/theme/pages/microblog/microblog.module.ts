@@ -21,7 +21,7 @@ const routes: Routes = [
             },
             {
                 "path": "comment",
-                "component":CommentComponent
+                "component": CommentComponent
             },
             {
                 "path": "publish",
@@ -36,8 +36,8 @@ const routes: Routes = [
 ];
 @NgModule({
     imports: [
-        CommonModule, 
-        RouterModule.forChild(routes), 
+        CommonModule,
+        RouterModule.forChild(routes),
         LayoutModule,
         FormsModule,
         HttpModule,
@@ -49,7 +49,7 @@ const routes: Routes = [
         PublishComponent,
         RecycleComponent
     ],
-    providers:[
+    providers: [
         BaseRequestOptions
     ]
 })

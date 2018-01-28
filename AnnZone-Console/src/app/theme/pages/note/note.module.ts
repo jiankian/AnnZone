@@ -39,14 +39,14 @@ const routes: Routes = [
                 "path": "recycle",
                 "component": RecycleComponent
             },
-            
+
         ]
     }
 ];
 @NgModule({
     imports: [
-        CommonModule, 
-        RouterModule.forChild(routes), 
+        CommonModule,
+        RouterModule.forChild(routes),
         LayoutModule
     ], exports: [
         RouterModule

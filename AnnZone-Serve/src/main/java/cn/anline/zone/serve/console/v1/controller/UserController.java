@@ -331,6 +331,7 @@ public class UserController extends V1BaseController{
                     e.printStackTrace();
                     v1BaseBean.setStatus(4);
                     v1BaseBean.setResult(1);
+                    v1BaseBean.setExp(-1);
                     v1BaseBean.setMsg("Token所属的用户不存在");
 //                    v1BaseBean.setData(new TokenBean(newJWT));
                     return json(v1BaseBean);
@@ -346,6 +347,7 @@ public class UserController extends V1BaseController{
             e.printStackTrace();
             v1BaseBean.setStatus(5);
             v1BaseBean.setResult(0);
+            v1BaseBean.setExp(-1);
             v1BaseBean.setMsg("Token解析失败,Token无效或者已经过期，请检查Token或重新获取！");
             return json(v1BaseBean);
         }

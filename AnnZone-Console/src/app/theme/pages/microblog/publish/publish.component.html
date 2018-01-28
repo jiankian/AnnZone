@@ -122,6 +122,7 @@
 						<div class="form-group m-form__group m--margin-top-10">
 							<div class="alert m-alert m-alert--default" role="alert">
 								后台可以发布微博，APP客户端接口也可以发布，可以附带更多内容！
+								具体在服务端的控制器接收API请求即可！
 							</div>
 						</div>
 						
@@ -130,7 +131,7 @@
 							<label for="exampleTextarea">
 								微博正文
 							</label>
-							<textarea [(ngModel)]="ann_microblog.content" name="content" #content="ngModel" required class="form-control m-input m-input--air" id="exampleTextarea" rows="3"></textarea>
+							<textarea [(ngModel)]="ann_microblog.content" name="content" #content="ngModel" class="form-control m-input m-input--air" id="exampleTextarea" rows="3"></textarea>
 						</div>
 
 						<div class="form-group m-form__group">
@@ -143,6 +144,7 @@
 							</span>
 						</div>
 					</div>
+					<ng-template #alertPublish></ng-template>
 					<div class="m-portlet__foot m-portlet__foot--fit">
 						<div class="m-form__actions">
 							<button type="submit" class="btn btn-accent">

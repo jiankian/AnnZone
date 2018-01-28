@@ -98,6 +98,7 @@ public class V1BaseController extends AnnBase {
         if ( null == token || token.trim().equals("")){
             v1BaseBean.setStatus(1);
             v1BaseBean.setResult(0);
+            v1BaseBean.setExp(-1);
             v1BaseBean.setMsg("Token不能为空！");
             throw json(v1BaseBean);
         }
@@ -131,6 +132,7 @@ public class V1BaseController extends AnnBase {
                     System.out.println("用户无权限");
                     v1BaseBean.setStatus(9);
                     v1BaseBean.setResult(0);
+                    v1BaseBean.setExp(-1);
                     v1BaseBean.setMsg("您的Token无效，所在用户被封号");
                     throw  json(v1BaseBean);
                 }
@@ -138,6 +140,7 @@ public class V1BaseController extends AnnBase {
                 System.out.println("没有找到用户");
                 v1BaseBean.setStatus(8);
                 v1BaseBean.setResult(0);
+                v1BaseBean.setExp(-1);
                 v1BaseBean.setMsg("您的Token无效，所在用户不存在！");
                 throw  json(v1BaseBean);
             }
@@ -147,6 +150,7 @@ public class V1BaseController extends AnnBase {
 //            e.printStackTrace();
             v1BaseBean.setStatus(5);
             v1BaseBean.setResult(0);
+            v1BaseBean.setExp(-1);
             v1BaseBean.setMsg("您的Token无效或用户已被封号，请检查或重新登录获取！");
             throw  json(v1BaseBean);
         }

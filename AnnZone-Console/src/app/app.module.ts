@@ -11,6 +11,8 @@ import { ScriptLoaderService } from "./_services/script-loader.service";
 import { ThemeRoutingModule } from "./theme/theme-routing.module";
 import { AuthModule } from "./auth/auth.module";
 
+import { ElModule } from 'element-angular'
+
 @NgModule({
     declarations: [
         ThemeComponent,
@@ -23,7 +25,9 @@ import { AuthModule } from "./auth/auth.module";
         AppRoutingModule,
         ThemeRoutingModule,
         AuthModule,
-        HttpModule
+        HttpModule,
+        ElModule.forRoot(),
+        
     ],
     providers: [
         ScriptLoaderService,
