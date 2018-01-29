@@ -10,6 +10,7 @@ public class Ann_blog {
   private Long uid;
   private String title;
   private Long cid;
+  private String extra_cid;
   private String short_title;
   private String source;
   private String url;
@@ -64,6 +65,14 @@ public class Ann_blog {
 
   public void setCid(Long cid) {
     this.cid = cid;
+  }
+
+  public String getExtra_cid() {
+    return extra_cid;
+  }
+
+  public void setExtra_cid(String extra_cid) {
+    this.extra_cid = extra_cid;
   }
 
   public String getShort_title() {

@@ -9,12 +9,12 @@ public class Ann_user {
   @Id
   private Long id;
   private Long role_id;
-  @Column(unique = true)
+  @Column(unique = true)//为了系统全局操作的原子性，用户名保持唯一 不用ID+密码两者查询作为登录，用户名方便存储在框架context.login(username:)方便其它数据操作的原子性
   private String username;
   private String password;
   private String avatar;
   private String nickname;
-  @Column(unique = true)
+  @Column(unique = true)//一个邮箱注册一个帐号时候 true 这样可以做邮箱号登录也可以
   private String email;
   private Long gender;
   private String profile;
