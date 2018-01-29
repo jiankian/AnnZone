@@ -37,7 +37,7 @@ export class PublishComponent implements OnInit, AfterViewInit {
     //主分类
     cid:number
     // 扩展分类
-    extra_cid:string
+    extra_cid:number[] = []
     constructor(
         private _script: ScriptLoaderService,
         private _http: Http,
@@ -77,11 +77,24 @@ export class PublishComponent implements OnInit, AfterViewInit {
     mainCategory(e){
         console.log("主分类选择器值")
         console.log(e)
+        this.cid = e.id
+        console.log(this.cid)
     }
     extraCategory(e){
         console.log("扩展分类选择器值")
         console.log(e)
+        let index = this.extra_cid.indexOf(e.id)
+        console.log('选中内容在参照物的位置：'+index)
+        if(index > -1) {//如果是已经存在该选择就删除
+            this.extra_cid.splice(index,1);
+        }else {//如果不存在，那就加进去 最后就获得所有选中的数组
+            this.extra_cid.push(e.id)
+        }
+        // 看下选中结果是哪些值：
         console.log(this.extra_cid)
+        // 传服务器请转换成 , 分割
+        let extra_cid = this.extra_cid.join(',')
+        console.log(extra_cid)
     }
 
 }

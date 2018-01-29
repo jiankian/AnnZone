@@ -25,7 +25,7 @@ MySQL数据库导入 数据库 导入最新的日期的文件名的sql即可
  
 使用了jjwt库作为Token身份认证系统，Act框架新版本内置了更方便的jwt机制，但是如果同时使用了模板引擎和session，会出现session跨方法时候就丢失了，我们网页版不可能把每次浏览器的请求都包含Token进去吧？
 
-**数据库操作没法插入emoji**
+**数据库操作没法插入emoji？**
 
 
 [http://blog.csdn.net/tongsh6/article/details/52292336](http://blog.csdn.net/tongsh6/article/details/52292336)
