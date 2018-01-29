@@ -10,6 +10,7 @@ import { ScriptLoaderService } from "./_services/script-loader.service";
 import { ThemeRoutingModule } from "./theme/theme-routing.module";
 import { AuthModule } from "./auth/auth.module";
 import {NgZorroAntdModule} from "ng-zorro-antd";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {NgZorroAntdModule} from "ng-zorro-antd";
         AuthModule,
         HttpModule,
         NgZorroAntdModule.forRoot(),
+        HttpClientModule
     ],
     providers: [
         ScriptLoaderService,

@@ -1,7 +1,7 @@
 # 安浪个人工作站
 安浪个人工作站：与企业员工OA系统不同，本系统完全面向个人，创建一个属于自己的完全的云端空间！
 
-- JAVA+[ActFramework](http://www.ActFramework.org)+MySQL+[Angular5](http://angular.io)+Metronic5+[Ant Design for Angular](https://ng.ant.design/)
+- JAVA+[ActFramework](http://www.ActFramework.org)+MySQL+[Angular5](http://angular.io)+Metronic5+[Ant Design for Angular](https://ng.ant.design/) (NG-ZORRO-ANTD)
 
     - [AnnZone-Console](./AnnZone-Console) 管理中心，Angular5+Metronic5+各种angular第三方组件开发
     - [AnnZone-Serve](./AnnZone-Serve) WEB系统，后台接口，博客微博网页版视图，JAVA WEB开发 ActFramework框架开发
@@ -16,8 +16,7 @@
 
 - 2018年不去泡妹子不去吃鸡不去喝酒，所有空闲时间都会跟进本项目！！！！！作为研究、学习、使用、分享
 
-#主要功能
-
+# 主要功能
 1. 写博客，带有博客前台页面；
 1. 记笔记，程序员的Markdown技术笔记；
 1. 项目管理，把所有接手的项目记录下来；

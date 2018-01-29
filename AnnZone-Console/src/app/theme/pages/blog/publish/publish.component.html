@@ -216,7 +216,28 @@
                             封面:
                         </label>
                         <div class="col-lg-6">
-
+                            <nz-upload
+                                    nzAction="{{coverUploadUrl}}"
+                                    nzListType="picture-card"
+                                    nzAccept="image/*"
+                                    [nzData]="coverFormData"
+                                    [nzHeaders]="coverUploadHeaders"
+                                    [nzSize]="5000"
+                                    [nzLimit]="5"
+                                    [nzMultiple]="true"
+                                    [(nzFileList)]="fileList"
+                                    [nzShowButton]="fileList.length < 5"
+                                    [nzPreview]="coverPreviewHandle"
+                                    (nzChange)="coverChange($event)"
+                                    >
+                                <i class="anticon anticon-plus"></i>
+                                <div class="ant-upload-text">上传图片</div>
+                            </nz-upload>
+                            <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+                                <ng-template #modalContent>
+                                    <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+                                </ng-template>
+                            </nz-modal>
                         </div>
                     </div>
                 </div>

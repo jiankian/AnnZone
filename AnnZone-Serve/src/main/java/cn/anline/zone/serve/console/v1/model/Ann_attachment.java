@@ -12,16 +12,19 @@ public class Ann_attachment {
   private String module;
   private String path;
   private String thumb;
+  private String ss_key;
   private String url;
   private String mime;
   private String ext;
   private Long size;
   private String md5;
   private String sha1;
+  private String crc32;
   private String driver;
   private Long download;
   private Long origin;
   private String ua;
+  private String ip;
   private String version;
   private String http_info;
   private Long sort;
@@ -77,6 +80,14 @@ public class Ann_attachment {
     this.thumb = thumb;
   }
 
+  public String getSs_key() {
+    return ss_key;
+  }
+
+  public void setSs_key(String ss_key) {
+    this.ss_key = ss_key;
+  }
+
   public String getUrl() {
     return url;
   }
@@ -125,6 +136,14 @@ public class Ann_attachment {
     this.sha1 = sha1;
   }
 
+  public String getCrc32() {
+    return crc32;
+  }
+
+  public void setCrc32(String crc32) {
+    this.crc32 = crc32;
+  }
+
   public String getDriver() {
     return driver;
   }
@@ -155,6 +174,14 @@ public class Ann_attachment {
 
   public void setUa(String ua) {
     this.ua = ua;
+  }
+
+  public String getIp() {
+    return ip;
+  }
+
+  public void setIp(String ip) {
+    this.ip = ip;
   }
 
   public String getVersion() {

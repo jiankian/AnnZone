@@ -12,6 +12,7 @@ import { AddCategoryComponent } from './category/add.component';
 import { RecycleComponent } from './recycle/recycle.component';
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
+import {NzModalModule, NzUploadModule} from "ng-zorro-antd";
 
 const routes: Routes = [
     {
@@ -57,6 +58,8 @@ const routes: Routes = [
         LayoutModule,
         FormsModule,
         HttpModule,
+        NzUploadModule,
+        NzModalModule
     ], exports: [
         RouterModule
     ], declarations: [

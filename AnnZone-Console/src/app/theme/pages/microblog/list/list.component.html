@@ -246,7 +246,7 @@
 				</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let data of listData">
+					<tr *ngFor="let data of listData" #lists="ngModel" [(ngModel)]="listData">
 						<td>
 							{{data.id}}
 						</td>

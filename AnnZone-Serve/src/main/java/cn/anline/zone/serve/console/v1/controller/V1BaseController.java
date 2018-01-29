@@ -122,7 +122,7 @@ public class V1BaseController extends AnnBase {
             System.out.println(jwtUser.getId());
             System.out.println(JSON.toJSONString(dbFindUser));
             if (null != dbFindUser){
-                System.out.println("找到了用户");
+                System.out.println("找到了用户"+jwtUsername);
                 context.login(jwtUsername);
                 context.param("uid",jwtUid);
                 context.cache("user",jwtUser);
