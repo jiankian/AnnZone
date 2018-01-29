@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
         console.log("构造函数：")
         console.log(this._http)
         let http: Http = this._http
+        // 为了刚刚关闭浏览器的用户可以被快速纠察Token 在这里开始刷新
         //刷新Token 根据需求去刷新 Token过期时间越短 这里就设置的越快一点吧 
         setInterval(() => {
             this.refreshToken(http)

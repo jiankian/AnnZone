@@ -4,7 +4,7 @@ import { ScriptLoaderService } from '../../../../_services/script-loader.service
 import {ElMessageService, ElNotificationService} from "element-angular";
 import {AlertService} from "../../../../auth/_services/alert.service";
 import {Router} from "@angular/router";
-import {Http} from "@angular/http";
+import {Headers, Http, RequestOptions} from "@angular/http";
 
 
 @Component({
@@ -16,6 +16,28 @@ export class PublishComponent implements OnInit, AfterViewInit {
 
     ann_blog: any = {}
     contentAlert: boolean = true
+    headers: any
+    options: any
+    token: string
+
+    blog_category: any = [
+        {id:1,name:'分类1'},
+        {id:2,name:'分类2'},
+        {id:3,name:'分类3'},
+        {id:4,name:'分类4'},
+        {id:5,name:'分类5'},
+        {id:6,name:'分类6'},
+        {id:7,name:'分类7'},
+        {id:8,name:'分类8'},
+        {id:9,name:'分类9'},
+        {id:10,name:'分类10'},
+        {id:11,name:'分类11'},
+        {id:12,name:'分类12'},]
+
+    //主分类
+    cid:number
+    // 扩展分类
+    extra_cid:string
     constructor(
         private _script: ScriptLoaderService,
         private _http: Http,
@@ -26,7 +48,9 @@ export class PublishComponent implements OnInit, AfterViewInit {
         private _alertService: AlertService,
 
     ) {
-
+        this.token = JSON.parse(localStorage.getItem("currentUser")).token;
+        this.headers = new Headers({ 'ann_token': this.token });
+        this.options = new RequestOptions({ headers: this.headers });
     }
     ngOnInit() {
 
@@ -45,7 +69,19 @@ export class PublishComponent implements OnInit, AfterViewInit {
         console.log(this.ann_blog)
         let  content = document.querySelector(".note-editable").innerHTML
         console.log(content)
+        // 先把正文内容插入到文章对象中
+        this.ann_blog.content = content
+        console.log(this.ann_blog)
+    }
 
+    mainCategory(e){
+        console.log("主分类选择器值")
+        console.log(e)
+    }
+    extraCategory(e){
+        console.log("扩展分类选择器值")
+        console.log(e)
+        console.log(this.extra_cid)
     }
 
 }

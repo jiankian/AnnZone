@@ -11,6 +11,7 @@ import { ListCategoryComponent } from './category/list.component';
 import { AddCategoryComponent } from './category/add.component';
 import { RecycleComponent } from './recycle/recycle.component';
 import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
 
 const routes: Routes = [
     {
@@ -54,7 +55,8 @@ const routes: Routes = [
         CommonModule,
         RouterModule.forChild(routes),
         LayoutModule,
-        FormsModule
+        FormsModule,
+        HttpModule,
     ], exports: [
         RouterModule
     ], declarations: [
