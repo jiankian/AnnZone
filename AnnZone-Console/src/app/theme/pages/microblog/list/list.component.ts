@@ -41,8 +41,7 @@ export class ListComponent implements OnInit, AfterViewInit {
     ngAfterViewInit() {
         this._script.loadScripts('app-inner',
             ['assets/app/js/dashboard.js']);
-        this._script.loadScripts('app-inner',
-            ['assets/app/js/microblog-list-html-table.js']);
+
     }
 
     loadData(){
@@ -54,6 +53,9 @@ export class ListComponent implements OnInit, AfterViewInit {
                 if (res && res.status == 0){
                     this._notify.success(res.msg)
                     this.listData = res.data
+                    //有了数据再去加载本地列表显示jq脚本 避免打开没有内容
+                    this._script.loadScripts('app-inner',
+                        ['assets/app/js/microblog-list-html-table.js']);
                 }else {
                     this._notify.error(res.msg)
                 }
@@ -64,7 +66,9 @@ export class ListComponent implements OnInit, AfterViewInit {
             });
     }
     refresh(){
-        this.listData = []
+        // window.location.reload()
+        // UI框架有时候不会正常加载本地列表 以下方式似乎没什么卵用
+        this.listData = []//先清空
         this.loadData()
     }
 

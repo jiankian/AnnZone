@@ -18,10 +18,33 @@
       <file leaf-file-name="publish.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/theme/pages/blog/publish/publish.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="92" column="22" lean-forward="true" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+            <state relative-caret-position="462">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#0#108#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header-nav.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/theme/layouts/header-nav/header-nav.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="808" column="84" lean-forward="true" selection-start-line="808" selection-start-column="84" selection-end-line="808" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="248" column="53" lean-forward="false" selection-start-line="248" selection-start-column="53" selection-end-line="248" selection-end-column="53" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#span#0;n#span#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,21 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendors.bundle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/vendors/base/vendors.bundle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="55537" column="4" lean-forward="false" selection-start-line="55537" selection-start-column="4" selection-end-line="55537" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="publish.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="publish.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/theme/pages/blog/publish/publish.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+            <state relative-caret-position="-181">
+              <caret line="187" column="44" lean-forward="false" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -74,8 +87,8 @@
       <file leaf-file-name="list.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="377">
+              <caret line="67" column="14" lean-forward="true" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
               <folding>
                 <element signature="e#0#108#0" expanded="true" />
               </folding>
@@ -134,13 +147,14 @@
         <option value="$PROJECT_DIR$/src/assets/app/js/microblog-list-html-table.js" />
         <option value="$PROJECT_DIR$/src/assets/demo/demo7/base/scripts.bundle.js" />
         <option value="$PROJECT_DIR$/src/app/theme/pages/microblog/publish/publish.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.html" />
         <option value="$PROJECT_DIR$/src/assets/demo/default/custom/components/forms/widgets/summernote.js" />
         <option value="$PROJECT_DIR$/src/app/theme/pages/blog/blog.module.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/theme/pages/blog/publish/publish.component.ts" />
         <option value="$PROJECT_DIR$/src/app/theme/pages/blog/publish/publish.component.html" />
+        <option value="$PROJECT_DIR$/src/app/theme/pages/blog/publish/publish.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/theme/layouts/header-nav/header-nav.component.html" />
+        <option value="$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.html" />
       </list>
     </option>
   </component>
@@ -229,7 +243,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnnZone-Console" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnnZone-Console" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="header-nav" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AnnZone-Console" type="b2602c69:ProjectViewProjectNode" />
@@ -238,27 +261,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="theme" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AnnZone-Console" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AnnZone-Console" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="category" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AnnZone-Console" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AnnZone-Console" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="publish" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AnnZone-Console" type="b2602c69:ProjectViewProjectNode" />
@@ -278,16 +280,6 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="microblog" type="462c0819:PsiDirectoryNode" />
               <item name="list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AnnZone-Console" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AnnZone-Console" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="microblog" type="462c0819:PsiDirectoryNode" />
-              <item name="publish" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AnnZone-Console" type="b2602c69:ProjectViewProjectNode" />
@@ -400,12 +392,12 @@
       <updated>1517138844553</updated>
       <workItem from="1517138846651" duration="78000" />
       <workItem from="1517138936254" duration="2066000" />
-      <workItem from="1517171349131" duration="23324000" />
+      <workItem from="1517171349131" duration="27709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25468000" />
+    <option name="totallyTimeSpent" value="29853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1006" extended-state="0" />
@@ -577,17 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="272" column="44" lean-forward="false" selection-start-line="272" selection-start-column="44" selection-end-line="272" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#span#0;n#span#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/demo/default/custom/components/forms/widgets/summernote.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -601,16 +582,6 @@
         <state relative-caret-position="403">
           <caret line="55537" column="4" lean-forward="false" selection-start-line="55537" selection-start-column="4" selection-end-line="55537" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#108#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -670,21 +641,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/theme/pages/blog/publish/publish.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-181">
+          <caret line="187" column="44" lean-forward="false" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/theme/pages/blog/publish/publish.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="92" column="22" lean-forward="true" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+        <state relative-caret-position="462">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="e#0#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/theme/pages/blog/publish/publish.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/theme/layouts/header-nav/header-nav.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+        <state relative-caret-position="343">
+          <caret line="808" column="84" lean-forward="true" selection-start-line="808" selection-start-column="84" selection-end-line="808" selection-end-column="84" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="67" column="14" lean-forward="true" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="248" column="53" lean-forward="false" selection-start-line="248" selection-start-column="53" selection-end-line="248" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#span#0;n#span#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

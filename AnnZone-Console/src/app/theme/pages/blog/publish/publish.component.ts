@@ -94,6 +94,7 @@ export class PublishComponent implements OnInit, AfterViewInit {
         console.log(this.extra_cid)
         // 传服务器请转换成 , 分割
         let extra_cid = this.extra_cid.join(',')
+        console.log('此刻正在选中的值：')
         console.log(extra_cid)
     }
 
