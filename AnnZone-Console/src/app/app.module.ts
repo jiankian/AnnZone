@@ -4,14 +4,13 @@ import { NgModule } from '@angular/core';
 import { ThemeComponent } from './theme/theme.component';
 import { LayoutModule } from './theme/layouts/layout.module';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScriptLoaderService } from "./_services/script-loader.service";
 import { ThemeRoutingModule } from "./theme/theme-routing.module";
 import { AuthModule } from "./auth/auth.module";
+import {NgZorroAntdModule} from "ng-zorro-antd";
 
-import { ElModule } from 'element-angular'
 
 @NgModule({
     declarations: [
@@ -26,8 +25,7 @@ import { ElModule } from 'element-angular'
         ThemeRoutingModule,
         AuthModule,
         HttpModule,
-        ElModule.forRoot(),
-
+        NgZorroAntdModule.forRoot(),
     ],
     providers: [
         ScriptLoaderService,

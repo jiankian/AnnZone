@@ -10,8 +10,8 @@ import { PublishComponent } from './publish/publish.component';
 import { ListCategoryComponent } from './category/list.component';
 import { AddCategoryComponent } from './category/add.component';
 import { RecycleComponent } from './recycle/recycle.component';
-import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 
 const routes: Routes = [
     {

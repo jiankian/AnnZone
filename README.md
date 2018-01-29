@@ -1,7 +1,7 @@
 # 安浪个人工作站
 安浪个人工作站：与企业员工OA系统不同，本系统完全面向个人，创建一个属于自己的完全的云端空间！
 
-- JAVA+[ActFramework](http://www.ActFramework.org)+MySQL+[Angular5](http://angular.io)+Metronic5+[ElementUI for Angular](https://element-angular.faas.ele.me/)
+- JAVA+[ActFramework](http://www.ActFramework.org)+MySQL+[Angular5](http://angular.io)+Metronic5+[Ant Design for Angular](https://ng.ant.design/)
 
     - [AnnZone-Console](./AnnZone-Console) 管理中心，Angular5+Metronic5+各种angular第三方组件开发
     - [AnnZone-Serve](./AnnZone-Serve) WEB系统，后台接口，博客微博网页版视图，JAVA WEB开发 ActFramework框架开发
@@ -13,6 +13,8 @@
 
 - 还有Android、iOS客户端、微信小程序，客户端主要是UI设计，内容服务端轻轻松松生成
 开发中...作者本人的博客系统在用，会长期更新！！！
+
+- 2018年不去泡妹子不去吃鸡不去喝酒，所有空闲时间都会跟进本项目！！！！！作为研究、学习、使用、分享
 
 #主要功能
 
@@ -40,3 +42,7 @@
 文档存在于各个项目的目录下的README.md文件中，代码里面没去掉各种控制台打印调试，注释也不少，会相应技术的人都应该看得懂。
 需要掌握的有：angular相关知识，java MVC框架 ActFramework 。
 需要手把手只用而不去自己去完成开发的用户，请等我完善后发视频链接！
+
+**Copyright**
+
+MIT开源，想怎么改，怎么用，怎么卖，怎么骂都随意，（注意引用的第三方库的版权）

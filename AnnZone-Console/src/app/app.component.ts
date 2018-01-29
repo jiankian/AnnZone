@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
         //刷新Token 根据需求去刷新 Token过期时间越短 这里就设置的越快一点吧 
         setInterval(() => {
             this.refreshToken(http)
-        }, 1000*60*10);
+        }, 1000 * 60 * 10);
         // 10分钟请求一次新Token 服务器上的过期时间为2小时
     }
 

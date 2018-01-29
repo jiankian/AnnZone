@@ -17,7 +17,7 @@ public class Ann_blog {
   private String author;
   private String summary;
   private String content;
-  private Long image;
+  private String image;
   private String keyword;
   private String article_id_array;
   private Long click;
@@ -123,11 +123,11 @@ public class Ann_blog {
     this.content = content;
   }
 
-  public Long getImage() {
+  public String getImage() {
     return image;
   }
 
-  public void setImage(Long image) {
+  public void setImage(String image) {
     this.image = image;
   }
 

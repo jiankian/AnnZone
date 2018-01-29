@@ -33,6 +33,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/cdk@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-5.1.0.tgz#e04547609d96d8b6fe0dac17bed323760c3952e9"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@^1.6.5":
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.5.tgz#9217c5d5c366292aca61fb0328c406bb5b0f2d76"
@@ -1617,10 +1623,6 @@ ejs@^2.5.7:
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
   version "1.3.31"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.31.tgz#00d832cba9fe2358652b0c48a8816c8e3a037e9f"
-
-element-angular@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/element-angular/-/element-angular-0.5.4.tgz#3496812e8dd340e9606ed32f110d21f7b334201a"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -3443,6 +3445,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
+moment@^2.18.1:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -3504,6 +3510,14 @@ ng-recaptcha@^3.0.0:
   resolved "https://registry.yarnpkg.com/ng-recaptcha/-/ng-recaptcha-3.0.3.tgz#2355e7875b94b92486cf21b674a28c9d0f000531"
   optionalDependencies:
     "@types/grecaptcha" "^2.0.33"
+
+ng-zorro-antd@^0.6.13:
+  version "0.6.13"
+  resolved "https://registry.yarnpkg.com/ng-zorro-antd/-/ng-zorro-antd-0.6.13.tgz#db1031b7d034a710be9b2019b7f31fff3e1520a5"
+  dependencies:
+    "@angular/cdk" "^5.0.0"
+    moment "^2.18.1"
+    tslib "^1.7.1"
 
 no-case@^2.2.0:
   version "2.3.2"

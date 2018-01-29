@@ -4,9 +4,9 @@ import { Component, OnInit, ViewEncapsulation, AfterViewInit, ViewContainerRef, 
 import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
 import { Router } from '@angular/router';
-import { ElNotificationService, ElMessageService } from 'element-angular';
 import { AlertService } from './../../../../auth/_services/alert.service';
 import { AlertComponent } from '../../../../auth/_directives/alert.component';
+import {NzMessageService, NzNotificationService} from "ng-zorro-antd";
 
 @Component({
     selector: "app-inner",
@@ -25,8 +25,8 @@ export class PublishComponent implements OnInit, AfterViewInit {
         private _script: ScriptLoaderService,
         private _http: Http,
         private _router: Router,
-        private _notify: ElNotificationService,
-        private _message: ElMessageService,
+        private _notify: NzNotificationService,
+        private _message: NzMessageService,
         private _cfr: ComponentFactoryResolver,
         private _alertService: AlertService,
     ) {
@@ -61,7 +61,7 @@ export class PublishComponent implements OnInit, AfterViewInit {
                     this._alertService.success("微博发布成功！");
                     // 清空表单输入
                     this.ann_microblog = {}
-                    this._router.navigate(['../'])
+                    this._router.navigate(['/microblog'])
                 } else {
                     this.message("error", "微博发布失败！")
                     this.showAlert('alertPublish');

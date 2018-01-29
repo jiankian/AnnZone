@@ -180,7 +180,7 @@
 						<div class="col-lg-6">
 							<div class="m-checkbox-inline">
 								<label *ngFor="let c of blog_category" class="m-checkbox">
-									<input name="extra_cid" value="{{c.id}}" #extra_cid (change)="extraCategory(c)" type="checkbox">
+									<input name="extra_cid" value="{{c.id}}"  (change)="extraCategory(c)" type="checkbox">
 									{{c.name}}
 									<span></span>
 								</label>
@@ -209,6 +209,18 @@
 				</div>
 
 			</div>
+            <div class="m-portlet__body">
+                <div class="m-form__section m-form__section--first">
+                    <div class="form-group m-form__group row">
+                        <label class="col-lg-3 col-form-label">
+                            封面:
+                        </label>
+                        <div class="col-lg-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 			<div class="m-portlet__foot m-portlet__foot--fit">
 				<div class="m-form__actions m-form__actions">
@@ -217,7 +229,7 @@
 							<button type="submit" class="btn btn-primary">
 								保存
 							</button>
-							<button type="reset" class="btn btn-secondary">
+							<button (click)="clearForm($event)"  type="reset" class="btn btn-secondary">
 								重置
 							</button>
 						</div>

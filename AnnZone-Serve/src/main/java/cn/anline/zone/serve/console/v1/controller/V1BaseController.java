@@ -93,6 +93,8 @@ public class V1BaseController extends AnnBase {
     @Before(except = {"signin","signup","verify","token"})
     public void   __init__(){
         //拦截登录 此处可做Token判断
+        System.out.println("获取参数：");
+        System.out.println(JSON.toJSONString(context.req().paramNames()));
         String token = context.req().header("ann_token");
         //System.out.println("token获取值："+token);
         if ( null == token || token.trim().equals("")){
