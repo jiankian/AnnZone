@@ -219,8 +219,7 @@
 					</div>
 				</div>
 			</div>
-			<!--end: Search Form -->
-			<!--begin: Datatable -->
+			<!--end: Search Form -->  		<!--begin: Datatable -->
 			<table class="m-datatable" id="html_table" width="100%">
 				<thead>
 				<tr>
@@ -246,7 +245,7 @@
 				</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let data of listData" #lists="ngModel" [(ngModel)]="listData">
+					<tr *ngFor="let data of listData">
 						<td>
 							{{data.id}}
 						</td>
@@ -265,30 +264,15 @@
 						<td>
 							<span style="overflow: visible; width: 110px;">
 								<span>
-									<div class="dropdown">
-										<a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown" aria-expanded="false">
-											<i class="la la-ellipsis-h"></i>
-										</a>
-										<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-115px, 33px, 0px); top: 0px; left: 0px; will-change: transform;">
-											<a class="dropdown-item" href="#">
-												<i class="la la-edit"></i>
-												Edit Details
-											</a>
-											<a class="dropdown-item" href="#">
-												<i class="la la-leaf"></i>
-												Update Status</a>
-											<a class="dropdown-item" href="#">
-												<i class="la la-print"></i>
-												Generate Report
-											</a>
-										</div>
-									</div>
-									<span class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="编辑">
-										<i (click)="editItem(data)" class="la la-edit"></i>
-									</span>
-									<span class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" title="删除">
-										<i (click)="deleteItem(data)" class="la la-trash"></i>
-									</span>
+									<a (click)="test()" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="详情">
+										<i class="la la-ellipsis-h"></i>
+									</a>
+									<a (click)="editItem(data)" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="编辑">
+										<i class="la la-edit"></i>
+									</a>
+									<a (click)="deleteItem(data)" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" title="删除">
+										<i class="la la-trash"></i>
+									</a>
 								</span>
 							</span>
 						</td>

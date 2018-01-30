@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.6.35)
 # Database: ann_zone_serve
-# Generation Time: 2018-01-29 23:57:36 +0000
+# Generation Time: 2018-01-30 02:25:08 +0000
 # ************************************************************
 
 
@@ -211,7 +211,7 @@ CREATE TABLE `ann_blog` (
   `author` varchar(50) NOT NULL DEFAULT '' COMMENT '文章作者',
   `summary` varchar(140) NOT NULL DEFAULT '' COMMENT '文章摘要',
   `content` longtext NOT NULL COMMENT '文章正文',
-  `image` tinytext NOT NULL COMMENT '文章封面图片 附件ID',
+  `cover` text NOT NULL COMMENT '文章封面图片 附件ID',
   `keyword` varchar(255) NOT NULL DEFAULT '' COMMENT '文章关键字',
   `article_id_array` varchar(255) NOT NULL DEFAULT '' COMMENT '相关文章',
   `click` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '文章点击量',
@@ -225,6 +225,9 @@ CREATE TABLE `ann_blog` (
   `publisher_name` varchar(50) NOT NULL DEFAULT '' COMMENT '发布者用户名 ',
   `last_comment_time` int(11) DEFAULT '0' COMMENT '最新评论时间',
   `public_time` int(11) DEFAULT '0' COMMENT '发布时间',
+  `ip` varchar(128) DEFAULT NULL COMMENT 'IP',
+  `ua` tinytext COMMENT 'UA',
+  `http_info` tinytext COMMENT 'HTTP',
   `origin` int(11) DEFAULT NULL,
   `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0发布 1草稿 2关闭',
   `create_time` bigint(20) DEFAULT '0' COMMENT '文章创建时间',

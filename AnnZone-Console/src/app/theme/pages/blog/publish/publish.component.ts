@@ -3,7 +3,7 @@ import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
 import { AlertService } from "../../../../auth/_services/alert.service";
 import { Router } from "@angular/router";
-import { Headers, Http, RequestOptions } from "@angular/http";
+import {Headers, Http, RequestOptions, Response} from "@angular/http";
 import { Config } from "../../../../_ann";
 import {NzMessageService, NzNotificationService, UploadFile} from "ng-zorro-antd";
 import {HttpHeaders} from "@angular/common/http";
@@ -101,6 +101,25 @@ export class PublishComponent implements OnInit, AfterViewInit {
         this.ann_blog.cid = this.cid
         this.ann_blog.extra_cid = this.extra_cid
         console.log(this.ann_blog)
+        this._http.post(Config.api_url + 'blog/publish',{ann_blog:this.ann_blog},this.options).toPromise()
+            .then((response:Response) =>{
+                console.log("博客发布接口返回")
+                console.log(response)
+                console.log(response.json())
+                let res = response.json()
+                if (res && res.status == 0){
+                    this._notify.success('博客发布成功','博客保存到服务器数据库成功！')
+                    this._message.success(res.msg)
+                    this._router.navigate(['/blog'])
+                }else {
+                    this._notify.warning('博客发布失败','服务器异常，联系管理员~')
+                    this._message.warning(res.msg)
+                }
+            })
+            .catch((err)=>{
+                this._notify.error("","")
+                this._message.error(err)
+            })
     }
 
     mainCategory(e) {

@@ -17,7 +17,7 @@ public class Ann_blog {
   private String author;
   private String summary;
   private String content;
-  private String image;
+  private String cover;
   private String keyword;
   private String article_id_array;
   private Long click;
@@ -31,6 +31,10 @@ public class Ann_blog {
   private String publisher_name;
   private Long last_comment_time;
   private Long public_time;
+  private String ip;
+  private String ua;
+  private String http_info;
+  private Long origin;
   private Long status;
   private Long create_time;
   private Long update_time;
@@ -123,12 +127,12 @@ public class Ann_blog {
     this.content = content;
   }
 
-  public String getImage() {
-    return image;
+  public String getCover() {
+    return cover;
   }
 
-  public void setImage(String image) {
-    this.image = image;
+  public void setCover(String cover) {
+    this.cover = cover;
   }
 
   public String getKeyword() {
@@ -233,6 +237,38 @@ public class Ann_blog {
 
   public void setPublic_time(Long public_time) {
     this.public_time = public_time;
+  }
+
+  public String getIp() {
+    return ip;
+  }
+
+  public void setIp(String ip) {
+    this.ip = ip;
+  }
+
+  public String getUa() {
+    return ua;
+  }
+
+  public void setUa(String ua) {
+    this.ua = ua;
+  }
+
+  public String getHttp_info() {
+    return http_info;
+  }
+
+  public void setHttp_info(String http_info) {
+    this.http_info = http_info;
+  }
+
+  public Long getOrigin() {
+    return origin;
+  }
+
+  public void setOrigin(Long origin) {
+    this.origin = origin;
   }
 
   public Long getStatus() {

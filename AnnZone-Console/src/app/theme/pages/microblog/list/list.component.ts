@@ -72,13 +72,17 @@ export class ListComponent implements OnInit, AfterViewInit {
         this.loadData()
     }
 
-    editItem(data) {
+    editItem = (data) =>{
         console.log("编辑操作")
         console.log(data)
     }
-    deleteItem(data) {
+    deleteItem = (data) => {
         console.log("删除操作：")
         console.log(data)
+    }
+
+    test(){
+        console.log("测试")
     }
 
 }
