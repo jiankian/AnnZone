@@ -328,7 +328,7 @@ public class UserController extends V1BaseController{
                     v1BaseBean.setMsg("Token验证成功，且派发了最新用户信息(+Token)数据！");
                     return json(v1BaseBean);
                 }catch (Exception e){
-                    e.printStackTrace();
+//                    e.printStackTrace();
                     v1BaseBean.setStatus(4);
                     v1BaseBean.setResult(1);
                     v1BaseBean.setExp(-1);
@@ -344,7 +344,7 @@ public class UserController extends V1BaseController{
             }
         }catch (Exception e)
         {
-            e.printStackTrace();
+//            e.printStackTrace();
             v1BaseBean.setStatus(5);
             v1BaseBean.setResult(0);
             v1BaseBean.setExp(-1);
