@@ -66,6 +66,10 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/video\/video.module#VideoModule"
             },
             {
+                "path": "message",
+                "loadChildren": ".\/pages\/message\/message.module#MessageModule"
+            },
+            {
                 "path": "404",
                 "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"
             },

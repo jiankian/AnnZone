@@ -55,6 +55,7 @@ export class AppComponent implements OnInit {
                         console.log(resData)
                         if (resData && resData.status == 0 && resData.data.token) {
                             localStorage.setItem('currentUser', JSON.stringify(resData.data))
+                            that._notify.success('Token刷新成功',resData.msg)
                         }else {
                             this._notify.warning('身份认证异常',resData.msg)
                             this._modal.warning({
@@ -77,6 +78,7 @@ export class AppComponent implements OnInit {
                     .catch((err) => {
                         console.log("心跳刷新Token请求失败：")
                         console.log(err)
+                        that._notify.warning('Token刷新异常',err,)
                     });
             }
         } catch (error) {

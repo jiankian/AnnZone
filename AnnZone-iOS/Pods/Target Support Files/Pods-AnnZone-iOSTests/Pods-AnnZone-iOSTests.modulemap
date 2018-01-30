@@ -1,0 +1,6 @@
+framework module Pods_AnnZone_iOSTests {
+  umbrella header "Pods-AnnZone-iOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
