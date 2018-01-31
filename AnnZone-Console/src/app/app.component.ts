@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { Helpers } from "./helpers";
-import {NzMessageService, NzModalService, NzNotificationService} from "ng-zorro-antd";
+import { NzMessageService, NzModalService, NzNotificationService } from "ng-zorro-antd";
 
 @Component({
     selector: 'body',
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
         private _router: Router,
         private _http: Http,
         private _notify: NzNotificationService,
-        private _message:NzMessageService,
+        private _message: NzMessageService,
         private _modal: NzModalService,
     ) {
         console.log("构造函数：")
@@ -55,20 +55,20 @@ export class AppComponent implements OnInit {
                         console.log(resData)
                         if (resData && resData.status == 0 && resData.data.token) {
                             localStorage.setItem('currentUser', JSON.stringify(resData.data))
-                            that._notify.success('Token刷新成功',resData.msg)
-                        }else {
-                            this._notify.warning('身份认证异常',resData.msg)
+                            that._notify.success('Token刷新成功', resData.msg)
+                        } else {
+                            this._notify.warning('身份认证异常', resData.msg)
                             this._modal.warning({
-                                title:'身份验证异常',
-                                content:'解析本地保存登录信息异常，请尝试注销后重新登录！',
-                                okText:'重新登录',
-                                cancelText:'暂不理会',
-                                maskClosable:false,
-                                onOk(){
+                                title: '身份验证异常',
+                                content: '解析本地保存登录信息异常，请尝试注销后重新登录！',
+                                okText: '重新登录',
+                                cancelText: '暂不理会',
+                                maskClosable: false,
+                                onOk() {
                                     console.log('确定了')
                                     that._router.navigate(['logout'])
                                 },
-                                onCancel(){
+                                onCancel() {
                                     console.log('取消了')
                                 }
                             })
@@ -78,23 +78,23 @@ export class AppComponent implements OnInit {
                     .catch((err) => {
                         console.log("心跳刷新Token请求失败：")
                         console.log(err)
-                        that._notify.warning('Token刷新异常',err,)
+                        that._notify.warning('Token刷新异常', err, )
                     });
             }
         } catch (error) {
             console.log("解析本地LocalStorage Token失败")
-            this._notify.warning('身份验证异常','解析本地保存登录信息异常，请尝试注销后重新登录！')
+            this._notify.warning('身份验证异常', '解析本地保存登录信息异常，请尝试注销后重新登录！')
             this._modal.warning({
-                title:'身份验证异常',
-                content:'解析本地保存登录信息异常，请尝试注销后重新登录！',
-                okText:'重新登录',
-                cancelText:'暂不理会',
-                maskClosable:false,
-                onOk(){
+                title: '身份验证异常',
+                content: '解析本地保存登录信息异常，请尝试注销后重新登录！',
+                okText: '重新登录',
+                cancelText: '暂不理会',
+                maskClosable: false,
+                onOk() {
                     console.log('确定了')
                     that._router.navigate(['logout'])
                 },
-                onCancel(){
+                onCancel() {
                     console.log('取消了')
                 }
             })

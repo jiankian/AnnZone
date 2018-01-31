@@ -6,7 +6,7 @@ import { ScriptLoaderService } from '../../../../_services/script-loader.service
 import { Router } from '@angular/router';
 import { AlertService } from './../../../../auth/_services/alert.service';
 import { AlertComponent } from '../../../../auth/_directives/alert.component';
-import {NzMessageService, NzNotificationService} from "ng-zorro-antd";
+import { NzMessageService, NzNotificationService } from "ng-zorro-antd";
 
 @Component({
     selector: "app-inner",

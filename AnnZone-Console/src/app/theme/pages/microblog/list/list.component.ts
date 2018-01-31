@@ -5,7 +5,7 @@ import { Headers, Http, RequestOptions, Response } from "@angular/http";
 import { Router } from "@angular/router";
 import { AlertService } from "../../../../auth/_services/alert.service";
 import { Config } from "../../../../_ann";
-import {NzMessageService, NzNotificationService} from "ng-zorro-antd";
+import { NzMessageService, NzNotificationService } from "ng-zorro-antd";
 
 
 @Component({
@@ -51,18 +51,18 @@ export class ListComponent implements OnInit, AfterViewInit {
                 console.log(response.json())
                 let res = response.json()
                 if (res && res.status == 0) {
-                    this._notify.create('success','加载成功',res.msg)
+                    this._notify.create('success', '加载成功', res.msg)
                     this.listData = res.data
                     //有了数据再去加载本地列表显示jq脚本 避免打开没有内容
                     this._script.loadScripts('app-inner',
                         ['assets/app/js/microblog-list-html-table.js']);
                 } else {
-                    this._notify.create('error','加载失败',res.msg)
+                    this._notify.create('error', '加载失败', res.msg)
                 }
             })
             .catch((err) => {
-                this._notify.create('error','请求结果',"微博服务器请求失败！")
-                this._message.create('error',err)
+                this._notify.create('error', '请求结果', "微博服务器请求失败！")
+                this._message.create('error', err)
             });
     }
     refresh() {
@@ -72,7 +72,7 @@ export class ListComponent implements OnInit, AfterViewInit {
         this.loadData()
     }
 
-    editItem = (data) =>{
+    editItem = (data) => {
         console.log("编辑操作")
         console.log(data)
     }
@@ -81,7 +81,7 @@ export class ListComponent implements OnInit, AfterViewInit {
         console.log(data)
     }
 
-    test(){
+    test() {
         console.log("测试")
     }
 
