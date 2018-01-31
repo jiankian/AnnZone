@@ -11,17 +11,19 @@ import { ThemeRoutingModule } from "./theme/theme-routing.module";
 import { AuthModule } from "./auth/auth.module";
 import { NgZorroAntdModule } from "ng-zorro-antd";
 import { HttpClientModule } from "@angular/common/http";
+import { NgZorroAntdExtraModule } from "ng-zorro-antd-extra";
+
 
 //fundebug
-import * as fundebug from "fundebug-javascript";
-fundebug.apikey = "576472ab60c50c49f7b8e3d5e1cec250103c103b88284af5ae9bab217d68ab7d";
+// import * as fundebug from "fundebug-javascript";
+// fundebug.apikey = "576472ab60c50c49f7b8e3d5e1cec250103c103b88284af5ae9bab217d68ab7d";
 
 // 定义FundebugErrorHandler
-export class FundebugErrorHandler implements ErrorHandler {
-    handleError(err:any) : void {
-        fundebug.notifyError(err);
-    }
-}
+// export class FundebugErrorHandler implements ErrorHandler {
+//     handleError(err: any): void {
+//         fundebug.notifyError(err);
+//     }
+// }
 
 @NgModule({
     declarations: [
@@ -37,12 +39,13 @@ export class FundebugErrorHandler implements ErrorHandler {
         AuthModule,
         HttpModule,
         NgZorroAntdModule.forRoot(),
-        HttpClientModule
+        HttpClientModule,
+        NgZorroAntdExtraModule.forRoot(),
     ],
     providers: [
         ScriptLoaderService,
         BaseRequestOptions,
-        { provide: ErrorHandler, useClass: FundebugErrorHandler },
+        // { provide: ErrorHandler, useClass: FundebugErrorHandler },
     ],
     bootstrap: [AppComponent]
 })

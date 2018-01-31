@@ -3515,6 +3515,10 @@ ng-recaptcha@^3.0.0:
   optionalDependencies:
     "@types/grecaptcha" "^2.0.33"
 
+ng-zorro-antd-extra@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/ng-zorro-antd-extra/-/ng-zorro-antd-extra-1.1.7.tgz#0e0579cac2c8dc3ac566e1f49a4b0ca7f0186b50"
+
 ng-zorro-antd@^0.6.13:
   version "0.6.13"
   resolved "https://registry.yarnpkg.com/ng-zorro-antd/-/ng-zorro-antd-0.6.13.tgz#db1031b7d034a710be9b2019b7f31fff3e1520a5"

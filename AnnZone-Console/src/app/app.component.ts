@@ -83,8 +83,8 @@ export class AppComponent implements OnInit {
                         that._notify.warning('Token刷新异常', err, )
                         that._message.warning('身份验证服务器请求连接失败')
                     });
-            }else {
-                that._notify.warning('身份验证失败','获取不到本地用户信息，请登录后操作！')
+            } else {
+                that._notify.warning('身份验证失败', '获取不到本地用户信息，请登录后操作！')
             }
         } catch (error) {
             console.log("解析本地LocalStorage Token失败")
