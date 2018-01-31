@@ -7,7 +7,8 @@
     - [AnnZone-Serve](./AnnZone-Serve) WEB系统，后台接口，博客微博网页版视图，JAVA WEB开发 ActFramework框架开发
     - [AnnZone-Android](./AnnZone-Android) 安卓Android APP客户端版本
     - [AnnZone-iOS](./AnnZone-iOS) 苹果iOS APP客户端版本
-    - [AnnZone-MiniProgram](./AnnZone-MiniProgram) 微信 小程序客户端版本
+    - [AnnZone-MiniProgram](./AnnZone-MiniProgram) 微信
+    - [素材和资源](./素材和资源) 项目用到的设计图、资源、素材等文件。Angular后台素材、Android/iOS APP素材、网页版素材、微信小程序素材等
 
 - 以API 接口为核心工作，博客和微博 会有HTML网页版，方便搞技术的搭建自己的对外博客平台，其中其它模块的数据也可以在博客站点的网页中表现...也可以做企业网站等CMS系统
 
