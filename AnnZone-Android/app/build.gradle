@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+//添加ObjectBox数据库插件
+apply plugin: 'io.objectbox'
 
 android {
     compileSdkVersion 26
@@ -30,4 +30,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //ObjectBox 依赖
+    compile "io.objectbox:objectbox-kotlin:$objectboxVersion"
+    annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"
 }

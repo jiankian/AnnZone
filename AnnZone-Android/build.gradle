@@ -1,17 +1,28 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.10'
+    ext {
+        gradle_version = '3.0.1'
+        kotlin_version = '1.2.10'
+        _buildToolsVersion = '27.0.2'
+        _compileSdkVersion = 27
+        objectboxVersion = '1.4.1'
+    }
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "http://objectbox.net/beta-repo/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "com.android.tools.build:gradle:$gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        //添加ObjectBox数据库依赖
+        classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
     }
 }
 
@@ -19,6 +30,16 @@ allprojects {
     repositories {
         google()
         jcenter()
+        //添加常用的Android依赖仓库
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "http://objectbox.net/beta-repo/" }
+        maven {
+            url 'https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple'
+        }
+        maven {
+            url 'http://nexus.d.xiaomi.net/nexus/content/groups/public'
+        }
     }
 }
 
