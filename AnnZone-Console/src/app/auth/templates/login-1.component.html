@@ -66,28 +66,29 @@
 						<form (ngSubmit)="f.form.valid && signup()" #f="ngForm" class="m-login__form m-form" action="">
 							<ng-template #alertSignup></ng-template>
 							<div class="form-group m-form__group">
-								<input class="form-control m-input" type="text" placeholder="Fullname" name="fullname" [(ngModel)]="model.fullname" #fullname="ngModel">
+								<input class="form-control m-input" type="text" placeholder="请输入用户名" name="username" [(ngModel)]="model.username" #username="ngModel">
 							</div>
 							<div class="form-group m-form__group">
-								<input class="form-control m-input" type="text" placeholder="Email" name="email" [(ngModel)]="model.email" #email="ngModel" autocomplete="off">
+								<input class="form-control m-input" type="text" placeholder="请输入邮箱号" name="email" [(ngModel)]="model.email" #email="ngModel" autocomplete="off">
 							</div>
 							<div class="form-group m-form__group">
-								<input class="form-control m-input" type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel">
+								<input class="form-control m-input" type="password" placeholder="请输入密码" name="password" [(ngModel)]="model.password" #password="ngModel">
 							</div>
 							<div class="form-group m-form__group">
-								<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Confirm Password" name="rpassword" [(ngModel)]="model.rpassword" #rpassword="ngModel">
+								<input class="form-control m-input m-login__form-input--last" type="password" placeholder="再次输入密码确认" name="rpassword" [(ngModel)]="model.rpassword" #rpassword="ngModel">
 							</div>
 							<div class="row form-group m-form__group m-login__form-sub">
 								<div class="col m--align-left">
 									<label class="m-checkbox m-checkbox--focus">
 										<input type="checkbox" name="agree" [(ngModel)]="model.agree" #agree="ngModel">
 										阅读并同意
-										<a href="#" class="m-link m-link--focus">
-											用户注册协议
-										</a>
+
 										.
 										<span></span>
 									</label>
+									<a (click)="showRegisterProtocol()" class="m-link m-link--focus" style="color: purple">
+										用户注册协议
+									</a>
 									<span class="m-form__help"></span>
 								</div>
 							</div>

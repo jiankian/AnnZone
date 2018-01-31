@@ -12,6 +12,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { AlertService } from './_services/alert.service';
 import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from './_services/user.service';
+import { UserRegisterProtocolComponent } from './register/user-register-protocol.component';
 // import { fakeBackendProvider } from './_helpers/index';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UserService } from './_services/user.service';
         AuthComponent,
         AlertComponent,
         LogoutComponent,
+        UserRegisterProtocolComponent,
     ],
     imports: [
         CommonModule,
@@ -36,7 +38,10 @@ import { UserService } from './_services/user.service';
         // MockBackend,
         BaseRequestOptions,
     ],
-    entryComponents: [AlertComponent],
+    entryComponents: [
+        AlertComponent,
+        UserRegisterProtocolComponent,
+    ],
 })
 
 export class AuthModule {

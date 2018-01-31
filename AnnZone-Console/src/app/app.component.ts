@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
         let http: Http = this._http
         // 为了刚刚关闭浏览器的用户可以被快速纠察Token 在这里开始刷新
         //刷新Token 根据需求去刷新 Token过期时间越短 这里就设置的越快一点吧 
+        this.refreshToken(http)//先立即执行一次离开后重新进来时候 Token是否随着最后一次访问时间而失效
         setInterval(() => {
             this.refreshToken(http)
         }, 1000 * 60 * 10);
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
         console.log(new Date().toLocaleTimeString())
         try {
             let localUser = JSON.parse(localStorage.getItem('currentUser'));
+            //获取不到时候就被上面JSON.parse抛出 有的浏览器localStorage获取不到解析JSON直接报错，有的浏览器又不会，不管了 抛出try外执行妥妥的
             console.log(localUser)
             if (localUser && localUser.token) {
                 console.log("本地有token,大概是已经登录好了！~")
@@ -79,7 +81,10 @@ export class AppComponent implements OnInit {
                         console.log("心跳刷新Token请求失败：")
                         console.log(err)
                         that._notify.warning('Token刷新异常', err, )
+                        that._message.warning('身份验证服务器请求连接失败')
                     });
+            }else {
+                that._notify.warning('身份验证失败','获取不到本地用户信息，请登录后操作！')
             }
         } catch (error) {
             console.log("解析本地LocalStorage Token失败")
