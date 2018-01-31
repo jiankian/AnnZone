@@ -5,14 +5,16 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.objectbox'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion _compileSdkVersion
     defaultConfig {
         applicationId "cn.anline.annzone"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion _compileSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //允许multiDex
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -20,12 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //电脑配置低的请改成 4G 或者 6G
+    dexOptions {
+        javaMaxHeapSize "8g"
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation "com.android.support:appcompat-v7:$_buildToolsVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
@@ -33,4 +39,5 @@ dependencies {
     //ObjectBox 依赖
     compile "io.objectbox:objectbox-kotlin:$objectboxVersion"
     annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"
+
 }
