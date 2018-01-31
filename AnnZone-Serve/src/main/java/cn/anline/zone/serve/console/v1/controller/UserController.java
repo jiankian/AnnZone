@@ -214,7 +214,8 @@ public class UserController extends V1BaseController{
         System.out.println(JSON.toJSONString(context.cached("user")));
         System.out.println("注销后ctx标签的当前用户对象：");
         System.out.println(JSON.toJSONString(context.attribute("user")));
-
+        v1BaseBean.setTime(new Date().getTime());
+        v1BaseBean.setExp(-1);
         return json(v1BaseBean);
     }
 
@@ -243,6 +244,7 @@ public class UserController extends V1BaseController{
             if (String.valueOf(jwt.get("username")).trim().equals(username.trim())){
                 v1BaseBean.setStatus(0);
                 v1BaseBean.setResult(1);
+                v1BaseBean.setExp(Constant.exp+new Date().getTime());
                 v1BaseBean.setMsg("Token验证成功：合法！");
                 return json(v1BaseBean);
             }else {
@@ -324,6 +326,8 @@ public class UserController extends V1BaseController{
                     );
                     v1BaseBean.setStatus(0);
                     v1BaseBean.setResult(1);
+                    v1BaseBean.setTime(new Date().getTime());
+                    v1BaseBean.setExp(new Date().getTime()+Constant.exp);
                     v1BaseBean.setData(refreshLoginBean);
                     v1BaseBean.setMsg("Token验证成功，且派发了最新用户信息(+Token)数据！");
                     return json(v1BaseBean);
@@ -332,6 +336,7 @@ public class UserController extends V1BaseController{
                     v1BaseBean.setStatus(4);
                     v1BaseBean.setResult(1);
                     v1BaseBean.setExp(-1);
+                    v1BaseBean.setTime(new Date().getTime());
                     v1BaseBean.setMsg("Token所属的用户不存在");
 //                    v1BaseBean.setData(new TokenBean(newJWT));
                     return json(v1BaseBean);
@@ -339,6 +344,8 @@ public class UserController extends V1BaseController{
             }else {
                 v1BaseBean.setStatus(2);
                 v1BaseBean.setResult(0);
+                v1BaseBean.setTime(new Date().getTime());
+                v1BaseBean.setExp(-1);
                 v1BaseBean.setMsg("Token与用户名不匹配！");
                 return json(v1BaseBean);
             }
@@ -347,6 +354,7 @@ public class UserController extends V1BaseController{
 //            e.printStackTrace();
             v1BaseBean.setStatus(5);
             v1BaseBean.setResult(0);
+            v1BaseBean.setTime(new Date().getTime());
             v1BaseBean.setExp(-1);
             v1BaseBean.setMsg("Token解析失败,Token无效或者已经过期，请检查Token或重新获取！");
             return json(v1BaseBean);
@@ -365,6 +373,8 @@ public class UserController extends V1BaseController{
         if (null == user || user.equals("") || null == ann_user){
             v1BaseBean.setStatus(2);
             v1BaseBean.setResult(0);
+            v1BaseBean.setExp(-1);
+            v1BaseBean.setTime(new Date().getTime());
             v1BaseBean.setMsg("更新参数不正确，请检查数据以重试！");
             throw json(v1BaseBean);
         }
@@ -382,21 +392,165 @@ public class UserController extends V1BaseController{
                 v1BaseBean.setResult(1);
                 v1BaseBean.setMsg("用户信息更新成功！");
                 v1BaseBean.setData(afterUser);
+                v1BaseBean.setTime(new Date().getTime());
+                v1BaseBean.setExp(new Date().getTime()+Constant.exp);
                 return json(v1BaseBean);
             }else {
                 v1BaseBean.setStatus(7);
                 v1BaseBean.setResult(0);
+                v1BaseBean.setTime(new Date().getTime());
+                v1BaseBean.setExp(-1);
                 v1BaseBean.setMsg("用户信息数据库更新失败，请检查数据！");
                 return json(v1BaseBean);
             }
         }catch (Exception e){
             v1BaseBean.setStatus(7);
             v1BaseBean.setResult(0);
+            v1BaseBean.setTime(new Date().getTime());
+            v1BaseBean.setExp(-1);
             v1BaseBean.setMsg("用户更新数据写入数据库失败，请检查数据是否正确！");
             return json(v1BaseBean);
         }
 
     }
 
+    /**
+     * 修改用户密码
+     * @param username 用户名
+     * @param old_password 旧密码
+     * @param new_password 新密码
+     * @return
+     */
+    @PostAction("password/modify")
+    public RenderJSON passwordModify(String username, String old_password, String new_password){
+        /**
+         * 修改参数只是密码，其它信息不动！！！！
+         */
+        if (null == username || username.isEmpty() ){
+            v1BaseBean.setExp(-1);
+            v1BaseBean.setTime(new Date().getTime());
+            v1BaseBean.setResult(0);
+            v1BaseBean.setStatus(1);
+            v1BaseBean.setMsg("用户名不能为空！");
+            throw json(v1BaseBean);
+        }
+        if (null == old_password || old_password.isEmpty()){
+            v1BaseBean.setExp(-1);
+            v1BaseBean.setTime(new Date().getTime());
+            v1BaseBean.setResult(0);
+            v1BaseBean.setStatus(1);
+            v1BaseBean.setMsg("旧密码不能为空！");
+            throw json(v1BaseBean);
+        }
+        if (null == new_password || new_password.isEmpty()){
+            v1BaseBean.setExp(-1);
+            v1BaseBean.setTime(new Date().getTime());
+            v1BaseBean.setResult(0);
+            v1BaseBean.setStatus(1);
+            v1BaseBean.setMsg("新密码不能为空！");
+            throw json(v1BaseBean);
+        }
+        try {
+            Ann_user ann_user = userEbeanDao.findOneBy("username",username);
+            if (null == ann_user) {
+                v1BaseBean.setStatus(8);
+                v1BaseBean.setMsg("用户："+username+"不存在或者已被封号或删除！");
+                v1BaseBean.setResult(0);
+                v1BaseBean.setTime(new Date().getTime());
+                v1BaseBean.setExp(-1);
+                return   json(v1BaseBean);
+            }else {
+                 if (Crypto.passwordHash(old_password).equals(ann_user.getPassword())){
+                    ann_user.setPassword(Crypto.passwordHash(new_password));
+                    try {
+                        Ann_user ann_user_new = userEbeanDao.save(ann_user);
+                        if (null != ann_user_new){
+                            v1BaseBean.setResult(1);
+                            v1BaseBean.setTime(new Date().getTime());
+                            v1BaseBean.setStatus(0);
+                            v1BaseBean.setMsg("密码修改成功！");
+                            v1BaseBean.setExp(new Date().getTime() +Constant.exp);
+                            v1BaseBean.setData(ann_user_new);
+                            return json(v1BaseBean);
+                        }else {
+                            v1BaseBean.setStatus(7);
+                            v1BaseBean.setExp(-1);
+                            v1BaseBean.setMsg("密码保存失败，数据库写入错误！");
+                            v1BaseBean.setTime(new Date().getTime());
+                            v1BaseBean.setResult(0);
+                            return json(v1BaseBean);
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                        v1BaseBean.setStatus(2);
+                        v1BaseBean.setExp(-1);
+                        v1BaseBean.setMsg("旧密码不正确！");
+                        v1BaseBean.setTime(new Date().getTime());
+                        v1BaseBean.setResult(0);
+                        return json(v1BaseBean);
+                    }
+                 }else {
+                     v1BaseBean.setStatus(2);
+                     v1BaseBean.setExp(-1);
+                     v1BaseBean.setMsg("旧密码不正确！");
+                     v1BaseBean.setTime(new Date().getTime());
+                     v1BaseBean.setResult(0);
+                     return json(v1BaseBean);
+                 }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            v1BaseBean.setStatus(8);
+            v1BaseBean.setMsg("密码修改失败，未知异常！");
+            v1BaseBean.setResult(0);
+            v1BaseBean.setTime(new Date().getTime());
+            v1BaseBean.setExp(-1);
+            return  json(v1BaseBean);
+        }
+
+    }
+
+    /**
+     * 邮箱找回密码接口
+     * @param email
+     * @return
+     */
+    @PostAction("password/forget")
+    public RenderJSON passwordForget(String email){
+        if (null == email || email.isEmpty() || email.equals("")){
+            v1BaseBean.setResult(0);
+            v1BaseBean.setTime(new Date().getTime());
+            v1BaseBean.setExp(-1);
+            v1BaseBean.setStatus(1);
+            v1BaseBean.setMsg("邮箱不能为空！");
+            throw json(v1BaseBean);
+        }
+        //设置邮箱找回相关操作 现在暂时不是多用户系统，自己用，不作密码自助找回功能
+        v1BaseBean.setStatus(0);
+        v1BaseBean.setResult(1);
+        v1BaseBean.setMsg("密码找回方法已经发送到邮箱"+email);
+        v1BaseBean.setTime(new Date().getTime());
+        v1BaseBean.setExp(Constant.exp + new Date().getTime());
+        return json(v1BaseBean);
+    }
+
+    /**
+     * 用户点击邮箱找回密码链接操作接口 此处应该返回一个网页链接才行  再考虑下吧！！！！！！！
+     * @param token
+     * @return
+     */
+    @PostAction("password/reset")
+    public RenderJSON passwordReset(String token){
+        //邮箱点击后链接操作，token为修改的令牌，从邮箱中获取！
+        /**
+         * 暂时不写了，等做了多用户功能再做此功能
+         */
+        v1BaseBean.setStatus(1);
+        v1BaseBean.setMsg("暂不支持自助修改修改，因为你也是管理员啊，暂时还没有普通前台用户~");
+        v1BaseBean.setTime(new Date().getTime());
+        v1BaseBean.setExp(-1);
+        v1BaseBean.setResult(0);
+        return json(v1BaseBean);
+    }
 
 }

@@ -90,7 +90,7 @@ public class V1BaseController extends AnnBase {
     /**
      * 登录和注册的接口不拦截 Token验证 写方法名。。。
      */
-    @Before(except = {"signin","signup","verify","token"})
+    @Before(except = {"signin","signup","verify","token", "passwordForget", "passwordReset"})
     public void   __init__(){
         //拦截登录 此处可做Token判断
         System.out.println("获取参数：");

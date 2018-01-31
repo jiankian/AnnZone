@@ -34,7 +34,7 @@ public class AttachmentController extends V1BaseController {
 
     @PostAction("upload")
     public RenderJSON upload(ISObject file) throws IOException, NoSuchAlgorithmException {
-        if (null == file){
+        if (null == file || file.isValid()){
             v1BaseBean.setStatus(11);
             v1BaseBean.setResult(0);
             v1BaseBean.setMsg("文件上传出现异常");
@@ -105,7 +105,7 @@ public class AttachmentController extends V1BaseController {
             annAttachment.setThumb("");
             annAttachment.setSs_key(ss_key);
             annAttachment.setUrl(sFile.getUrl());
-            annAttachment.setMime(sFile.getContentType());
+            annAttachment.setMime(file.getContentType());
             String fileName = sFile.asFile().getName();
             annAttachment.setExt(fileName.substring(fileName.lastIndexOf(".") + 1));
             annAttachment.setSize(sFile.getLength());

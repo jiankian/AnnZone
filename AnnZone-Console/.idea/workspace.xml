@@ -30,8 +30,8 @@
       <file leaf-file-name="auth.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/auth/auth.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="73" column="27" lean-forward="true" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
+            <state relative-caret-position="397">
+              <caret line="164" column="40" lean-forward="true" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
               <folding>
                 <element signature="e#0#149#0" expanded="true" />
               </folding>
@@ -265,12 +265,12 @@
       <workItem from="1517138936254" duration="2066000" />
       <workItem from="1517171349131" duration="57134000" />
       <workItem from="1517315166336" duration="10314000" />
-      <workItem from="1517407808173" duration="8513000" />
+      <workItem from="1517407808173" duration="10029000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78105000" />
+    <option name="totallyTimeSpent" value="79621000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -719,8 +719,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/auth/auth.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="73" column="27" lean-forward="true" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
+        <state relative-caret-position="397">
+          <caret line="164" column="40" lean-forward="true" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
           <folding>
             <element signature="e#0#149#0" expanded="true" />
           </folding>

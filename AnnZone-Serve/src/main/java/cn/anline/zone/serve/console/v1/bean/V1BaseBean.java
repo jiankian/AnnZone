@@ -29,7 +29,7 @@ public class V1BaseBean {
         this.msg = "空白的接口请求结果！";
         this.data = new Object();
         this.time = new Date().getTime();
-        this.exp = new Date().getTime()+Constant.exp;
+        this.exp = this.status==0?this.time+Constant.exp:-1;
     }
 
     public long getExp() {
