@@ -6,6 +6,8 @@ import static act.controller.Controller.Util.*;
 import act.db.ebean2.EbeanDao;
 import cn.anline.zone.serve.console.v1.config.Constant;
 import cn.anline.zone.serve.console.v1.model.Ann_blog;
+import cn.anline.zone.serve.console.v1.model.Ann_blog_category;
+import org.osgl.mvc.annotation.GetAction;
 import org.osgl.mvc.annotation.PostAction;
 import org.osgl.mvc.result.RenderJSON;
 
@@ -20,6 +22,10 @@ public class BlogController extends V1BaseController {
 
     @Inject
     EbeanDao<Long,Ann_blog> annBlogEbeanDao;
+
+    @Inject
+    EbeanDao<Long,Ann_blog_category> annBlogCategoryEbeanDao;
+
 
     /**
      * 博客文章发布接口
@@ -65,5 +71,22 @@ public class BlogController extends V1BaseController {
         }
 
 
+    }
+
+
+    /**
+     * 获取总数接口
+     * @return
+     */
+    @GetAction("count")
+    public RenderJSON count(){
+        long count = annBlogEbeanDao.count();
+        v1BaseBean.setData(count);
+        v1BaseBean.setTime(new Date().getTime());
+        v1BaseBean.setResult(1);
+        v1BaseBean.setExp(new Date().getTime()+Constant.exp);
+        v1BaseBean.setStatus(0);
+        v1BaseBean.setMsg("博客文章总数获取成功！");
+        return json(v1BaseBean);
     }
 }

@@ -3,6 +3,7 @@ package cn.anline.zone.serve.console.v1.controller;
 import act.controller.Controller;
 import act.db.DbBind;
 import act.db.ebean2.EbeanDao;
+import cn.anline.zone.serve.console.v1.config.Constant;
 import cn.anline.zone.serve.console.v1.model.Ann_microblog;
 import cn.anline.zone.serve.console.v1.model.Ann_microblog_comment;
 import com.alibaba.fastjson.JSON;
@@ -137,6 +138,22 @@ public class MicroblogController extends V1BaseController {
         v1BaseBean.setMsg("已进行删除操作");
         v1BaseBean.setResult(0);
         v1BaseBean.setStatus(0);
+        return json(v1BaseBean);
+    }
+
+    /**
+     * 获取总数接口
+     * @return
+     */
+    @GetAction("count")
+    public RenderJSON count(){
+        long count = microblogEbeanDao.count();
+        v1BaseBean.setTime(new Date().getTime());
+        v1BaseBean.setData(count);
+        v1BaseBean.setResult(1);
+        v1BaseBean.setExp(new Date().getTime()+Constant.exp);
+        v1BaseBean.setStatus(0);
+        v1BaseBean.setMsg("微博总数获取成功！");
         return json(v1BaseBean);
     }
 }

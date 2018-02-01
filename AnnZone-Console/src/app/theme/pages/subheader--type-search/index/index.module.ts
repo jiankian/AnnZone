@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './index.component';
 import { LayoutModule } from '../../../layouts/layout.module';
 import { SubheaderTypeSearchComponent } from '../subheader--type-search.component';
+import {HttpModule} from "@angular/http";
 
 const routes: Routes = [
     {
@@ -19,7 +20,10 @@ const routes: Routes = [
 ];
 @NgModule({
     imports: [
-        CommonModule, RouterModule.forChild(routes), LayoutModule
+        CommonModule,
+        RouterModule.forChild(routes),
+        LayoutModule,
+        HttpModule,
     ], exports: [
         RouterModule
     ], declarations: [

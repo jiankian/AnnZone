@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
 import { Helpers } from '../../../../helpers';
 import { ScriptLoaderService } from '../../../../_services/script-loader.service';
+import {Http} from "@angular/http";
+import {NzMessageService, NzNotificationService} from "ng-zorro-antd";
 
 
 @Component({
@@ -10,8 +12,18 @@ import { ScriptLoaderService } from '../../../../_services/script-loader.service
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 
+    microblogNum:number = 0
+    blogNum:number = 0
+    noteNum:number = 0
 
-    constructor(private _script: ScriptLoaderService) {
+
+    constructor(
+        private _script: ScriptLoaderService,
+        private _http: Http,
+        private _notify: NzNotificationService,
+        private _message: NzMessageService,
+
+    ) {
 
     }
     ngOnInit() {
