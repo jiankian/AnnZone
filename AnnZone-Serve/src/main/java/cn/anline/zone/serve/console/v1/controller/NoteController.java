@@ -38,7 +38,7 @@ public class NoteController extends V1BaseController {
         v1BaseBean.setResult(1);
         v1BaseBean.setExp(new Date().getTime()+Constant.exp);
         v1BaseBean.setStatus(0);
-        v1BaseBean.setMsg("博客文章总数获取成功！");
+        v1BaseBean.setMsg("笔记总数获取成功！");
         return json(v1BaseBean);
     }
 }
