@@ -49,8 +49,8 @@ public class AttachmentController extends V1BaseController {
         //配置可选参数
         //来源
         Long origin = Long.valueOf(0);
-        //模块
-        String module = "Blog";
+        //模块 后期在各个客户端各个模块传参
+        String module = "Console";
         //版本
         String version = "0.1.0";
 

@@ -15,7 +15,7 @@ import {AuthenticationService} from "../../../../auth/_services/authentication.s
 export class ProfileComponent implements OnInit {
     userinfo:any = {}
     password:any = {}
-    avatar:any = {}
+    avatarUser:any = {}
     //头像上传组件
     loading = false;
     avatarUrl: string;
@@ -31,6 +31,8 @@ export class ProfileComponent implements OnInit {
     options: any
 
     returnUrl: string;
+
+    avatar:any = {}
 
     constructor(
         private _http: Http,
@@ -60,8 +62,13 @@ export class ProfileComponent implements OnInit {
         this.avatarUploadUrl = Config.api_url + 'attachment/upload'
         this.avatarUploadHeaders = { ann_token: this.userinfo.token }
         this.avatarFormData = { origin_name: 'Angular SPA' }
+
+        this.loadAvatar()
     }
 
+    /**
+     * 基础信息修改
+     */
     basicUpdate(){
         let that = this
         console.log("基础信息更新")
@@ -73,9 +80,13 @@ export class ProfileComponent implements OnInit {
                 console.log(response)
                 let resData = response.json()
                 console.log(resData)
-                if (resData && resData.status){
+                if (resData && resData.status == 0){
                     that._notify.success("用户信息更新成功！",resData.msg)
                     that._message.success(resData.msg)
+                    setTimeout(()=>{
+                        // 刷新才能更新用户本地信息
+                        window.location.reload()
+                    },2000)
                 }else {
                     that._notify.warning("用户信息更新失败！",resData.msg)
                     that._message.warning(resData.msg)
@@ -86,6 +97,11 @@ export class ProfileComponent implements OnInit {
                 that._message.error(err)
             })
     }
+
+    /**
+     * 头像上传
+     * @returns {boolean}
+     */
     avatarUpdate(){
         let that = this
         console.log("头像更新")
@@ -103,9 +119,9 @@ export class ProfileComponent implements OnInit {
             that._message.warning("头像没有正确传入服务器数据库！")
             return false
         }
-        that.avatar.avatar = that.fileList[0] && that.fileList[0].response.data.id
-        if (that.avatar.avatar){
-            that._http.post(Config.api_url+'user/avatar',{user:that.userinfo.id,ann_user:that.avatar},this.options)
+        that.avatarUser.avatar = that.fileList[0] && that.fileList[0].response.data.id
+        if (that.avatarUser.avatar){
+            that._http.post(Config.api_url+'user/avatar',{user:that.userinfo.id,ann_user:that.avatarUser},this.options)
                 .toPromise()
                 .then((response:Response)=>{
                     let resData = response.json()
@@ -113,6 +129,7 @@ export class ProfileComponent implements OnInit {
                         that._notify.success("头像更新成功！",resData.msg)
                         that._message.success("头像更新成功！")
                         //本地头像显示刷新-->>>>>
+                        window.location.reload()
                     }else {
                         that._notify.error("头像保存服务器失败",resData.msg)
                         that._message.error("头像更新失败，保存到服务器异常！")
@@ -187,7 +204,11 @@ export class ProfileComponent implements OnInit {
             })
     }
 
-
+    /**
+     * 上传过滤器
+     * @param {File} file
+     * @returns {boolean}
+     */
     beforeUpload = (file: File) => {
         const isJPG = file.type === 'image/jpeg';
         const isPNG = file.type === 'image/png';
@@ -204,11 +225,19 @@ export class ProfileComponent implements OnInit {
         return isInSize;
     }
 
+    /**
+     * 预览事件
+     * @param {UploadFile} file
+     */
     handlePreview = (file: UploadFile) => {
         this.previewImage = file.url || file.thumbUrl;
         this.previewVisible = true;
     }
 
+    /**
+     * 头像选择器改变
+     * @param e
+     */
     avatarChange = (e) => {
         console.log("头像上传状态改变")
         console.log(e)
@@ -216,4 +245,27 @@ export class ProfileComponent implements OnInit {
         console.log(this.fileList)
     }
 
+    /**
+     * 加载头像
+     */
+    loadAvatar(){
+        if (this.userinfo.avatar && this.userinfo.avatar.length !== 0){
+            this._http.get(Config.api_url + 'attachment/view?'+'id='+this.userinfo.avatar,this.options)
+                .toPromise()
+                .then((res:Response)=>{
+                    console.log("头像加载请求成功")
+                    let resData = res.json()
+                    if (resData && resData.status == 0){
+                        this.avatar = resData.data
+                        this.avatar.url = Config.api_base + this.avatar.url
+                    }
+                })
+                .catch((err)=>{
+                    console.log("头像加载请求失败")
+                    console.log(err)
+                })
+        }else {
+            console.log("头像数据不存在，停止了头像加载请求")
+        }
+    }
 }

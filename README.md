@@ -33,6 +33,7 @@
 **开发过程中：**
 ![控制台截图](./screenshot/console1.png)
 ![博客发布](./screenshot/console2_blog_publish.png)
+![个人中心](./screenshot/console3_user_prodile.png)
 
 
 **文档问题**
