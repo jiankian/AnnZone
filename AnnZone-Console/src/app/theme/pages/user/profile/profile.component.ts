@@ -19,6 +19,13 @@ export class ProfileComponent implements OnInit {
     //头像上传组件
     loading = false;
     avatarUrl: string;
+    fileList = [];
+    previewImage = '';
+    previewVisible = false;
+    avatarUploadUrl: string = ''
+    avatarUploadHeaders: any
+    //上传附带参数
+    avatarFormData: any = {}
 
     headers: any
     options: any
@@ -49,6 +56,10 @@ export class ProfileComponent implements OnInit {
 
         this.headers = new Headers({ 'ann_token': this.userinfo.token });
         this.options = new RequestOptions({ headers: this.headers });
+
+        this.avatarUploadUrl = Config.api_url + 'attachment/upload'
+        this.avatarUploadHeaders = { ann_token: this.userinfo.token }
+        this.avatarFormData = { origin_name: 'Angular SPA' }
     }
 
     basicUpdate(){
@@ -78,7 +89,40 @@ export class ProfileComponent implements OnInit {
     avatarUpdate(){
         let that = this
         console.log("头像更新")
-        console.log(this.avatar)
+        console.log(that.fileList)
+        if (that.fileList.length == 0){
+            this._message.warning("头像不能为空！")
+            return false
+        }
+        if (that.fileList[0] && that.fileList[0].status != "done"){
+            that._message.warning("头像没有准备好！")
+            return false
+        }
+        if (that.fileList[0] && that.fileList[0].response.status != 0){
+            that._notify.warning("服务器上传文件失败！",that.fileList[0] && that.fileList[0].response.msg)
+            that._message.warning("头像没有正确传入服务器数据库！")
+            return false
+        }
+        that.avatar.avatar = that.fileList[0] && that.fileList[0].response.data.id
+        if (that.avatar.avatar){
+            that._http.post(Config.api_url+'user/avatar',{user:that.userinfo.id,ann_user:that.avatar},this.options)
+                .toPromise()
+                .then((response:Response)=>{
+                    let resData = response.json()
+                    if (resData && resData.status == 0){
+                        that._notify.success("头像更新成功！",resData.msg)
+                        that._message.success("头像更新成功！")
+                        //本地头像显示刷新-->>>>>
+                    }else {
+                        that._notify.error("头像保存服务器失败",resData.msg)
+                        that._message.error("头像更新失败，保存到服务器异常！")
+                    }
+                })
+                .catch((err)=>{
+                    that._notify.error("头像更新失败",err)
+                    that._message.error("头像更新失败，连接服务器异常！")
+                })
+        }
     }
     passwordUpdate(){
         let that = this
@@ -146,34 +190,30 @@ export class ProfileComponent implements OnInit {
 
     beforeUpload = (file: File) => {
         const isJPG = file.type === 'image/jpeg';
-        if (!isJPG) {
-            this._message.error('You can only upload JPG file!');
+        const isPNG = file.type === 'image/png';
+        const isGIF = file.type === 'image/gif';
+        if (!isJPG && !isPNG && !isGIF) {
+            this._message.error('你只能上传jpg/png/gif格式的图片');
+            return false
         }
-        const isLt2M = file.size / 1024 / 1024 < 2;
-        if (!isLt2M) {
-            this._message.error('Image must smaller than 2MB!');
+        const isInSize = file.size  < 1024 * 1024 * 0.5;
+        if (!isInSize) {
+            this._message.error('图片不能超过 0.5MB!');
+            return false
         }
-        return isJPG && isLt2M;
+        return isInSize;
     }
 
-    private getBase64(img: File, callback: (img: any) => void) {
-        const reader = new FileReader();
-        reader.addEventListener('load', () => callback(reader.result));
-        reader.readAsDataURL(img);
+    handlePreview = (file: UploadFile) => {
+        this.previewImage = file.url || file.thumbUrl;
+        this.previewVisible = true;
     }
 
-    handleChange(info: { file: UploadFile }) {
-        if (info.file.status === 'uploading') {
-            this.loading = true;
-            return;
-        }
-        if (info.file.status === 'done') {
-            // Get this url from response in real world.
-            this.getBase64(info.file.originFileObj, (img: any) => {
-                this.loading = false;
-                this.avatarUrl = img;
-            });
-        }
+    avatarChange = (e) => {
+        console.log("头像上传状态改变")
+        console.log(e)
+        console.log("this.fileList")
+        console.log(this.fileList)
     }
 
 }

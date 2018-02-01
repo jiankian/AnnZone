@@ -47,6 +47,5 @@ dependencies {
     compile "io.objectbox:objectbox-kotlin:$objectboxVersion"
     annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"
     //Tabbar
-    compile 'com.github.armcha:SpaceNavigationView:1.6.0'
 
 }

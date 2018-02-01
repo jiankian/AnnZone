@@ -7,7 +7,7 @@ import { LayoutModule } from '../../layouts/layout.module';
 import { DefaultComponent } from '../default/default.component';
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
-import {NzUploadModule} from "ng-zorro-antd";
+import {NzModalModule, NzUploadModule} from "ng-zorro-antd";
 import {UserService} from "../../../auth/_services/user.service";
 import {AuthenticationService} from "../../../auth/_services/authentication.service";
 import {AuthGuard} from "../../../auth/_guards";
@@ -32,6 +32,7 @@ const routes: Routes = [
         HttpModule,
         FormsModule,
         NzUploadModule,
+        NzModalModule,
     ],
     exports: [
         RouterModule
