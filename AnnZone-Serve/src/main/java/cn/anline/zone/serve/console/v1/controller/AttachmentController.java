@@ -11,6 +11,8 @@ import cn.anline.zone.serve.console.v1.common.Util.MD5;
 import cn.anline.zone.serve.console.v1.config.Constant;
 import cn.anline.zone.serve.console.v1.model.Ann_attachment;
 import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang3.StringUtils;
+import org.osgl.mvc.annotation.GetAction;
 import org.osgl.mvc.annotation.PostAction;
 import org.osgl.mvc.result.RenderJSON;
 import org.osgl.storage.ISObject;
@@ -165,6 +167,45 @@ public class AttachmentController extends V1BaseController {
         }
 
 
+
+    }
+
+    /**
+     * 获取附件详情
+     * @param id
+     * @return
+     */
+    @GetAction("view")
+    public RenderJSON view(String id){
+        if (!StringUtils.isNumeric(id)){
+            v1BaseBean.setStatus(1);
+            v1BaseBean.setMsg("附件ID不合法");
+            v1BaseBean.setResult(0);
+            throw json(v1BaseBean);
+        }
+        long _id = Long.valueOf(id);
+        try {
+            Ann_attachment ann_attachment = annAttachmentEbeanDao.findOneBy("id",_id);
+            if (null != ann_attachment){
+                v1BaseBean.setExp(Constant.exp+new Date().getTime());
+                v1BaseBean.setMsg("附件详情获取成功！");
+                v1BaseBean.setStatus(0);
+                v1BaseBean.setData(ann_attachment);
+                v1BaseBean.setResult(1);
+                v1BaseBean.setTime(new Date().getTime());
+                return json(v1BaseBean);
+            }else {
+                v1BaseBean.setStatus(14);
+                v1BaseBean.setMsg("附件不存在");
+                v1BaseBean.setExp(-1);
+                return json(v1BaseBean);
+            }
+        }catch (Exception e){
+            v1BaseBean.setStatus(14);
+            v1BaseBean.setMsg("附件不存在");
+            v1BaseBean.setExp(-1);
+            return json(v1BaseBean);
+        }
 
     }
 }

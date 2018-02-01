@@ -5,6 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { LayoutModule } from '../../layouts/layout.module';
 import { DefaultComponent } from '../default/default.component';
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {NzUploadModule} from "ng-zorro-antd";
+import {UserService} from "../../../auth/_services/user.service";
+import {AuthenticationService} from "../../../auth/_services/authentication.service";
+import {AuthGuard} from "../../../auth/_guards";
 
 const routes: Routes = [
     {
@@ -12,7 +18,7 @@ const routes: Routes = [
         "component": DefaultComponent,
         "children": [
             {
-                "path": "",
+                "path": "profile",
                 "component": ProfileComponent
             }
         ]
@@ -22,10 +28,18 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
-        LayoutModule
+        LayoutModule,
+        HttpModule,
+        FormsModule,
+        NzUploadModule,
     ],
     exports: [
         RouterModule
+    ],
+    providers:[
+        AuthGuard,
+        AuthenticationService,
+        UserService,
     ],
     declarations: [
         ProfileComponent

@@ -76,16 +76,28 @@ public class UserController extends V1BaseController{
                     .compact();
             LoginBean loginBean = new LoginBean(
                  annUser.getId(),
-                 annUser.getRole_id(),
-                 annUser.getUsername(),
-                 annUser.getAvatar(),
-                 annUser.getNickname(),
-                 annUser.getEmail(),
-                 annUser.getGender(),
-                 annUser.getProfile(),
-                 annUser.getCreate_time(),
-                 annUser.getUpdate_time(),
-                 token
+                    annUser.getRole_id(),
+                    annUser.getUsername(),
+                    annUser.getAvatar(),
+                    annUser.getNickname(),
+                    annUser.getOccupation(),
+                    annUser.getCompany(),
+                    annUser.getMobile(),
+                    annUser.getProvince(),
+                    annUser.getCity(),
+                    annUser.getDistrict(),
+                    annUser.getAddress(),
+                    annUser.getQq(),
+                    annUser.getWechat(),
+                    annUser.getGithub(),
+                    annUser.getWeibo(),
+                    annUser.getEmail(),
+                    annUser.getGender(),
+                    annUser.getProfile(),
+                    annUser.getStatus(),
+                    annUser.getCreate_time(),
+                    annUser.getUpdate_time(),
+                    token
             );
             v1BaseBean.setData(loginBean);
             return json(v1BaseBean);
@@ -317,9 +329,21 @@ public class UserController extends V1BaseController{
                             newUser.getUsername(),
                             newUser.getAvatar(),
                             newUser.getNickname(),
+                            newUser.getOccupation(),
+                            newUser.getCompany(),
+                            newUser.getMobile(),
+                            newUser.getProvince(),
+                            newUser.getCity(),
+                            newUser.getDistrict(),
+                            newUser.getAddress(),
+                            newUser.getQq(),
+                            newUser.getWechat(),
+                            newUser.getGithub(),
+                            newUser.getWeibo(),
                             newUser.getEmail(),
                             newUser.getGender(),
                             newUser.getProfile(),
+                            newUser.getStatus(),
                             newUser.getCreate_time(),
                             newUser.getUpdate_time(),
                             newJWT
@@ -370,6 +394,69 @@ public class UserController extends V1BaseController{
      */
     @PostAction("update")
     public RenderJSON update(@DbBind @NotNull Ann_user user,Ann_user ann_user){
+        if (null == user || user.equals("") || null == ann_user){
+            v1BaseBean.setStatus(2);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setExp(-1);
+            v1BaseBean.setTime(new Date().getTime());
+            v1BaseBean.setMsg("更新参数不正确，请检查数据以重试！");
+            throw json(v1BaseBean);
+        }
+
+        //写入需要的更新项 具体更新项目具体去开发....
+        user.setNickname(ann_user.getNickname());
+        user.setGender(ann_user.getGender());
+        user.setOccupation(ann_user.getOccupation());
+        user.setCompany(ann_user.getCompany());
+        user.setMobile(ann_user.getMobile());
+        user.setProvince(ann_user.getProvince());
+        user.setCity(ann_user.getCity());
+        user.setDistrict(ann_user.getDistrict());
+        user.setAddress(ann_user.getAddress());
+        user.setQq(ann_user.getQq());
+        user.setWechat(ann_user.getWechat());
+        user.setGithub(ann_user.getGithub());
+        user.setWeibo(ann_user.getWeibo());
+
+        user.setUpdate_time(new Date().getTime());
+
+        try{
+            Ann_user afterUser = userEbeanDao.save(user);
+            if (null != afterUser){
+                v1BaseBean.setStatus(0);
+                v1BaseBean.setResult(1);
+                v1BaseBean.setMsg("用户信息更新成功！");
+                v1BaseBean.setData(afterUser);
+                v1BaseBean.setTime(new Date().getTime());
+                v1BaseBean.setExp(new Date().getTime()+Constant.exp);
+                return json(v1BaseBean);
+            }else {
+                v1BaseBean.setStatus(7);
+                v1BaseBean.setResult(0);
+                v1BaseBean.setTime(new Date().getTime());
+                v1BaseBean.setExp(-1);
+                v1BaseBean.setMsg("用户信息数据库更新失败，请检查数据！");
+                return json(v1BaseBean);
+            }
+        }catch (Exception e){
+            v1BaseBean.setStatus(7);
+            v1BaseBean.setResult(0);
+            v1BaseBean.setTime(new Date().getTime());
+            v1BaseBean.setExp(-1);
+            v1BaseBean.setMsg("用户更新数据写入数据库失败，请检查数据是否正确！");
+            return json(v1BaseBean);
+        }
+
+    }
+
+    /**
+     * 用户头像更新
+     * @param user
+     * @param ann_user
+     * @return
+     */
+    @PostAction("avatar")
+    public RenderJSON avatar(@DbBind @NotNull Ann_user user,Ann_user ann_user){
         if (null == user || user.equals("") || null == ann_user){
             v1BaseBean.setStatus(2);
             v1BaseBean.setResult(0);
@@ -462,6 +549,7 @@ public class UserController extends V1BaseController{
             }else {
                  if (Crypto.passwordHash(old_password).equals(ann_user.getPassword())){
                     ann_user.setPassword(Crypto.passwordHash(new_password));
+                    ann_user.setUpdate_time(new Date().getTime());
                     try {
                         Ann_user ann_user_new = userEbeanDao.save(ann_user);
                         if (null != ann_user_new){

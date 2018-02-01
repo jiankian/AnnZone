@@ -1,6 +1,5 @@
 package cn.anline.zone.serve.console.v1.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -9,12 +8,21 @@ public class Ann_user {
   @Id
   private Long id;
   private Long role_id;
-  @Column(unique = true)//为了系统全局操作的原子性，用户名保持唯一 不用ID+密码两者查询作为登录，用户名方便存储在框架context.login(username:)方便其它数据操作的原子性
   private String username;
   private String password;
   private String avatar;
   private String nickname;
-  @Column(unique = true)//一个邮箱注册一个帐号时候 true 这样可以做邮箱号登录也可以
+  private String occupation;
+  private String company;
+  private String mobile;
+  private String province;
+  private String city;
+  private String district;
+  private String address;
+  private String qq;
+  private String wechat;
+  private String github;
+  private String weibo;
   private String email;
   private Long gender;
   private String profile;
@@ -68,6 +76,94 @@ public class Ann_user {
 
   public void setNickname(String nickname) {
     this.nickname = nickname;
+  }
+
+  public String getOccupation() {
+    return occupation;
+  }
+
+  public void setOccupation(String occupation) {
+    this.occupation = occupation;
+  }
+
+  public String getCompany() {
+    return company;
+  }
+
+  public void setCompany(String company) {
+    this.company = company;
+  }
+
+  public String getMobile() {
+    return mobile;
+  }
+
+  public void setMobile(String mobile) {
+    this.mobile = mobile;
+  }
+
+  public String getProvince() {
+    return province;
+  }
+
+  public void setProvince(String province) {
+    this.province = province;
+  }
+
+  public String getCity() {
+    return city;
+  }
+
+  public void setCity(String city) {
+    this.city = city;
+  }
+
+  public String getDistrict() {
+    return district;
+  }
+
+  public void setDistrict(String district) {
+    this.district = district;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public String getQq() {
+    return qq;
+  }
+
+  public void setQq(String qq) {
+    this.qq = qq;
+  }
+
+  public String getWechat() {
+    return wechat;
+  }
+
+  public void setWechat(String wechat) {
+    this.wechat = wechat;
+  }
+
+  public String getGithub() {
+    return github;
+  }
+
+  public void setGithub(String github) {
+    this.github = github;
+  }
+
+  public String getWeibo() {
+    return weibo;
+  }
+
+  public void setWeibo(String weibo) {
+    this.weibo = weibo;
   }
 
   public String getEmail() {

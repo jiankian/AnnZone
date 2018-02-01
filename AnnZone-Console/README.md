@@ -1,5 +1,6 @@
 # 系统前端
-技术栈：`angular5`、`metronic5`
+- 技术栈：`angular5`、`metronic5`
+- 开发环境： `Webstorm` 比`Visual Studio Code`还是高出一个级别的！
 
 
 人生苦短，我用Angular！   会Javascript，去用TypeScript 根本就不需要学习好吗？

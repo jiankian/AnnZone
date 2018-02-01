@@ -18,9 +18,9 @@
 						<div class="m-dropdown__body">
 							<div class="m-dropdown__content">
 								<ul class="m-nav">
-									<li class="m-nav__section m-nav__section--first m--hide">
+									<li class="m-nav__section m-nav__section--first ">
 										<span class="m-nav__section-text">
-											Quick Actions
+											快捷菜单
 										</span>
 									</li>
 									<li class="m-nav__item">
@@ -78,7 +78,7 @@
 				<div class="m-portlet__body">
 					<div class="m-card-profile">
 						<div class="m-card-profile__title m--hide">
-							Your Profile
+							个人资料
 						</div>
 						<div class="m-card-profile__pic">
 							<div class="m-card-profile__pic-wrapper">
@@ -87,10 +87,10 @@
 						</div>
 						<div class="m-card-profile__details">
 							<span class="m-card-profile__name">
-								Mark Andre
+								{{userinfo.nickname}}
 							</span>
 							<a href="" class="m-card-profile__email m-link">
-								mark.andre@gmail.com
+								{{userinfo.email}}
 							</a>
 						</div>
 					</div>
@@ -102,12 +102,12 @@
 							</span>
 						</li>
 						<li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
+							<a routerLink="/user/profile" class="m-nav__link">
 								<i class="m-nav__link-icon flaticon-profile-1"></i>
 								<span class="m-nav__link-title">
 									<span class="m-nav__link-wrap">
 										<span class="m-nav__link-text">
-											My Profile
+											个人简介
 										</span>
 										<span class="m-nav__link-badge">
 											<span class="m-badge m-badge--success">
@@ -119,42 +119,42 @@
 							</a>
 						</li>
 						<li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
+							<a routerLink="/" class="m-nav__link">
 								<i class="m-nav__link-icon flaticon-share"></i>
 								<span class="m-nav__link-text">
-									Activity
+									仪表盘
 								</span>
 							</a>
 						</li>
 						<li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
+							<a routerLink="/message" class="m-nav__link">
 								<i class="m-nav__link-icon flaticon-chat-1"></i>
 								<span class="m-nav__link-text">
-									Messages
+									信息
 								</span>
 							</a>
 						</li>
 						<li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
+							<a routerLink="/project" class="m-nav__link">
 								<i class="m-nav__link-icon flaticon-graphic-2"></i>
 								<span class="m-nav__link-text">
-									Sales
+									项目
 								</span>
 							</a>
 						</li>
 						<li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
+							<a routerLink="/task" class="m-nav__link">
 								<i class="m-nav__link-icon flaticon-time-3"></i>
 								<span class="m-nav__link-text">
-									Events
+									任务
 								</span>
 							</a>
 						</li>
 						<li class="m-nav__item">
-							<a routerLink="/header/profile" class="m-nav__link">
+							<a routerLink="/support" class="m-nav__link">
 								<i class="m-nav__link-icon flaticon-lifebuoy"></i>
 								<span class="m-nav__link-text">
-									Support
+									技术支持
 								</span>
 							</a>
 						</li>
@@ -182,10 +182,10 @@
 							<div class="row m-row--no-padding align-items-center">
 								<div class="col">
 									<h3 class="m-widget1__title">
-										Orders
+										项目标题一
 									</h3>
 									<span class="m-widget1__desc">
-										Weekly Customer Orders
+										简单描述
 									</span>
 								</div>
 								<div class="col m--align-right">
@@ -199,10 +199,10 @@
 							<div class="row m-row--no-padding align-items-center">
 								<div class="col">
 									<h3 class="m-widget1__title">
-										Issue Reports
+										项目标题二
 									</h3>
 									<span class="m-widget1__desc">
-										System bugs and issues
+										简单描述
 									</span>
 								</div>
 								<div class="col m--align-right">
@@ -224,17 +224,17 @@
 							<li class="nav-item m-tabs__item">
 								<a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_user_profile_tab_1" role="tab">
 									<i class="flaticon-share m--hide"></i>
-									Update Profile
+									更新资料
 								</a>
 							</li>
 							<li class="nav-item m-tabs__item">
 								<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_2" role="tab">
-									Messages
+									头像设置
 								</a>
 							</li>
 							<li class="nav-item m-tabs__item">
 								<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_3" role="tab">
-									Settings
+									帐号安全
 								</a>
 							</li>
 						</ul>
@@ -320,133 +320,157 @@
 				</div>
 				<div class="tab-content">
 					<div class="tab-pane active" id="m_user_profile_tab_1">
-						<form class="m-form m-form--fit m-form--label-align-right">
+						<form (ngSubmit)="basicUpdate()" class="m-form m-form--fit m-form--label-align-right">
 							<div class="m-portlet__body">
 								<div class="form-group m-form__group m--margin-top-10 m--hide">
 									<div class="alert m-alert m-alert--default" role="alert">
-										The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
+										帐号相关设置页面！
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<div class="col-10 ml-auto">
 										<h3 class="m-form__section">
-											1. Personal Details
+											1. 个人信息
 										</h3>
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Full Name
+										昵称
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="Mark Andre">
+										<input [(ngModel)]="userinfo.nickname" name="nickname" #nickname="ngModel"  class="form-control m-input" type="text" placeholder="请输入昵称">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Occupation
+										性别
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="CTO">
+										<div class="m-radio-inline">
+											<label class="m-radio">
+												<input name="gender" type="radio" [checked]="userinfo.gender == 0" (click)="userinfo.gender = 0" value="0">
+												保密
+												<span></span>
+											</label>
+											<label class="m-radio">
+												<input name="gender" type="radio" [checked]="userinfo.gender == 1" (click)="userinfo.gender = 1" value="1">
+												男
+												<span></span>
+											</label>
+											<label class="m-radio">
+												<input name="gender" type="radio" [checked]="userinfo.gender == 2"  (click)="userinfo.gender = 2" value="2">
+												女
+												<span></span>
+											</label>
+										</div>
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Company Name
+										职位
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="Keenthemes">
+										<input [(ngModel)]="userinfo.occupation" name="occupation" #occupation="ngModel" class="form-control m-input" type="text" placeholder="请输入职位">
+									</div>
+								</div>
+								<div class="form-group m-form__group row">
+									<label for="example-text-input" class="col-2 col-form-label">
+										公司名称
+									</label>
+									<div class="col-7">
+										<input [(ngModel)]="userinfo.company" name="company" #company="ngModel" class="form-control m-input" type="text" placeholder="请输入公司/团队">
 										<span class="m-form__help">
-											If you want your invoices addressed to a company. Leave blank to use your full name.
+											团队名称/公司名称
 										</span>
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Phone No.
+										手机号
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="+456669067890">
+										<input [(ngModel)]="userinfo.mobile" name="mobile" #name="ngModel" class="form-control m-input" type="text" placeholder="请输入手机号">
 									</div>
 								</div>
 								<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
 								<div class="form-group m-form__group row">
 									<div class="col-10 ml-auto">
 										<h3 class="m-form__section">
-											2. Address
+											2. 地址
 										</h3>
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Address
+										省
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="L-12-20 Vertex, Cybersquare">
+										<input [(ngModel)]="userinfo.province" name="province" #province="ngModel" class="form-control m-input" type="text" placeholder="请输入省份">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										City
+										市
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="San Francisco">
+										<input [(ngModel)]="userinfo.city" name="city" #city="ngModel" class="form-control m-input" type="text" placeholder="请输入城市">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										State
+										区/县
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="California">
+										<input [(ngModel)]="userinfo.district" name="district" #district="ngModel" class="form-control m-input" type="text" placeholder="请输入区县">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Postcode
+										详细地址
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="45000">
+										<input [(ngModel)]="userinfo.address" name="address" #address="ngModel" class="form-control m-input" type="text" placeholder="请输入详细地址">
 									</div>
 								</div>
 								<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
 								<div class="form-group m-form__group row">
 									<div class="col-10 ml-auto">
 										<h3 class="m-form__section">
-											3. Social Links
+											3. 社交信息
 										</h3>
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Linkedin
+										QQ
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="www.linkedin.com/Mark.Andre">
+										<input [(ngModel)]="userinfo.qq" name="qq" #qq="ngModel" class="form-control m-input" type="text" placeholder="请输入qq号">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Facebook
+										微信
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="www.facebook.com/Mark.Andre">
+										<input [(ngModel)]="userinfo.wechat" name="wechat" #wechat="ngModel" class="form-control m-input" type="text" placeholder="请输入微信号">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Twitter
+										Github
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="www.twitter.com/Mark.Andre">
+										<input [(ngModel)]="userinfo.github" name="github" #github="ngModel" class="form-control m-input" type="text" placeholder="请输入开源仓库地址">
 									</div>
 								</div>
 								<div class="form-group m-form__group row">
 									<label for="example-text-input" class="col-2 col-form-label">
-										Instagram
+										微博
 									</label>
 									<div class="col-7">
-										<input class="form-control m-input" type="text" value="www.instagram.com/Mark.Andre">
+										<input [(ngModel)]="userinfo.weibo" name="weibo" #weibo="ngModel" class="form-control m-input" type="text" placeholder="请输入微博地址">
 									</div>
 								</div>
 							</div>
@@ -455,12 +479,12 @@
 									<div class="row">
 										<div class="col-2"></div>
 										<div class="col-7">
-											<button type="reset" class="btn btn-accent m-btn m-btn--air m-btn--custom">
-												Save changes
+											<button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+												保存修改
 											</button>
 											&nbsp;&nbsp;
 											<button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
-												Cancel
+												取消
 											</button>
 										</div>
 									</div>
@@ -468,8 +492,124 @@
 							</div>
 						</form>
 					</div>
-					<div class="tab-pane" id="m_user_profile_tab_2"></div>
-					<div class="tab-pane" id="m_user_profile_tab_3"></div>
+					<div class="tab-pane" id="m_user_profile_tab_2">
+						<form (ngSubmit)="avatarUpdate()" class="m-form m-form--fit m-form--label-align-right">
+							<div class="m-portlet__body">
+								<div class="form-group m-form__group m--margin-top-10 m--hide">
+									<div class="alert m-alert m-alert--default" role="alert">
+										帐号相关设置页面！
+									</div>
+								</div>
+								<div class="form-group m-form__group row">
+									<div class="col-10 ml-auto">
+										<h3 class="m-form__section">
+											1. 头像设置
+										</h3>
+									</div>
+								</div>
+								<div class="form-group m-form__group row">
+									<label for="example-text-input" class="col-2 col-form-label">
+										选择头像
+									</label>
+									<div class="col-7">
+										<nz-upload class="avatar-uploader"
+												   nzAction="https://jsonplaceholder.typicode.com/posts/"
+												   nzName="avatar"
+												   [nzShowUploadList]="false"
+												   [nzBeforeUpload]="beforeUpload"
+												   (nzChange)="handleChange($event)">
+											<i *ngIf="!avatarUrl" class="anticon anticon-plus avatar-uploader-trigger"></i>
+											<img *ngIf="avatarUrl" [src]="avatarUrl" class="avatar">
+										</nz-upload>
+										<span class="m-form__help">
+											点击图片可重新选择上传图片
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<div class="m-portlet__foot m-portlet__foot--fit">
+								<div class="m-form__actions">
+									<div class="row">
+										<div class="col-2"></div>
+										<div class="col-7">
+											<button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+												保存新头像
+											</button>
+											&nbsp;&nbsp;
+											<button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+												取消
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane" id="m_user_profile_tab_3">
+						<form (ngSubmit)="passwordUpdate()" class="m-form m-form--fit m-form--label-align-right">
+							<div class="m-portlet__body">
+								<div class="form-group m-form__group m--margin-top-10 m--hide">
+									<div class="alert m-alert m-alert--default" role="alert">
+										密码相关设置页面！
+									</div>
+								</div>
+								<div class="form-group m-form__group row">
+									<div class="col-10 ml-auto">
+										<h3 class="m-form__section">
+											1. 更新密码
+										</h3>
+									</div>
+								</div>
+								<div class="form-group m-form__group row">
+									<label for="example-text-input" class="col-2 col-form-label">
+										旧密码
+									</label>
+									<div class="col-7">
+										<input [(ngModel)]="password.old_password" name="old_password" #old_password="ngModel"  class="form-control m-input" type="text" placeholder="请输入旧密码">
+									</div>
+								</div>
+								<div class="form-group m-form__group row">
+									<label for="example-text-input" class="col-2 col-form-label">
+										新密码
+									</label>
+									<div class="col-7">
+										<input [(ngModel)]="password.new_password" name="new_password" #new_password="ngModel" class="form-control m-input" type="text" placeholder="请输入新密码">
+									</div>
+								</div>
+								<div class="form-group m-form__group row">
+									<label for="example-text-input" class="col-2 col-form-label">
+										确认密码
+									</label>
+									<div class="col-7">
+										<input [(ngModel)]="password.new_password2" name="new_password2" #new_password2="ngModel" class="form-control m-input" type="text" placeholder="请再次输入新密码">
+										<span class="m-form__help">
+											再次输入新密码以确认输入准确
+										</span>
+									</div>
+								</div>
+
+								<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
+
+							</div>
+							<div class="m-portlet__foot m-portlet__foot--fit">
+								<div class="m-form__actions">
+									<div class="row">
+										<div class="col-2"></div>
+										<div class="col-7">
+											<button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+												更新密码
+											</button>
+											&nbsp;&nbsp;
+											<button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+												取消
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

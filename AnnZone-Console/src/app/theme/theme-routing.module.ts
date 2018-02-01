@@ -70,6 +70,10 @@ const routes: Routes = [
                 "loadChildren": ".\/pages\/message\/message.module#MessageModule"
             },
             {
+                "path": "support",
+                "loadChildren": ".\/pages\/support\/support.module#SupportModule"
+            },
+            {
                 "path": "404",
                 "loadChildren": ".\/pages\/default\/not-found\/not-found.module#NotFoundModule"
             },
