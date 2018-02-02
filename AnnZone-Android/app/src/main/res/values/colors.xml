@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#fc0361</color>
+    <color name="colorPrimaryDark">#8e01fa</color>
+    <color name="colorAccent">#e5f305</color>
+
+    <color name="colorTabbar">@color/colorPurple</color>
+    <color name="colorTabbarButton">@color/colorPink</color>
+
+    <color name="colorBlue">#00ABC9</color>
+    <color name="colorGreen">#48A64B</color>
+    <color name="colorOrange">#FF8C19</color>
+    <color name="colorRed">#F2453D</color>
+    <color name="colorPurple">#9B24B6</color>
+    <color name="colorPink">#E6285D</color>
 </resources>

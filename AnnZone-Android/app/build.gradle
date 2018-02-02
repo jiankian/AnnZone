@@ -38,6 +38,7 @@ dependencies {
     implementation "com.android.support:design:$_buildToolsVersion"
     implementation "com.android.support:recyclerview-v7:$_buildToolsVersion"
     implementation "com.android.support:cardview-v7:$_buildToolsVersion"
+    implementation 'com.android.support:support-v4:27.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -66,6 +67,14 @@ dependencies {
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.9'
     compile 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+//    Apollo的核心库
+    implementation "com.github.lsxiao.Apollo:core:1.0.1-fix"
+//    IPC,如不需要可以不依赖
+    implementation "com.github.lsxiao.Apollo:ipc:1.0.1-fix"
+//    Apollo的编译时注解处理器
+    annotationProcessor "com.github.lsxiao.Apollo:processor:1.0.1-fix"
+    //如果你使用的是kotlin,请使用kapt
+    kapt "com.github.lsxiao.Apollo:processor:1.0.1-fix"
 //    步骤条
     compile 'com.github.baoyachi:StepView:1.9'
 //    图片选择库
