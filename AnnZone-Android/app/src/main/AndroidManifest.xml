@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.anline.annzone">
+
     <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -62,6 +63,7 @@
     <uses-permission android:name="android.permission.READ_HISTORY_BOOKMARKS" />
     <uses-permission android:name="android.permission.WRITE_HISTORY_BOOKMARKS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -76,6 +78,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.user.LoginActivity" />
+        <activity android:name=".ui.blog.BlogViewActivity" />
+        <activity android:name=".ui.blog.BlogPublishActivity" />
+        <activity android:name=".ui.blog.BlogCommentActivity" />
+        <activity android:name=".ui.microblog.MicroblogViewActivity" />
+        <activity android:name=".ui.microblog.MicroblogListActivity" />
+        <activity android:name=".ui.blog.BlogCategoryManagerActivity" />
+        <activity android:name=".ui.blog.BlogCategoryListActivity" />
+        <activity android:name=".ui.microblog.MicroblogPublishActivity" />
+        <activity android:name=".ui.note.NoteListActivity" />
+        <activity android:name=".ui.note.NotePublishActivity" />
+        <activity android:name=".ui.note.NoteCategoryManagerActivity" />
+        <activity android:name=".ui.note.NoteCategoryListActivity" />
+        <activity android:name=".ui.im.IMListActivity" />
+        <activity android:name=".ui.im.IMChatActivity" />
+        <activity android:name=".ui.attachment.AttachmentDisplayActivity" />
+        <activity android:name=".ui.attachment.AttachmentViewActivity" />
+        <activity android:name=".ui.attachment.AttachmentUploadActivity" />
+        <activity android:name=".ui.feedback.FeedbackSendActivity" />
+        <activity android:name=".ui.feedback.FeedbackListActivity" />
+        <activity android:name=".ui.blog.BlogTagViewActivity" />
+        <activity android:name=".ui.account.AccountTypeActivity" />
+        <activity android:name=".ui.account.AccountMetaActivity" />
+        <activity android:name=".ui.account.AccountDisplayActivity" />
+        <activity android:name=".ui.account.AccountAddActivity" />
+        <activity android:name=".ui.health.HealthAddActivity" />
+        <activity android:name=".ui.health.HealthDisplayActivity" />
+        <activity android:name=".ui.health.HealthTypeActivity" />
+        <activity android:name=".ui.project.ProjectAddActivity" />
+        <activity android:name=".ui.project.ProjectListActivity" />
+        <activity android:name=".ui.project.ProjectViewActivity" />
+        <activity android:name=".ui.project.ProjectShowActivity" />
+        <activity android:name=".ui.task.TaskAddActivity" />
+        <activity android:name=".ui.task.TaskListActivity" />
+        <activity android:name=".ui.space.SpaceTreeActivity" />
+        <activity android:name=".ui.space.SpaceAddActivity" />
+        <activity android:name=".ui.space.SpaceTreeManagerActivity" />
+        <activity android:name=".ui.space.SpaceViewActivity" />
+        <activity android:name=".ui.video.VideoAddActivity" />
+        <activity android:name=".ui.video.VideoPlayActivity" />
+        <activity android:name=".ui.video.VideoDisplayActivity" />
+        <activity android:name=".ui.album.AlbumAddActivity" />
+        <activity android:name=".ui.album.AlbumFolderManagerActivity" />
+        <activity android:name=".ui.album.AlbumDisplayActivity" />
+        <activity android:name=".ui.user.UserUpdateActivity" />
+        <activity android:name=".ui.user.UserSafetyActivity"></activity>
     </application>
 
 </manifest>
