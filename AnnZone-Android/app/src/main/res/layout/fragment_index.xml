@@ -2,14 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rl_MeFragment"
-    tools:context="cn.anline.annzone.ui.MeFragment">
+    android:id="@+id/rl_IndexFragment"
+    tools:context="cn.anline.annzone.ui.discover.IndexFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="首页列表界面" />
 
 </RelativeLayout>

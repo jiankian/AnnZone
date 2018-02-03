@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import cn.anline.annzone.ui.*
+import com.gyf.barlibrary.ImmersionBar
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -15,6 +16,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ImmersionBar.with(this)
+                .transparentStatusBar()
+                .navigationBarColor(R.color.colorTabbar)
+                .init()
         setContentView(R.layout.activity_main)
 //        添加Fragment
         fragmentMutableList = ArrayList<Fragment>()

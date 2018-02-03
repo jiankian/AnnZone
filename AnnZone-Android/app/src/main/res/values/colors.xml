@@ -13,6 +13,9 @@
     <color name="colorRed">#F2453D</color>
     <color name="colorPurple">#9B24B6</color>
     <color name="colorPink">#E6285D</color>
+    <color name="colorGrayLight">#b7b7b7</color>
     <color name="colorGray">#D5D6D6</color>
     <color name="colorGrayDark">#eaecec</color>
+    <color name="colorAlpha">#00000000</color>
+    <color name="colorBlank">#EEF5FF</color>
 </resources>
