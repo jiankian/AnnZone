@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import cn.anline.annzone.R
+import kotlinx.android.synthetic.main.fragment_work.*
 
 class WorkFragment : Fragment() {
 
@@ -25,5 +26,6 @@ class WorkFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        tv.text = "所有应用"
     }
 }
