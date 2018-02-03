@@ -7,21 +7,18 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import cn.anline.annzone.ui.*
 import eu.long1.spacetablayout.SpaceTabLayout
+import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * 主界面
+ */
 class MainActivity : AppCompatActivity() {
 
-    lateinit var spaceTabLayout: SpaceTabLayout
-    lateinit var viewPager: ViewPager
-    lateinit var coordinatorLayout: CoordinatorLayout
     lateinit var fragmentMutableList: MutableList<Fragment>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        绑定UI
-        coordinatorLayout = findViewById(R.id.activity_main)
-        viewPager = findViewById(R.id.viewPager)
-        spaceTabLayout = findViewById(R.id.spaceTabLayout)
 //        添加Fragment
         fragmentMutableList = ArrayList<Fragment>()
         fragmentMutableList.add(DiscoverFragment())
@@ -36,7 +33,5 @@ class MainActivity : AppCompatActivity() {
         spaceTabLayout.setTabThreeIcon(R.mipmap.tabbar_publish)
         spaceTabLayout.setTabFourIcon(R.mipmap.tabbar_work)
         spaceTabLayout.setTabFiveIcon(R.mipmap.tabbar_me)
-
-
     }
 }

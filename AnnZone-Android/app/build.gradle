@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 //添加ObjectBox数据库插件
 apply plugin: 'io.objectbox'
 
@@ -44,6 +45,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     compile "com.android.support:multidex:1.0.2"
+//    AnKo
+    compile "org.jetbrains.anko:anko:$anko_version"
 //    ObjectBox 依赖
     compile "io.objectbox:objectbox-kotlin:$objectboxVersion"
     annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"

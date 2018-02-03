@@ -3,11 +3,11 @@
 
 - JAVA+[ActFramework](http://www.ActFramework.org)+MySQL+[Angular5](http://angular.io)+Metronic5+[Ant Design for Angular](https://ng.ant.design/) (NG-ZORRO-ANTD)
 
-    - [AnnZone-Console](./AnnZone-Console) 管理中心，Angular5+Metronic5+各种angular第三方组件开发
-    - [AnnZone-Serve](./AnnZone-Serve) WEB系统，后台接口，博客微博网页版视图，JAVA WEB开发 ActFramework框架开发
-    - [AnnZone-Android](./AnnZone-Android) 安卓Android APP客户端版本
-    - [AnnZone-iOS](./AnnZone-iOS) 苹果iOS APP客户端版本
-    - [AnnZone-MiniProgram](./AnnZone-MiniProgram) 微信
+    - [AnnZone-Console](./AnnZone-Console) 管理中心，Angular5+Metronic5+各种Angular5第三方组件开发 ng-zorro-antd (Ant Design for angular)
+    - [AnnZone-Serve](./AnnZone-Serve) WEB系统，后台接口，博客微博网页版视图，JAVA WEB开发 ActFramework框架`1.6.6+`开发
+    - [AnnZone-Android](./AnnZone-Android) 安卓Android APP客户端版本 Kotlin语言`1.2.10+`开发
+    - [AnnZone-iOS](./AnnZone-iOS) 苹果iOS APP客户端版本 Swift `4.0.3` + Xcode `9.2`开发
+    - [AnnZone-MiniProgram](./AnnZone-MiniProgram) 微信小程序 `1.9.5`最新版本组件化开发
     - [素材和资源](./素材和资源) 项目用到的设计图、资源、素材等文件。Angular后台素材、Android/iOS APP素材、网页版素材、微信小程序素材等
 
 - 以API 接口为核心工作，博客和微博 会有HTML网页版，方便搞技术的搭建自己的对外博客平台，其中其它模块的数据也可以在博客站点的网页中表现...也可以做企业网站等CMS系统

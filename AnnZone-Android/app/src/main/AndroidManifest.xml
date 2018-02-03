@@ -72,13 +72,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".IntroActivity" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".ui.user.LoginActivity" />
         <activity android:name=".ui.blog.BlogViewActivity" />
         <activity android:name=".ui.blog.BlogPublishActivity" />
@@ -124,7 +126,7 @@
         <activity android:name=".ui.album.AlbumFolderManagerActivity" />
         <activity android:name=".ui.album.AlbumDisplayActivity" />
         <activity android:name=".ui.user.UserUpdateActivity" />
-        <activity android:name=".ui.user.UserSafetyActivity"></activity>
+        <activity android:name=".ui.user.UserSafetyActivity" />
     </application>
 
 </manifest>

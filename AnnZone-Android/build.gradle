@@ -4,6 +4,7 @@ buildscript {
     ext {
         gradle_version = '3.0.1'
         kotlin_version = '1.2.10'
+        anko_version='0.10.4'
         _buildToolsVersion = '27.0.2'
         _compileSdkVersion = 27
         objectboxVersion = '1.4.1'

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">安浪时空</string>
+    <string name="hello_blank_fragment">空白组件化页面</string>
+    <string name="powered_by">安浪®提供技术支持</string>
+</resources>
