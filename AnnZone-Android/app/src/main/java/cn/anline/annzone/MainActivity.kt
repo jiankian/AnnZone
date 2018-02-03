@@ -2,11 +2,8 @@ package cn.anline.annzone
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.CoordinatorLayout
 import android.support.v4.app.Fragment
-import android.support.v4.view.ViewPager
 import cn.anline.annzone.ui.*
-import eu.long1.spacetablayout.SpaceTabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
