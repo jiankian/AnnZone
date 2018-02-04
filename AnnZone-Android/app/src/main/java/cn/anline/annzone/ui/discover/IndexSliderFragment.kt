@@ -2,17 +2,22 @@ package cn.anline.annzone.ui.discover
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import cn.anline.annzone.R
+import cn.anline.annzone.adapter.DiscoverIndexListAdapter
+import cn.anline.annzone.bean.BlogDataItem
+import kotlinx.android.synthetic.main.fragment_index_slider.*
 
 /**
  * 首页滑动列表 分类列表页面
  */
 class IndexSliderFragment : Fragment() {
     private var cid: Int? = null
+    private var title: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -25,13 +30,27 @@ class IndexSliderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //        装载RecyclerView数据
+        var listBlogDataItem: ArrayList<BlogDataItem> = ArrayList<BlogDataItem>()
+        for (i in 1..20){
+            var blogDataItem: BlogDataItem = BlogDataItem()
+            blogDataItem.title = title+"第"+i+"篇"+":都不知道取什么标题哦！呵呵呵，😄"
+            blogDataItem.summary= title+i+"的描述"
+            blogDataItem.uid = 1
+            blogDataItem.createTime = 1517731912688L
+            listBlogDataItem.add(blogDataItem)
+        }
+        recycler_view.adapter = DiscoverIndexListAdapter(R.layout.discover_index_list_item,listBlogDataItem)
+        recycler_view.layoutManager = LinearLayoutManager(activity)
     }
 
     companion object {
 
-        fun getInstance(cid: Int): IndexSliderFragment {
+        fun getInstance(cid: Int,title: String): IndexSliderFragment {
             val indexSliderFragment = IndexSliderFragment()
             indexSliderFragment.cid = cid
+            indexSliderFragment.title = title
             return indexSliderFragment
         }
     }

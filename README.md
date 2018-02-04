@@ -35,6 +35,11 @@
 ![博客发布](./screenshot/console2_blog_publish.png)
 ![个人中心](./screenshot/console3_user_prodile.png)
 
+**安卓版本 Kotlin语言全新开发 AnKo和XML的混合使用**
+
+UI样式什么的自己去改源码 都有注释，毕竟大家可能没有我这样骚，我也没有特别专业的设计水平
+![安卓预览开发版](./screenshot/android_v0.1.1.gif)
+
 
 **文档问题**
 

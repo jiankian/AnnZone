@@ -4,11 +4,26 @@
     android:layout_height="match_parent"
     android:id="@+id/rl_IndexSliderFragment"
     tools:context="cn.anline.annzone.ui.discover.IndexSliderFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:text="分类列表页面"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/SmartRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/NestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/rl_scroller_inner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_below="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                </android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </RelativeLayout>

@@ -13,6 +13,7 @@ import org.osgl.mvc.result.RenderJSON;
 
 import javax.inject.Inject;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 博客接口
@@ -87,6 +88,18 @@ public class BlogController extends V1BaseController {
         v1BaseBean.setExp(new Date().getTime()+Constant.exp);
         v1BaseBean.setStatus(0);
         v1BaseBean.setMsg("博客文章总数获取成功！");
+        return json(v1BaseBean);
+    }
+
+    @GetAction("list")
+    public RenderJSON list(){
+        List<Ann_blog> ann_blogs = annBlogEbeanDao.findAllAsList();
+        v1BaseBean.setData(ann_blogs);
+        v1BaseBean.setMsg("博客列表获取成功！");
+        v1BaseBean.setStatus(0);
+        v1BaseBean.setExp(Constant.exp+new Date().getTime());
+        v1BaseBean.setTime(new Date().getTime());
+        v1BaseBean.setResult(ann_blogs.size());
         return json(v1BaseBean);
     }
 }

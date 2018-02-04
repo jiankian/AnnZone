@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/discover_index_list_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_discover_index_list_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="3"
+        android:text="@string/powered_by"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_discover_index_list_item_cover"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_discover_index_list_item_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="安浪科技 ∙ 6小时前"
+        android:textSize="13sp"
+        android:textColor="@color/colorGrayLight"
+        app:layout_constraintBottom_toTopOf="@+id/v_dec_line"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/tv_discover_index_list_item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="1100阅读"
+        android:textColor="@color/colorGrayLight"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/v_dec_line"
+        app:layout_constraintEnd_toStartOf="@+id/iv_discover_index_list_item_cover"
+        android:layout_marginRight="8dp" />
+
+    <ImageView
+        android:id="@+id/iv_discover_index_list_item_cover"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="8dp" />
+
+    <View
+        android:id="@+id/v_dec_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5px"
+        android:background="@color/colorGray"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</android.support.constraint.ConstraintLayout>

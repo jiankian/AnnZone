@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import cn.anline.annzone.R
+import cn.anline.annzone.bean.BlogCategoryListItem
+import cn.anline.annzone.bean.BlogDataItem
 import cn.anline.annzone.ui.discover.IndexFragment
 import cn.anline.annzone.ui.discover.IndexSliderFragment
 import com.flyco.tablayout.listener.OnTabSelectListener
@@ -20,8 +22,8 @@ import java.util.ArrayList
 
 class DiscoverFragment : Fragment() {
     private var mFragments: ArrayList<Fragment>? = null
-    private  var tabTitles: Array<String>? = null;
-    private  var tabCids: Array<Int>? = null;
+    private var list: ArrayList<BlogCategoryListItem>? = null
+    val titles = arrayOf("推荐","Android","iOS","前端","后端","人工智能","设计","工具资源")
     private var mAdapter: MyPagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +43,14 @@ class DiscoverFragment : Fragment() {
         rl_top_wrapper.topPadding = ImmersionBar.getStatusBarHeight(activity)
 
 //        具体从服务器获取分类内容
-        tabCids = arrayOf(2,3,21,43,11,25,21)
-        tabTitles = arrayOf("推荐","Android","iOS","前端","后端","人工智能","设计","工具资源")
+
         mFragments = ArrayList<Fragment>()
 //        首页
-        mFragments!!.add(IndexFragment.getInstance(0))
-//        加载分类页面
-        for (id in tabCids!!){
-            mFragments!!.add(IndexSliderFragment.getInstance(id))
+        mFragments!!.add(IndexFragment.getInstance())
+//        加载分类页面 目前仅作模拟
+        list = ArrayList()
+        for (d in 1..7){
+            mFragments!!.add(IndexSliderFragment.getInstance(d,titles[d]))
         }
         discover_viewPager.adapter = MyPagerAdapter(fragmentManager)
         flyco_tab.setOnTabSelectListener(object : OnTabSelectListener{
@@ -74,7 +76,7 @@ class DiscoverFragment : Fragment() {
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
-            return tabTitles!![position]
+            return titles!![position]
         }
 
         override fun getItem(position: Int): Fragment {

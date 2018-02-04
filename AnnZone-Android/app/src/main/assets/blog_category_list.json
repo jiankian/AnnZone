@@ -1,0 +1,24 @@
+{
+  "data": [{
+    "id": 1,
+    "level": 0,
+    "name": "Android",
+    "pid": 0,
+    "status": 0,
+    "summary": "安卓开发博客",
+    "uid": 1
+  }, {
+    "id": 3,
+    "level": 0,
+    "name": "iOS",
+    "pid": 0,
+    "status": 0,
+    "summary": "苹果APP开发",
+    "uid": 1
+  }],
+  "exp": 1517743970425,
+  "msg": "主分类列表获取成功！",
+  "result": 2,
+  "status": 0,
+  "time": 1517736770425
+}
