@@ -3,7 +3,7 @@
 buildscript {
     ext {
         gradle_version = '3.0.1'
-        kotlin_version = '1.2.10'
+        kotlin_version = '1.2.21'
         anko_version='0.10.4'
         _buildToolsVersion = '27.0.2'
         _compileSdkVersion = 27
