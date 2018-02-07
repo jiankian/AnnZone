@@ -24,7 +24,7 @@
                 android:layout_width="104.0dip"
                 android:layout_height="104.0dip"
                 android:layout_centerInParent="true"
-                android:background="@drawable/ic_launcher_foreground" />
+                android:background="@drawable/logo" />
 
             <ImageView
                 android:layout_width="116.0dip"
