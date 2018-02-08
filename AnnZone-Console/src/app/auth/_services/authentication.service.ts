@@ -2,12 +2,16 @@ import { Config } from './../../_ann/config';
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import "rxjs/add/operator/map";
+import {NzMessageService, NzNotificationService} from "ng-zorro-antd";
 
 
 @Injectable()
 export class AuthenticationService {
 
-    constructor(private http: Http) {
+    constructor(private http: Http,
+                private _notify:NzNotificationService,
+                private _message:NzMessageService
+    ) {
     }
 
     login(username: string, password: string) {
@@ -29,6 +33,7 @@ export class AuthenticationService {
                     localStorage.setItem('currentUser', JSON.stringify(user.data));
                     return true
                 } else {
+                    this._notify.error("登录失败！",user.msg)
                     return false
                 }
             });

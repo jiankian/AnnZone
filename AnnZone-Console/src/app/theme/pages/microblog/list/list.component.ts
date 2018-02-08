@@ -15,10 +15,20 @@ import { NzMessageService, NzNotificationService } from "ng-zorro-antd";
 })
 export class ListComponent implements OnInit, AfterViewInit {
 
-    listData: any
+    listData: any = []
     headers: any
     options: any
     token: string
+
+    // Loadmore:
+    data = [];
+    loading = false;
+    loadingMore = false;
+    showLoadMore = false;
+    pi = 1;
+    ps = 5;
+    show_max_pi = 5;
+
     constructor(
         private _script: ScriptLoaderService,
         private _http: Http,
@@ -31,20 +41,22 @@ export class ListComponent implements OnInit, AfterViewInit {
         this.token = JSON.parse(localStorage.getItem("currentUser")).token;
         this.headers = new Headers({ 'ann_token': this.token });
         this.options = new RequestOptions({ headers: this.headers });
-
-
-        this.loadData()
     }
     ngOnInit() {
-
+        this.loadData()
     }
     ngAfterViewInit() {
-        this._script.loadScripts('app-inner',
-            ['assets/app/js/dashboard.js']);
+        // this._script.loadScripts('app-inner',
+        //     ['assets/app/js/dashboard.js']);
 
     }
 
     loadData() {
+        if (this.pi === 1)
+            this.loading = true;
+        else
+            this.loadingMore = true;
+
         this._http.get(Config.api_url + 'microblog/list', this.options).toPromise()
             .then((response: Response) => {
                 console.log("微博列表请求结果：")
@@ -52,17 +64,27 @@ export class ListComponent implements OnInit, AfterViewInit {
                 let res = response.json()
                 if (res && res.status == 0) {
                     this._notify.create('success', '加载成功', res.msg)
-                    this.listData = res.data
+                    if (this.pi === 1){
+                        this.listData = res.data
+                        this.loading = false;
+                    }else {
+                        this.listData.concat(res.data)
+                        this.loadingMore = false
+                    }
                     //有了数据再去加载本地列表显示jq脚本 避免打开没有内容
-                    this._script.loadScripts('app-inner',
-                        ['assets/app/js/microblog-list-html-table.js']);
+                    // this._script.loadScripts('app-inner',
+                    //     ['assets/app/js/microblog-list-html-table.js']);
                 } else {
                     this._notify.create('error', '加载失败', res.msg)
+                    this.loading =false
                 }
+
+                this.showLoadMore = this.pi <= this.show_max_pi;
             })
             .catch((err) => {
                 this._notify.create('error', '请求结果', "微博服务器请求失败！")
                 this._message.create('error', err)
+                this.showLoadMore = this.pi <= this.show_max_pi;
             });
     }
     refresh() {
@@ -81,6 +103,10 @@ export class ListComponent implements OnInit, AfterViewInit {
         console.log(data)
     }
 
+    handleLoadMore() {
+        ++this.pi;
+        this.loadData();
+    }
     test() {
         console.log("测试")
     }

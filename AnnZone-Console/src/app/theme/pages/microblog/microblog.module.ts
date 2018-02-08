@@ -9,6 +9,8 @@ import { CommentComponent } from './comment/comment.component';
 import { PublishComponent } from './publish/publish.component';
 import { RecycleComponent } from './recycle/recycle.component';
 import { FormsModule } from '@angular/forms';
+import {NzCardModule, NzListModule} from "ng-zorro-antd-extra";
+import {NzSpinModule} from "ng-zorro-antd";
 
 const routes: Routes = [
     {
@@ -41,6 +43,9 @@ const routes: Routes = [
         LayoutModule,
         FormsModule,
         HttpModule,
+        NzCardModule,
+        NzListModule,
+        NzSpinModule,
     ], exports: [
         RouterModule
     ], declarations: [
