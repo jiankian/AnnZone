@@ -72,8 +72,8 @@
       <file leaf-file-name="list.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="98" column="40" lean-forward="false" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
+            <state relative-caret-position="490">
+              <caret line="140" column="28" lean-forward="false" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="28" />
               <folding>
                 <element signature="e#0#110#0" expanded="true" />
               </folding>
@@ -381,12 +381,12 @@
       <workItem from="1517434911495" duration="28171000" />
       <workItem from="1517606946936" duration="76000" />
       <workItem from="1517799667724" duration="763000" />
-      <workItem from="1518045868550" duration="5513000" />
+      <workItem from="1518045868550" duration="6700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114144000" />
+    <option name="totallyTimeSpent" value="115331000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,8 +838,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/theme/pages/microblog/list/list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="98" column="40" lean-forward="false" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
+        <state relative-caret-position="490">
+          <caret line="140" column="28" lean-forward="false" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="28" />
           <folding>
             <element signature="e#0#110#0" expanded="true" />
           </folding>

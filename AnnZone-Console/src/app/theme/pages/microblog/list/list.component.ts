@@ -5,7 +5,7 @@ import { Headers, Http, RequestOptions, Response } from "@angular/http";
 import { Router } from "@angular/router";
 import { AlertService } from "../../../../auth/_services/alert.service";
 import { Config } from "../../../../_ann";
-import { NzMessageService, NzNotificationService } from "ng-zorro-antd";
+import {NzMessageService, NzModalService, NzNotificationService} from "ng-zorro-antd";
 
 
 @Component({
@@ -35,6 +35,7 @@ export class ListComponent implements OnInit, AfterViewInit {
         private _router: Router,
         private _notify: NzNotificationService,
         private _message: NzMessageService,
+        private _modal: NzModalService,
         private _cfr: ComponentFactoryResolver,
         private _alertService: AlertService,
     ) {
@@ -120,6 +121,8 @@ export class ListComponent implements OnInit, AfterViewInit {
         // window.location.reload()
         // UI框架有时候不会正常加载本地列表 以下方式似乎没什么卵用
         this.listData = []//先清空
+        this.show_max_pi =1
+        this.getPageCounts()
         this.loadData()
     }
 
@@ -128,8 +131,30 @@ export class ListComponent implements OnInit, AfterViewInit {
         console.log(data)
     }
     deleteItem = (data) => {
+        let that = this;
         console.log("删除操作：")
         console.log(data)
+        this._modal.warning({
+            title:"确认删除",
+            content:"删除后无法恢复，确定删除？",
+            okText:"删除",
+            cancelText:"取消",
+            onOk(){
+                that._http.post(Config.api_url + "microblog/delete",{microblog:data.id},that.options)
+                    .toPromise()
+                    .then((res:Response)=>{
+                        let resData = res.json()
+                        if (resData && resData.status == 0){
+                            that._message.success("删除成功")
+                            that.refresh()
+                        }else {
+                            that._message.error("删除失败")
+                        }
+                    }).catch((err)=>{
+                    that._message.error("删除失败")
+                })
+            },
+        })
     }
 
     handleLoadMore() {
