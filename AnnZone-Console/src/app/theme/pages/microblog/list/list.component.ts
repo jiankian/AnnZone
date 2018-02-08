@@ -15,7 +15,7 @@ import { NzMessageService, NzNotificationService } from "ng-zorro-antd";
 })
 export class ListComponent implements OnInit, AfterViewInit {
 
-    listData: any = []
+    listData = []
     headers: any
     options: any
     token: string
@@ -27,7 +27,7 @@ export class ListComponent implements OnInit, AfterViewInit {
     showLoadMore = false;
     pi = 1;
     ps = 5;
-    show_max_pi = 5;
+    show_max_pi = 1;
 
     constructor(
         private _script: ScriptLoaderService,
@@ -43,6 +43,7 @@ export class ListComponent implements OnInit, AfterViewInit {
         this.options = new RequestOptions({ headers: this.headers });
     }
     ngOnInit() {
+        this.getPageCounts()
         this.loadData()
     }
     ngAfterViewInit() {
@@ -51,13 +52,38 @@ export class ListComponent implements OnInit, AfterViewInit {
 
     }
 
+    /**
+     * 获取分页总数
+     */
+    getPageCounts(){
+        this._http.get(Config.api_url + 'microblog/pagecount',this.options)
+            .toPromise()
+            .then((res:Response)=>{
+                let resData = res.json()
+                console.log("分页获取结果")
+                console.log(resData)
+                if (resData && resData.status == 0){
+                    this.show_max_pi = resData.data
+                    this.showLoadMore = this.pi < this.show_max_pi;
+                }else {
+                    this._message.warning("总数计算获取失败！")
+                    this.show_max_pi = 1
+                    this.showLoadMore = this.pi < this.show_max_pi;
+                }
+
+            }).catch((err)=>{
+                this._message.warning("总数计算获取失败！")
+                this.show_max_pi =1
+                this.showLoadMore = this.pi < this.show_max_pi;
+        })
+    }
     loadData() {
         if (this.pi === 1)
             this.loading = true;
         else
             this.loadingMore = true;
 
-        this._http.get(Config.api_url + 'microblog/list', this.options).toPromise()
+        this._http.get(Config.api_url + 'microblog/list?p='+ this.pi, this.options).toPromise()
             .then((response: Response) => {
                 console.log("微博列表请求结果：")
                 console.log(response.json())
@@ -65,10 +91,13 @@ export class ListComponent implements OnInit, AfterViewInit {
                 if (res && res.status == 0) {
                     this._notify.create('success', '加载成功', res.msg)
                     if (this.pi === 1){
+                        console.log("不拼接")
                         this.listData = res.data
                         this.loading = false;
                     }else {
-                        this.listData.concat(res.data)
+                        console.log("拼接")
+                        this.listData = this.listData.concat(res.data)
+                        console.log(this.listData)
                         this.loadingMore = false
                     }
                     //有了数据再去加载本地列表显示jq脚本 避免打开没有内容
@@ -79,12 +108,12 @@ export class ListComponent implements OnInit, AfterViewInit {
                     this.loading =false
                 }
 
-                this.showLoadMore = this.pi <= this.show_max_pi;
+                this.showLoadMore = this.pi < this.show_max_pi;
             })
             .catch((err) => {
                 this._notify.create('error', '请求结果', "微博服务器请求失败！")
                 this._message.create('error', err)
-                this.showLoadMore = this.pi <= this.show_max_pi;
+                this.showLoadMore = this.pi < this.show_max_pi;
             });
     }
     refresh() {
@@ -106,6 +135,10 @@ export class ListComponent implements OnInit, AfterViewInit {
     handleLoadMore() {
         ++this.pi;
         this.loadData();
+    }
+
+    deleteAll = ()=>{
+        console.log("全部删除操作")
     }
     test() {
         console.log("测试")

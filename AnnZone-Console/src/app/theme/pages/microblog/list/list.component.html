@@ -124,58 +124,23 @@
 											<ul class="m-nav">
 												<li class="m-nav__section m-nav__section--first">
 													<span class="m-nav__section-text">
-														Quick Actions
+														快捷操作
 													</span>
 												</li>
 												<li class="m-nav__item">
-													<a href="" class="m-nav__link">
+													<a routerLink="./publish" href="" class="m-nav__link">
 														<i class="m-nav__link-icon flaticon-share"></i>
 														<span class="m-nav__link-text">
-															Create Post
+															发微博
 														</span>
 													</a>
 												</li>
 												<li class="m-nav__item">
-													<a href="" class="m-nav__link">
+													<a (click)="deleteAll()" href="" class="m-nav__link">
 														<i class="m-nav__link-icon flaticon-chat-1"></i>
 														<span class="m-nav__link-text">
-															Send Messages
+															全部删除
 														</span>
-													</a>
-												</li>
-												<li class="m-nav__item">
-													<a href="" class="m-nav__link">
-														<i class="m-nav__link-icon flaticon-multimedia-2"></i>
-														<span class="m-nav__link-text">
-															Upload File
-														</span>
-													</a>
-												</li>
-												<li class="m-nav__section">
-													<span class="m-nav__section-text">
-														Useful Links
-													</span>
-												</li>
-												<li class="m-nav__item">
-													<a href="" class="m-nav__link">
-														<i class="m-nav__link-icon flaticon-info"></i>
-														<span class="m-nav__link-text">
-															FAQ
-														</span>
-													</a>
-												</li>
-												<li class="m-nav__item">
-													<a href="" class="m-nav__link">
-														<i class="m-nav__link-icon flaticon-lifebuoy"></i>
-														<span class="m-nav__link-text">
-															Support
-														</span>
-													</a>
-												</li>
-												<li class="m-nav__separator m-nav__separator--fit m--hide"></li>
-												<li class="m-nav__item m--hide">
-													<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
-														Submit
 													</a>
 												</li>
 											</ul>
@@ -197,8 +162,8 @@
 					<nz-list [nzDataSource]="listData" [nzItemLayout]="'horizontal'" [nzLoading]="loading">
 						<ng-template #item let-item>
 							<nz-list-item>
-								<nz-list-item-action><a (click)="editItem(item)">edit</a></nz-list-item-action>
-								<nz-list-item-action><a (click)="deleteItem(item)">more</a></nz-list-item-action>
+								<nz-list-item-action><a (click)="editItem(item)">编辑</a></nz-list-item-action>
+								<nz-list-item-action><a (click)="deleteItem(item)">删除</a></nz-list-item-action>
 								<nz-list-item-meta
 										[nzTitle]="nzTitle"
 										nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"

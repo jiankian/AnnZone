@@ -29,20 +29,52 @@ public class MicroblogController extends V1BaseController {
     @Inject
     EbeanDao<Long,Ann_microblog_comment> microblogCommentEbeanDao;
 
+    private final int p_num = 10;//每页显示数量
+
     /**
      * 微博读取接口
+     * @param p 页码
      * @return
      */
     @GetAction("list")
-    public RenderJSON list(){
+    public RenderJSON list(Integer p){
+        if (null == p || p.equals("")){
+            p = 1;
+        }
+        long rows = microblogEbeanDao.count();//总数
+        int ps = 1;
+        if (rows >1){
+            ps = (int) ((int) rows%p_num == 0?rows/p_num:rows/p_num+1);
+        }else {
+            ps = 1;
+        }
+        int offset = p-1;
+        List<Ann_microblog> microblogList = microblogEbeanDao.q().offset(offset * p_num).limit(p_num).findList();
+
         v1BaseBean.setStatus(0);
+        v1BaseBean.setExp(Constant.exp + new Date().getTime());
         v1BaseBean.setMsg("微博列表请求成功");
-        List<Ann_microblog> microblogList = microblogEbeanDao.findAllAsList();
         v1BaseBean.setResult(microblogList.size());
         v1BaseBean.setData(microblogList);
         return json(v1BaseBean);
     }
 
+    @GetAction("pagecount")
+    public RenderJSON pagecount(){
+        long rows = microblogEbeanDao.count();
+        int ps;
+        if (rows >1){
+            ps = (int) ((int) rows%p_num == 0?rows/p_num:rows/p_num+1);
+        }else {
+            ps = 1;
+        }
+        v1BaseBean.setData(ps);
+        v1BaseBean.setStatus(0);
+        v1BaseBean.setMsg("分页总数获取成功！");
+        v1BaseBean.setExp(Constant.exp + new Date().getTime());
+        v1BaseBean.setResult(ps);
+        return json(v1BaseBean);
+    }
     /**
      * 微博发布接口
      * @param ann_microblog
