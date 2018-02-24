@@ -49,7 +49,7 @@ public class MicroblogController extends V1BaseController {
             ps = 1;
         }
         int offset = p-1;
-        List<Ann_microblog> microblogList = microblogEbeanDao.q().offset(offset * p_num).limit(p_num).findList();
+        List<Ann_microblog> microblogList = microblogEbeanDao.q().offset(offset * p_num).limit(p_num).orderBy().desc("id").findList();
 
         v1BaseBean.setStatus(0);
         v1BaseBean.setExp(Constant.exp + new Date().getTime());
