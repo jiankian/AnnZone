@@ -42,10 +42,10 @@
 										</span>
 									</li>
 									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
+										<a routerLink="./publish" href="" class="m-nav__link">
 											<i class="m-nav__link-icon flaticon-share"></i>
 											<span class="m-nav__link-text">
-												Activity
+												写博客
 											</span>
 										</a>
 									</li>
@@ -90,5 +90,108 @@
 </div>
 <!-- END: Subheader -->
 <div class="m-content">
-	Inner page content goes here
+	<div class="m-portlet m-portlet--mobile">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<h3 class="m-portlet__head-text">
+						所有博客
+					</h3>
+				</div>
+			</div>
+			<div class="m-portlet__head-tools">
+				<ul class="m-portlet__nav">
+					<li class="m-portlet__nav-item">
+						<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+							<a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+								<i class="la la-ellipsis-h m--font-brand"></i>
+							</a>
+							<div class="m-dropdown__wrapper">
+								<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+								<div class="m-dropdown__inner">
+									<div class="m-dropdown__body">
+										<div class="m-dropdown__content">
+											<ul class="m-nav">
+												<li class="m-nav__section m-nav__section--first">
+													<span class="m-nav__section-text">
+														快捷操作
+													</span>
+												</li>
+												<li class="m-nav__item">
+													<a routerLink="./publish" href="" class="m-nav__link">
+														<i class="m-nav__link-icon flaticon-share"></i>
+														<span class="m-nav__link-text">
+															新建博文
+														</span>
+													</a>
+												</li>
+												<li class="m-nav__item">
+													<a (click)="deleteAll()" href="" class="m-nav__link">
+														<i class="m-nav__link-icon flaticon-chat-1"></i>
+														<span class="m-nav__link-text">
+															全部删除
+														</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<!--begin: Datatable -->
+			<!--列表展示区开始-->
+			<div style="margin-bottom: 16px;">
+				<button nz-button [disabled]="_disabledButton" [nzType]="'primary'" [nzLoading]="_operating" (click)="_operateData()">批量操作</button>
+				<span style="margin-left: 8px;" *ngIf="_checkedNumber">选择了 {{_checkedNumber}} 项目</span>
+			</div>
+			<nz-table #nzTable [nzDataSource]="_dataSet" [nzPageSize]="10" (nzDataChange)="_displayDataChange($event)" (nzPageIndexChange)="_refreshStatus()" (nzPageSizeChange)="_refreshStatus()">
+				<thead nz-thead>
+				<tr>
+					<th nz-th nzCheckbox>
+						<label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+						</label>
+					</th>
+					<th nz-th><span>标题</span></th>
+					<th nz-th><span>主分类</span></th>
+					<th nz-th><span>扩展分类</span></th>
+					<th nz-th><span>创建时间</span></th>
+					<th nz-th><span>操作</span></th>
+				</tr>
+				</thead>
+				<tbody nz-tbody>
+				<tr nz-tbody-tr *ngFor="let data of nzTable.data">
+					<td nz-td nzCheckbox>
+						<label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+						</label>
+					</td>
+					<td nz-td>{{data.title}}</td>
+					<td nz-td>{{data.cid}}</td>
+					<td nz-td>{{data.extra_cid}}</td>
+					<td nz-td>{{data.create_time|date:'yyyy年MM月dd日，HH:mm:ss'}}</td>
+					<td nz-td>
+						<button nz-button [nzType]="'default'" (click)="editItem(data)">
+						<i class="anticon anticon-edit"></i>
+						</button>
+						<button nz-button [nzType]="'default'" (click)="viewItem(data)">
+							<i class="anticon anticon-eye"></i>
+						</button>
+						<button nz-button [nzType]="'default'" (click)="delItem(data)">
+							<i class="anticon anticon-delete"></i>
+						</button>
+					</td>
+				</tr>
+				</tbody>
+			</nz-table>
+
+			<!--列表展示区结束-->
+
+			<!--end: Datatable -->
+		</div>
+	</div>
 </div>

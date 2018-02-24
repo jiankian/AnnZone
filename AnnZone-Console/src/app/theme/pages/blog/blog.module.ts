@@ -12,7 +12,11 @@ import { AddCategoryComponent } from './category/add.component';
 import { RecycleComponent } from './recycle/recycle.component';
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
-import { NzModalModule, NzUploadModule } from "ng-zorro-antd";
+import {
+    NzButtonModule, NzCheckboxModule, NzModalModule, NzPaginationModule, NzTableModule,
+    NzUploadModule
+} from "ng-zorro-antd";
+import {NzCardModule, NzListModule} from "ng-zorro-antd-extra";
 
 const routes: Routes = [
     {
@@ -59,7 +63,14 @@ const routes: Routes = [
         FormsModule,
         HttpModule,
         NzUploadModule,
-        NzModalModule
+        NzModalModule,
+        NzTableModule,
+        NzListModule,
+        NzCardModule,
+        NzPaginationModule,
+        NzButtonModule,
+        NzCheckboxModule,
+
     ], exports: [
         RouterModule
     ], declarations: [

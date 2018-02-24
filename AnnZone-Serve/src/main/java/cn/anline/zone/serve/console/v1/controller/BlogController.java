@@ -93,7 +93,7 @@ public class BlogController extends V1BaseController {
 
     @GetAction("list")
     public RenderJSON list(){
-        List<Ann_blog> ann_blogs = annBlogEbeanDao.findAllAsList();
+        List<Ann_blog> ann_blogs = annBlogEbeanDao.q().orderBy().desc("id").findList();
         v1BaseBean.setData(ann_blogs);
         v1BaseBean.setMsg("博客列表获取成功！");
         v1BaseBean.setStatus(0);
