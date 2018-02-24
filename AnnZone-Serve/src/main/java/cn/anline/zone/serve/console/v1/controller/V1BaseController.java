@@ -4,6 +4,7 @@ import act.controller.Controller;
 import static act.controller.Controller.Util.*;
 
 import act.db.ebean2.EbeanDao;
+import act.inject.param.NoBind;
 import cn.anline.zone.serve.AnnBase;
 import cn.anline.zone.serve.console.v1.bean.UserBean;
 import cn.anline.zone.serve.console.v1.bean.V1BaseBean;
@@ -44,16 +45,19 @@ public class V1BaseController extends AnnBase {
     /**
      * 用户ID 从Token获取
      */
+    @NoBind
     protected int __uid;
 
     /**
      * 用户名 从Token获取
      */
+    @NoBind
     protected String __username;
 
     /**
      * 用户Bean
      */
+    @NoBind
     protected UserBean __user;
 
     public int get__uid() {
