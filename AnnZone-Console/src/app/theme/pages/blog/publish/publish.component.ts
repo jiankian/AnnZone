@@ -89,9 +89,8 @@ export class PublishComponent implements OnInit, AfterViewInit {
 
 
 
-    publish(e) {
+    publish() {
         console.log("博文发布")
-        console.log(e)
         console.log(this.ann_blog)
         let content = document.querySelector(".note-editable").innerHTML
         console.log(content)

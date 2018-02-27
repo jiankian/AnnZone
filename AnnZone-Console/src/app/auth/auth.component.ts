@@ -146,7 +146,7 @@ export class AuthComponent implements OnInit {
     }
 
     //显示用户注册协议
-    showRegisterProtocol($e) {
+    showRegisterProtocol() {
         let that = this
         console.log("单击了用户注册协议")
         //此处仅需作为显示作用，如需要阅读时间，必须阅读才能进行注册，请在下面参数中配置，具体使用文档去看 ng-zorro-antd的官方文档
