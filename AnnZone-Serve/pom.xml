@@ -77,84 +77,16 @@
     <app.entry>cn.anline.zone.serve.Ann</app.entry>
   </properties>
 
+  <parent>
+    <groupId>org.actframework</groupId>
+    <artifactId>act-starter-parent</artifactId>
+    <version>1.8.1.0</version>
+  </parent>
+
   <build>
-
     <finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName>
-
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
-
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>${maven-assemply-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>create-archive</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <appendAssemblyId>false</appendAssemblyId>
-              <descriptors>
-                <descriptor>src/assembly/pkg.xml</descriptor>
-              </descriptors>
-              <outputDirectory>${project.build.directory}/dist/</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.6.0</version>
-        <configuration>
-          <executable>java</executable>
-          <arguments>
-            <argument>-Xms512m</argument>
-            <argument>-Xmx1g</argument>
-            <argument>-classpath</argument>
-            <classpath/>
-            <argument>${app.entry}</argument>
-          </arguments>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>buildnumber-maven-plugin</artifactId>
-        <version>1.2</version>
-        <configuration>
-          <format>At {1,time} on {1,date}, there was {2} on planet {0,number,integer}.</format>
-          <items>
-            <item implementation="java.lang.Integer">7</item>
-            <item>timestamp</item>
-            <item>a disturbance in the Force</item>
-          </items>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>create</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
   </build>
 
-  <!--使用SNAPSHOT版本-->
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
   <dependencies>
     <dependency>
       <groupId>org.actframework</groupId>
