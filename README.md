@@ -1,6 +1,9 @@
 # 安浪个人工作站
 安浪个人工作站：与企业员工OA系统不同，本系统完全面向个人，创建一个属于自己的完全的云端空间！
 
+### 最新版本地址：
+码云地址[https://gitee.com/jiankian/AnnZone.git](https://gitee.com/jiankian/AnnZone.git)
+
 - JAVA+[ActFramework](http://www.ActFramework.org)+MySQL+[Angular5](http://angular.io)+Metronic5+[Ant Design for Angular](https://ng.ant.design/) (NG-ZORRO-ANTD)
 
     - [AnnZone-Console](./AnnZone-Console) 管理中心，Angular5+Metronic5+各种Angular5第三方组件开发 ng-zorro-antd (Ant Design for angular)
