@@ -3,7 +3,7 @@ package cn.anline.zone.serve.console.v1.controller;
 import act.controller.Controller;
 import static act.controller.Controller.Util.*;
 
-import act.db.ebean2.EbeanDao;
+import act.db.ebean.EbeanDao;
 import act.inject.param.NoBind;
 import cn.anline.zone.serve.AnnBase;
 import cn.anline.zone.serve.console.v1.bean.UserBean;

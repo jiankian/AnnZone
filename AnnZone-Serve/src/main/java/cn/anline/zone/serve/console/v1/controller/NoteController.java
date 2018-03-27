@@ -3,7 +3,7 @@ package cn.anline.zone.serve.console.v1.controller;
 import act.controller.Controller;
 import static act.controller.Controller.*;
 
-import act.db.ebean2.EbeanDao;
+import act.db.ebean.EbeanDao;
 import cn.anline.zone.serve.console.v1.config.Constant;
 import cn.anline.zone.serve.console.v1.model.Ann_note;
 import cn.anline.zone.serve.console.v1.model.Ann_note_category;

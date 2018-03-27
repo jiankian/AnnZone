@@ -3,7 +3,7 @@ package cn.anline.zone.serve.console.v1.controller;
 import act.controller.Controller;
 import static act.controller.Controller.Util.*;
 
-import act.db.ebean2.EbeanDao;
+import act.db.ebean.EbeanDao;
 import act.util.SimpleBean;
 import cn.anline.zone.serve.console.v1.bean.UploadBean;
 import cn.anline.zone.serve.console.v1.common.Util.FileSafeCode;

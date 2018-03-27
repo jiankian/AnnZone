@@ -29,19 +29,19 @@
   <url>http://www.anline.cn/</url>
 
   <properties>
-    <act.version>1.8.1</act.version>
-    <act-ebean2.version>1.5.1</act-ebean2.version>
-    <act-morphia.version>1.4.0</act-morphia.version>
-    <act-storage.version>0.13.0</act-storage.version>
-    <act-aaa.version>1.4.0</act-aaa.version>
-    <act-excel.version>1.4.1</act-excel.version>
+    <act.version>1.8.3</act.version>
+    <act-ebean.version>1.6.1</act-ebean.version>
+    <act-morphia.version>1.4.1</act-morphia.version>
+    <act-storage.version>0.13.1</act-storage.version>
+    <act-aaa.version>1.4.1</act-aaa.version>
+    <act-excel.version>1.4.2</act-excel.version>
     <app.entry>cn.anline.zone.serve.Ann</app.entry>
   </properties>
 
   <parent>
     <groupId>org.actframework</groupId>
     <artifactId>act-starter-parent</artifactId>
-    <version>1.8.1.0</version>
+    <version>1.8.3.0</version>
   </parent>
 
   <build>
@@ -49,11 +49,11 @@
   </build>
 
   <dependencies>
-    <dependency>
-      <groupId>org.actframework</groupId>
-      <artifactId>act</artifactId>
-      <version>${act.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.actframework</groupId>-->
+      <!--<artifactId>act</artifactId>-->
+      <!--<version>${act.version}</version>-->
+    <!--</dependency>-->
     <!--<dependency>-->
       <!--<groupId>org.jetbrains.kotlin</groupId>-->
       <!--<artifactId>kotlin-stdlib-jre8</artifactId>-->
@@ -78,8 +78,8 @@
     <!--使用MysQL数据库-->
     <dependency>
       <groupId>org.actframework</groupId>
-      <artifactId>act-ebean2</artifactId>
-      <version>${act-ebean2.version}</version>
+      <artifactId>act-ebean</artifactId>
+      <version>${act-ebean.version}</version>
     </dependency>
     <!--使用MongoDb数据库-->
     <!--<dependency>-->
@@ -113,7 +113,7 @@
     <dependency>
       <groupId>com.zaxxer</groupId>
       <artifactId>HikariCP</artifactId>
-      <version>${HikariCP.version}</version>
+      <version>2.7.8</version>
     </dependency>
 
     <!--权限控制插件-->
