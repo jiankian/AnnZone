@@ -29,19 +29,19 @@
   <url>http://www.anline.cn/</url>
 
   <properties>
-    <act.version>1.8.3</act.version>
-    <act-ebean.version>1.6.1</act-ebean.version>
-    <act-morphia.version>1.4.1</act-morphia.version>
-    <act-storage.version>0.13.1</act-storage.version>
-    <act-aaa.version>1.4.1</act-aaa.version>
-    <act-excel.version>1.4.2</act-excel.version>
+    <act.version>1.8.6</act.version>
+    <act-ebean.version>1.6.2</act-ebean.version>
+    <act-morphia.version>1.4.2</act-morphia.version>
+    <act-storage.version>0.13.2</act-storage.version>
+    <act-aaa.version>1.4.2</act-aaa.version>
+    <act-excel.version>1.4.3</act-excel.version>
     <app.entry>cn.anline.zone.serve.Ann</app.entry>
   </properties>
 
   <parent>
     <groupId>org.actframework</groupId>
     <artifactId>act-starter-parent</artifactId>
-    <version>1.8.3.0</version>
+    <version>1.8.6.0</version>
   </parent>
 
   <build>
@@ -97,7 +97,7 @@
     <dependency>
       <groupId>com.graphql-java</groupId>
       <artifactId>graphql-java</artifactId>
-      <version>7.0</version>
+      <version>8.0</version>
     </dependency>
     <dependency>
       <groupId>org.actframework</groupId>
