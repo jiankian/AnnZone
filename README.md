@@ -52,6 +52,9 @@ UI样式什么的自己去改源码 都有注释，毕竟大家可能没有我�
 需要掌握的有：angular相关知识，java MVC框架 ActFramework 。
 需要手把手只用而不去自己去完成开发的用户，请等我完善后发视频链接！
 
+请忽略上面几行，现在文档开始在看云编写。
+[https://www.kancloud.cn/jiankian/annzone](https://www.kancloud.cn/jiankian/annzone)
+
 **Copyright**
 
 MIT开源，想怎么改，怎么用，怎么卖，怎么骂都随意，（注意引用的第三方库的版权）
