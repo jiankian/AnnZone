@@ -11,8 +11,8 @@ android {
         applicationId "cn.anline.annzone"
         minSdkVersion 15
         targetSdkVersion _compileSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //允许multiDex
         multiDexEnabled true
