@@ -2,12 +2,12 @@
 
 buildscript {
     ext {
-        gradle_version = '3.0.1'
-        kotlin_version = '1.2.21'
-        anko_version='0.10.4'
-        _buildToolsVersion = '27.0.2'
-        _compileSdkVersion = 27
-        objectboxVersion = '1.4.1'
+        gradle_version = '3.1.4'
+        kotlin_version = '1.2.61'
+        anko_version='0.10.5'
+        _buildToolsVersion = '28.0.2'
+        _compileSdkVersion = 28
+        objectboxVersion = '2.0.0'
     }
     repositories {
         google()

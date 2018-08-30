@@ -52,7 +52,7 @@ class DiscoverFragment : Fragment() {
         for (d in 1..7){
             mFragments!!.add(IndexSliderFragment.getInstance(d,titles[d]))
         }
-        discover_viewPager.adapter = MyPagerAdapter(fragmentManager)
+        discover_viewPager.adapter = MyPagerAdapter(childFragmentManager)
         flyco_tab.setOnTabSelectListener(object : OnTabSelectListener{
             override fun onTabSelect(position: Int) {
                 Toast.makeText(activity,"选择了"+position,Toast.LENGTH_SHORT).show()

@@ -33,43 +33,42 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     //noinspection GradleCompatible
-    implementation "com.android.support:appcompat-v7:$_buildToolsVersion"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation "com.android.support:support-v4:$_buildToolsVersion"
-    implementation "com.android.support:design:$_buildToolsVersion"
-    implementation "com.android.support:recyclerview-v7:$_buildToolsVersion"
-    implementation "com.android.support:cardview-v7:$_buildToolsVersion"
-    implementation 'com.android.support:support-v4:27.0.2'
+    implementation "com.android.support:appcompat-v7:28.0.0-rc01"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation "com.android.support:support-v4:28.0.0-rc01"
+    implementation "com.android.support:design:28.0.0-rc01"
+    implementation "com.android.support:recyclerview-v7:28.0.0-rc01"
+    implementation "com.android.support:cardview-v7:28.0.0-rc01"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    compile "com.android.support:multidex:1.0.2"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support:multidex:1.0.3"
 //    AnKo
-    compile "org.jetbrains.anko:anko:$anko_version"
+    implementation "org.jetbrains.anko:anko:$anko_version"
 //    ObjectBox 依赖
-    compile "io.objectbox:objectbox-kotlin:$objectboxVersion"
+    implementation "io.objectbox:objectbox-kotlin:$objectboxVersion"
     annotationProcessor "io.objectbox:objectbox-processor:$objectboxVersion"
 //    Tabbar 底部标签选项卡
-    compile 'eu.long1:spacetablayout:1.0.4'
+    implementation 'eu.long1:spacetablayout:1.0.4'
 //    Android M+ Permission Request 安卓6.0以上权限申请
-    compile 'me.weyye.hipermission:library:1.0.7'
+    implementation 'me.weyye.hipermission:library:1.0.7'
 //    超强工具类 https://blankj.com/2016/07/31/android-utils-code/
-    compile 'com.blankj:utilcode:1.12.5'
+    implementation 'com.blankj:utilcode:1.19.3'
 //    JSON解析库
-    compile 'com.alibaba:fastjson:1.2.44'
+    implementation 'com.alibaba:fastjson:1.2.44'
 //    HTTP网络请求库
-    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
 //    RestAPI接口请求库
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
 //    json谷歌的解析库
-    compile 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.google.code.gson:gson:2.8.2'
 //    事件管理
-    compile 'org.greenrobot:eventbus:3.1.1'
+    implementation 'org.greenrobot:eventbus:3.1.1'
 //    响应式开发库
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.1.9'
-    compile 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
 //    Apollo的核心库
     implementation "com.github.lsxiao.Apollo:core:1.0.1-fix"
 //    IPC,如不需要可以不依赖
@@ -79,76 +78,77 @@ dependencies {
     //如果你使用的是kotlin,请使用kapt
     kapt "com.github.lsxiao.Apollo:processor:1.0.1-fix"
 //    步骤条
-    compile 'com.github.baoyachi:StepView:1.9'
+    implementation 'com.github.baoyachi:StepView:1.9'
 //    图片选择库
-    compile 'com.github.martin90s:ImagePicker:v1.3.2'
+    implementation 'com.github.martin90s:ImagePicker:v1.3.2'
 //    时间轴效果库
-    compile 'com.github.vipulasri:timelineview:1.0.5'
+    implementation 'com.github.vipulasri:timelineview:1.0.5'
 //    倒计时按钮
-    compile 'com.white.countdownbutton:countdownbtn:1.0.2'
-    compile 'com.github.iwgang:countdownview:2.1.6'
+    implementation 'com.white.countdownbutton:countdownbtn:1.0.2'
+    implementation 'com.github.iwgang:countdownview:2.1.6'
 //    红点提示
-    compile 'q.rorbin:badgeview:1.1.3'
+    implementation 'q.rorbin:badgeview:1.1.3'
 //    幻灯片
-    compile 'com.youth.banner:banner:1.4.10'
+    implementation 'com.youth.banner:banner:1.4.10'
 //    头像选择库
-    compile 'me.thewyp:avatar:1.0.4'
+    implementation 'me.thewyp:avatar:1.0.4'
 //    图像圆角库
-    compile 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 //    Tab选项卡之类
-    compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
-    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
-    compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
+    implementation 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    implementation 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
 //    元素小提示
-    compile 'it.sephiroth.android.library.targettooltip:target-tooltip-library:1.3.15'
-    compile 'com.github.florent37:viewtooltip:1.0.8'
+    implementation 'it.sephiroth.android.library.targettooltip:target-tooltip-library:1.3.15'
+    implementation 'com.github.florent37:viewtooltip:1.0.8'
 //    吐司美化版
-    compile 'com.sdsmdg.tastytoast:tastytoast:0.1.1'
+    implementation 'com.sdsmdg.tastytoast:tastytoast:0.1.1'
 //    Cookie库
-    compile 'com.liuguangqiang.cookie:library:0.3'
+    implementation 'com.liuguangqiang.cookie:library:0.3'
 //    compile 'com.github.takusemba:multisnaprecyclerview:1.1.1'
 //    高德地图
-    compile 'com.amap.api:navi-3dmap:5.1.0'
-    compile 'com.amap.api:location:3.7.0'
-    compile 'com.amap.api:search:5.5.0'
-    compile 'com.yanzhenjie:loading:1.0.0'
+    implementation 'com.amap.api:navi-3dmap:5.1.0'
+    implementation 'com.amap.api:location:3.7.0'
+    implementation 'com.amap.api:search:5.5.0'
+    implementation 'com.yanzhenjie:loading:1.0.0'
 //    沉浸式状态栏和导航栏
-    compile 'com.gyf.barlibrary:barlibrary:2.3.0'
+//    implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+    implementation 'com.gyf.immersionbar:immersionbar:2.3.1'
 //    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 //    图片加载库 不用Glide 因为它不能被某些兼容了 新版本和旧版本API不兼容
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 //    标签显示
-    compile 'me.gujun.android.taggroup:library:1.4@aar'
+    implementation 'me.gujun.android.taggroup:library:1.4@aar'
 //    compile 'com.baoyz.pullrefreshlayout:library:1.2.0'
 //    万能列表转换器适配器
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
 //    下拉刷新库
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-5'
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-5'//没有使用特殊Header，可以不加这行
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-5'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-5'//没有使用特殊Header，可以不加这行
 //    自动布局
-    compile 'com.google.android:flexbox:0.3.1'
+    implementation 'com.google.android:flexbox:0.3.1'
 //    路由
-    compile 'com.alibaba:arouter-api:1.3.1'
+    implementation 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
-    compile 'com.github.lzyzsd:jsbridge:1.0.4'
+    implementation 'com.github.lzyzsd:jsbridge:1.0.4'
 //    主题框架
-    compile 'com.bilibili:magicasakura:0.1.8@aar'
+    implementation 'com.bilibili:magicasakura:0.1.8@aar'
 //    引导页
-    compile 'com.github.apl-devs:appintro:v4.2.2'
+    implementation 'com.github.apl-devs:appintro:v4.2.2'
 //    ScrollView 观察器 API 23 以下不能监听原生的滑动事件 https://github.com/ksoichiro/Android-ObservableScrollView
-    compile "com.github.ksoichiro:android-observablescrollview:1.6.0"
+    implementation "com.github.ksoichiro:android-observablescrollview:1.6.0"
 //    安卓自适应布局
-    compile 'com.zhy:autolayout:1.4.5'
+    implementation 'com.zhy:autolayout:1.4.5'
 //    下单、各种动画元素实现库
-    compile 'com.airbnb.android:lottie:2.5.0-beta1'
+    implementation 'com.airbnb.android:lottie:2.5.0-beta1'
 //    Emoji库
-    compile 'io.github.rockerhieu:emojicon:1.4.0'
+    implementation 'io.github.rockerhieu:emojicon:1.4.0'
 //    MVP框架
-    compile 'com.hannesdorfmann.mosby3:mvi:3.1.0'
-    compile 'com.hannesdorfmann.mosby3:mvp:3.1.0'
-    compile 'com.hannesdorfmann.mosby3:viewstate:3.1.0'
-    compile 'com.hannesdorfmann.mosby3:mvp-lce:3.1.0'
-    compile 'com.hannesdorfmann.mosby3:mvp-nullobject-presenter:3.1.0'
-    compile 'com.hannesdorfmann.mosby3:mvp-queuing-presenter:3.1.0'
+    implementation 'com.hannesdorfmann.mosby3:mvi:3.1.0'
+    implementation 'com.hannesdorfmann.mosby3:mvp:3.1.0'
+    implementation 'com.hannesdorfmann.mosby3:viewstate:3.1.0'
+    implementation 'com.hannesdorfmann.mosby3:mvp-lce:3.1.0'
+    implementation 'com.hannesdorfmann.mosby3:mvp-nullobject-presenter:3.1.0'
+    implementation 'com.hannesdorfmann.mosby3:mvp-queuing-presenter:3.1.0'
 
 }
