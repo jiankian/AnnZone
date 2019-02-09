@@ -11,7 +11,7 @@ import com.youth.banner.loader.ImageLoader
  */
 class BannerPicassoImageLoader : ImageLoader() {
     override fun displayImage(context: Context?, path: Any?, imageView: ImageView?) {
-        Picasso.with(context)
+        Picasso.get()
                 .load(path as String)
                 .fit()
                 .into(imageView)

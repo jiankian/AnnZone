@@ -15,7 +15,7 @@ class DiscoverSliderListAdapter(layoutResId: Int, data: List<BlogDataItem>) : Ba
 
     override fun convert(helper: BaseViewHolder?, item: BlogDataItem?) {
             helper!!.setText(R.id.tv_discover_slider_list_item_title,item!!.title)
-        Picasso.with(mContext)
+        Picasso.get()
                 .load("https://pic.36krcnd.com/avatar/201802/03125552/cochd9j1la7gzbtl.jpeg!1200")
                 .into(helper!!.getView(R.id.iv_discover_slider_list_item_cover) as ImageView)
     }

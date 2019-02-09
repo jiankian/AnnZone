@@ -18,4 +18,6 @@
     <color name="colorGrayDark">#eaecec</color>
     <color name="colorAlpha">#00000000</color>
     <color name="colorBlank">#EEF5FF</color>
+
+    <color name="white">#ffffff</color>
 </resources>

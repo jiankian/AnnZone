@@ -31,7 +31,7 @@ class ProjectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        rl_ProjectFragment.topPadding = ImmersionBar.getStatusBarHeight(activity)
+        rl_ProjectFragment.topPadding = ImmersionBar.getStatusBarHeight(activity!!)
 
         var projectDataItem:ArrayList<ProjectDataItem> = ArrayList<ProjectDataItem>()
         for (d in 1..30){

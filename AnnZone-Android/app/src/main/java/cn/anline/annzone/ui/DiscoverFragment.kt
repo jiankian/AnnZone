@@ -40,7 +40,7 @@ class DiscoverFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        rl_top_wrapper.topPadding = ImmersionBar.getStatusBarHeight(activity)
+        rl_top_wrapper.topPadding = ImmersionBar.getStatusBarHeight(activity!!)
 
 //        具体从服务器获取分类内容
 
