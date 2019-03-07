@@ -29,7 +29,7 @@
   <url>http://www.anline.cn/</url>
 
   <properties>
-    <act.version>1.8.18</act.version>
+    <act.version>1.8.19</act.version>
     <act-ebean.version>1.7.6</act-ebean.version>
     <act-morphia.version>1.6.6</act-morphia.version>
     <act-storage.version>0.13.5</act-storage.version>
@@ -41,7 +41,7 @@
   <parent>
     <groupId>org.actframework</groupId>
     <artifactId>act-starter-parent</artifactId>
-    <version>1.8.18.0</version>
+    <version>1.8.19.0</version>
   </parent>
 
   <build>
@@ -113,7 +113,7 @@
     <dependency>
       <groupId>com.zaxxer</groupId>
       <artifactId>HikariCP</artifactId>
-      <version>3.3.0</version>
+      <version>3.3.1</version>
     </dependency>
 
     <!--权限控制插件-->
@@ -168,7 +168,7 @@
     <dependency>
       <groupId>io.reactivex.rxjava2</groupId>
       <artifactId>rxjava</artifactId>
-      <version>2.2.6</version>
+      <version>2.2.7</version>
     </dependency>
 
 
