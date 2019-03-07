@@ -1,8 +1,8 @@
 package cn.anline.annzone.ui.discover
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_index_slider.*
 /**
  * 首页滑动列表 分类列表页面
  */
-class IndexSliderFragment : Fragment() {
+class IndexSliderFragment : androidx.fragment.app.Fragment() {
     private var cid: Int? = null
     private var title: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +42,7 @@ class IndexSliderFragment : Fragment() {
             listBlogDataItem.add(blogDataItem)
         }
         recycler_view.adapter = DiscoverIndexListAdapter(R.layout.discover_index_list_item,listBlogDataItem)
-        recycler_view.layoutManager = LinearLayoutManager(activity)
+        recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity)
     }
 
     companion object {

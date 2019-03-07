@@ -7,10 +7,9 @@ import android.content.SharedPreferences
  * 引导页SharedPreferences管理器封装
  * Created by jiankian on 2018/2/3.
  */
-class IntroSharedPreferencesManager {
-    lateinit var context: Context
-    lateinit var sharedPreferences: SharedPreferences
-    lateinit var editor: SharedPreferences.Editor
+class IntroSharedPreferencesManager(var context: Context) {
+    var sharedPreferences: SharedPreferences
+    var editor: SharedPreferences.Editor
 //    存储名称和字段名
 
 //    引导页
@@ -19,8 +18,7 @@ class IntroSharedPreferencesManager {
     val INTRO_IS_FIRST: String = "intro_is_first"
     val MODE_PRIVATE = 0
 
-    constructor(context: Context) {
-        this.context = context
+    init {
         this.sharedPreferences = context.getSharedPreferences(INTRO_NAME,MODE_PRIVATE)
         this.editor = sharedPreferences.edit()
     }

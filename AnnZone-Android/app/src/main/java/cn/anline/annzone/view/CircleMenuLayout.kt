@@ -103,8 +103,8 @@ class CircleMenuLayout(context: Context, attrs: AttributeSet) : ViewGroup(contex
      * 设置布局的宽高，并策略menu item宽高
      */
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        var resWidth = 0
-        var resHeight = 0
+        var resWidth: Int
+        var resHeight: Int
 
         /**
          * 根据传入的参数，分别获取测量模式和测量值
@@ -154,7 +154,7 @@ class CircleMenuLayout(context: Context, attrs: AttributeSet) : ViewGroup(contex
             }
 
             // 计算menu item的尺寸；以及和设置好的模式，去对item进行测量
-            var makeMeasureSpec = -1
+            var makeMeasureSpec: Int
 
             if (child.id == R.id.id_circle_menu_item_center) {
                 makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(
@@ -417,19 +417,15 @@ class CircleMenuLayout(context: Context, attrs: AttributeSet) : ViewGroup(contex
             val tv = view
                     .findViewById<View>(R.id.id_circle_menu_item_text) as TextView
 
-            if (iv != null) {
-                iv.visibility = View.VISIBLE
-                iv.setImageResource(mItemImgs!![i])
-                iv.setOnClickListener { v ->
-                    if (mOnMenuItemClickListener != null) {
-                        mOnMenuItemClickListener!!.itemClick(v, i)
-                    }
+            iv.visibility = View.VISIBLE
+            iv.setImageResource(mItemImgs!![i])
+            iv.setOnClickListener { v ->
+                if (mOnMenuItemClickListener != null) {
+                    mOnMenuItemClickListener!!.itemClick(v, i)
                 }
             }
-            if (tv != null) {
-                tv.visibility = View.VISIBLE
-                tv.text = mItemTexts!![i]
-            }
+            tv.visibility = View.VISIBLE
+            tv.text = mItemTexts!![i]
 
             // 添加view到容器中
             addView(view)

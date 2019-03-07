@@ -17,7 +17,7 @@
             android:layout_height="45dp">
             <ImageView
                 android:id="@+id/iv_top_logo"
-                android:src="@mipmap/top_logo"
+                tl:srcCompat="@mipmap/top_logo"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_width="100dp"
@@ -34,7 +34,7 @@
                 android:layout_height="35dp">
                 <ImageView
                     android:id="@+id/iv_search_icon"
-                    android:src="@mipmap/search_icon"
+                    tl:srcCompat="@mipmap/search_icon"
                     android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
                     android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
 
             <ImageView
                 android:id="@+id/iv_qrcode"
-                android:src="@mipmap/qrcode_scan_icon"
+                tl:srcCompat="@mipmap/qrcode_scan_icon"
                 android:layout_toLeftOf="@id/iv_bell"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
@@ -66,7 +66,7 @@
                 android:id="@+id/iv_bell"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
-                android:src="@mipmap/bell_icon"
+                tl:srcCompat="@mipmap/bell_icon"
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="24sp" />
@@ -91,12 +91,12 @@
     <!--分类slider end-->
 
     <!--滑动列表 start-->
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/discover_viewPager"
         android:layout_below="@+id/flyco_tab"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
     <!--滑动列表 end-->
 </RelativeLayout>

@@ -1,6 +1,6 @@
 package cn.anline.annzone.ui.im
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import cn.anline.annzone.R
 

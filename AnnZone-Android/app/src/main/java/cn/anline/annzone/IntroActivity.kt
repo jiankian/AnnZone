@@ -1,9 +1,9 @@
 package cn.anline.annzone
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import cn.anline.annzone.ui.intro.*
 import cn.anline.annzone.utils.IntroSharedPreferencesManager
@@ -33,7 +33,7 @@ class IntroActivity : AppIntro() {
     /**
      * 引导页被点击完成事件
      */
-    override fun onDonePressed(currentFragment: Fragment?) {
+    override fun onDonePressed(currentFragment: androidx.fragment.app.Fragment?) {
         super.onDonePressed(currentFragment)
         Log.d(TAG,"完成")
 //        存储已启动数据
@@ -45,7 +45,7 @@ class IntroActivity : AppIntro() {
     /**
      * 引导页被跳过事件
      */
-    override fun onSkipPressed(currentFragment: Fragment?) {
+    override fun onSkipPressed(currentFragment: androidx.fragment.app.Fragment?) {
         super.onSkipPressed(currentFragment)
         Log.d(TAG,"跳过")
 //        存储引导过数据
@@ -57,7 +57,7 @@ class IntroActivity : AppIntro() {
     /**
      * 引导页发生翻页变化
      */
-    override fun onSlideChanged(oldFragment: Fragment?, newFragment: Fragment?) {
+    override fun onSlideChanged(oldFragment: androidx.fragment.app.Fragment?, newFragment: androidx.fragment.app.Fragment?) {
         super.onSlideChanged(oldFragment, newFragment)
         Log.d(TAG,"滑动")
     }

@@ -1,8 +1,8 @@
 package cn.anline.annzone
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import cn.anline.annzone.ui.*
 import com.gyf.barlibrary.ImmersionBar
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  */
 class MainActivity : AppCompatActivity() {
 
-    lateinit var fragmentMutableList: MutableList<Fragment>
+    lateinit var fragmentMutableList: MutableList<androidx.fragment.app.Fragment>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 .init()
         setContentView(R.layout.activity_main)
 //        添加Fragment
-        fragmentMutableList = ArrayList<Fragment>()
+        fragmentMutableList = ArrayList<androidx.fragment.app.Fragment>()
         fragmentMutableList.add(DiscoverFragment())
         fragmentMutableList.add(ProjectFragment())
         fragmentMutableList.add(PublishFragment())

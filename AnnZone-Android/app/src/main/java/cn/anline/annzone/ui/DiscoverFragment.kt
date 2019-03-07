@@ -1,9 +1,9 @@
 package cn.anline.annzone.ui
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,8 +20,8 @@ import org.jetbrains.anko.topPadding
 import java.util.ArrayList
 
 
-class DiscoverFragment : Fragment() {
-    private var mFragments: ArrayList<Fragment>? = null
+class DiscoverFragment : androidx.fragment.app.Fragment() {
+    private var mFragments: ArrayList<androidx.fragment.app.Fragment>? = null
     private var list: ArrayList<BlogCategoryListItem>? = null
     val titles = arrayOf("推荐","Android","iOS","前端","后端","人工智能","设计","工具资源")
     private var mAdapter: MyPagerAdapter? = null
@@ -44,7 +44,7 @@ class DiscoverFragment : Fragment() {
 
 //        具体从服务器获取分类内容
 
-        mFragments = ArrayList<Fragment>()
+        mFragments = ArrayList<androidx.fragment.app.Fragment>()
 //        首页
         mFragments!!.add(IndexFragment.getInstance())
 //        加载分类页面 目前仅作模拟
@@ -69,17 +69,17 @@ class DiscoverFragment : Fragment() {
     /**
      * 文章列表ViewPager转换器
      */
-    private inner class MyPagerAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
+    private inner class MyPagerAdapter(fm: androidx.fragment.app.FragmentManager?) : androidx.fragment.app.FragmentPagerAdapter(fm!!) {
 
         override fun getCount(): Int {
             return mFragments!!.size
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
-            return titles!![position]
+            return titles[position]
         }
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             return mFragments!![position]
         }
     }
