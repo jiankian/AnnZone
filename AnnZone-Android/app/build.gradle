@@ -55,19 +55,19 @@ dependencies {
 //    Android M+ Permission Request 安卓6.0以上权限申请
     implementation 'me.weyye.hipermission:library:1.0.7'
 //    超强工具类 https://blankj.com/2016/07/31/android-utils-code/
-    implementation 'com.blankj:utilcode:1.23.1'
+    implementation 'com.blankj:utilcode:1.23.6'
 //    JSON解析库
     implementation 'com.alibaba:fastjson:1.2.53'
 //    HTTP网络请求库
-    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1'
 //    RestAPI接口请求库
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
 //    json谷歌的解析库
     implementation 'com.google.code.gson:gson:2.8.5'
 
 //    响应式开发库
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.7'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
 
 //    步骤条
@@ -105,7 +105,7 @@ dependencies {
     implementation 'me.gujun.android.taggroup:library:1.4@aar'
 //    compile 'com.baoyz.pullrefreshlayout:library:1.2.0'
 //    万能列表转换器适配器
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
 //    下拉刷新库
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-5'
     implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-5'//没有使用特殊Header，可以不加这行
