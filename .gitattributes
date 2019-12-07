@@ -1,0 +1,2 @@
+*.* linguist-language=java
+*.py linguist-language=python
