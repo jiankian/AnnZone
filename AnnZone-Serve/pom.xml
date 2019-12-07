@@ -18,160 +18,225 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>cn.anline</groupId>
-  <artifactId>AnnZone-Serve</artifactId>
-  <version>1.0.0</version>
+    <groupId>cn.anline</groupId>
+    <artifactId>AnnZone-Serve</artifactId>
+    <version>1.0.0</version>
 
-  <name>Anline AnnZone Server App</name>
-  <description>RestAPI Server for Anline APP</description>
-  <url>http://www.anline.cn/</url>
+    <name>Anline AnnZone Server App</name>
+    <description>RestAPI Server for Anline APP</description>
+    <url>http://www.anline.cn/</url>
 
-  <properties>
-    <act.version>1.8.19</act.version>
-    <act-ebean.version>1.7.6</act-ebean.version>
-    <act-morphia.version>1.6.6</act-morphia.version>
-    <act-storage.version>0.13.5</act-storage.version>
-    <act-aaa.version>1.5.4</act-aaa.version>
-    <act-excel.version>1.5.0</act-excel.version>
-    <app.entry>cn.anline.zone.serve.Ann</app.entry>
-  </properties>
+    <properties>
+        <act.version>1.8.30</act.version>
+        <app.entry>cn.anline.zone.serve.Ann</app.entry>
+    </properties>
 
-  <parent>
-    <groupId>org.actframework</groupId>
-    <artifactId>act-starter-parent</artifactId>
-    <version>1.8.19.0</version>
-  </parent>
+    <parent>
+        <groupId>org.actframework</groupId>
+        <artifactId>act-starter-parent</artifactId>
+        <version>1.8.30.1</version>
+    </parent>
 
-  <build>
-    <finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName>
-  </build>
+    <build>
+        <finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  <dependencies>
-    <!--<dependency>-->
-      <!--<groupId>org.actframework</groupId>-->
-      <!--<artifactId>act</artifactId>-->
-      <!--<version>${act.version}</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>org.jetbrains.kotlin</groupId>-->
-      <!--<artifactId>kotlin-stdlib-jre8</artifactId>-->
-      <!--<version>${kotlin.version}</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>org.jetbrains.kotlin</groupId>-->
-      <!--<artifactId>kotlin-test</artifactId>-->
-      <!--<version>${kotlin.version}</version>-->
-      <!--<scope>test</scope>-->
-    <!--</dependency>-->
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.2.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.8.1</version>
-    </dependency>
-    <!--使用MysQL数据库-->
-    <dependency>
-      <groupId>org.actframework</groupId>
-      <artifactId>act-ebean</artifactId>
-      <version>${act-ebean.version}</version>
-    </dependency>
-    <!--使用MongoDb数据库-->
-    <!--<dependency>-->
-      <!--<groupId>org.actframework</groupId>-->
-      <!--<artifactId>act-morphia</artifactId>-->
-      <!--<version>${act-morphia.version}</version>-->
-    <!--</dependency>-->
-    <!--使用ArangoDb数据库驱动-->
-    <!--<dependency>-->
-      <!--<groupId>com.arangodb</groupId>-->
-      <!--<artifactId>arangodb-java-driver</artifactId>-->
-      <!--<version>${arangodb-java-driver}</version>-->
-    <!--</dependency>-->
-    <!-- GraphQL JAVA实现 -->
-    <dependency>
-      <groupId>com.graphql-java</groupId>
-      <artifactId>graphql-java</artifactId>
-      <version>11.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.actframework</groupId>
-      <artifactId>act-storage</artifactId>
-      <version>${act-storage.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.15</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.zaxxer</groupId>
-      <artifactId>HikariCP</artifactId>
-      <version>3.3.1</version>
-    </dependency>
-
-    <!--权限控制插件-->
-    <!--<dependency>-->
-      <!--<groupId>org.actframework</groupId>-->
-      <!--<artifactId>act-aaa</artifactId>-->
-      <!--<version>${act-aaa.version}</version>-->
-    <!--</dependency>-->
-
-    <!--模板引擎-->
-    <!--<dependency>-->
-      <!--<groupId>org.actframework</groupId>-->
-      <!--<artifactId>act-mustache</artifactId>-->
-      <!--<version>${act-mustache.version}</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>org.actframework</groupId>-->
-      <!--<artifactId>act-beetl</artifactId>-->
-      <!--<version>${act-beetl.version}</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>org.actframework</groupId>-->
-      <!--<artifactId>act-freemarker</artifactId>-->
-      <!--<version>${act-freemarker.version}</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>org.actframework</groupId>-->
-      <!--<artifactId>act-thymeleaf</artifactId>-->
-      <!--<version>${act-thymeleaf.version}</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>org.actframework</groupId>-->
-      <!--<artifactId>act-velocity</artifactId>-->
-      <!--<version>${act-velocity.version}</version>-->
-    <!--</dependency>-->
-
-    <!--Excel-->
-    <dependency>
-      <groupId>org.actframework</groupId>
-      <artifactId>act-excel</artifactId>
-      <version>${act-excel.version}</version>
-    </dependency>
+    <dependencies>
+        <!--<dependency>-->
+        <!--<groupId>org.actframework</groupId>-->
+        <!--<artifactId>act</artifactId>-->
+        <!--<version>1.8.22</version>-->
+        <!--</dependency>-->
+        <!--        https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.13</version>
+        </dependency>
+        <!--使用MysQL数据库-->
+        <!-- https://mvnrepository.com/artifact/org.actframework/act-ebean -->
+        <dependency>
+            <groupId>org.actframework</groupId>
+            <artifactId>act-ebean</artifactId>
+            <version>1.8.0</version>
+        </dependency>
 
 
-    <!--https://github.com/jwtk/jjwt-->
-    <dependency>
-      <groupId>io.jsonwebtoken</groupId>
-      <artifactId>jjwt</artifactId>
-      <version>0.9.0</version>
-    </dependency>
+        <!--使用MongoDb数据库-->
+        <!-- https://mvnrepository.com/artifact/org.actframework/act-morphia -->
+        <dependency>
+            <groupId>org.actframework</groupId>
+            <artifactId>act-morphia</artifactId>
+            <version>1.8.1</version>
+            <scope>provided</scope>
+        </dependency>
 
-    <dependency>
-      <groupId>io.reactivex.rxjava2</groupId>
-      <artifactId>rxjava</artifactId>
-      <version>2.2.7</version>
-    </dependency>
+        <!-- GraphQL JAVA实现 -->
+        <!--        https://mvnrepository.com/artifact/com.graphql-java/graphql-java -->
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java</artifactId>
+            <version>13.0</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/org.actframework/act-storage -->
+        <dependency>
+            <groupId>org.actframework</groupId>
+            <artifactId>act-storage</artifactId>
+            <version>0.15.0</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.1</version>
+        </dependency>
 
+        <!--权限控制插件-->
+        <!--<dependency>-->
+        <!--<groupId>org.actframework</groupId>-->
+        <!--<artifactId>act-aaa</artifactId>-->
+        <!--<version>1.5.4</version>-->
+        <!--</dependency>-->
+        <!--Excel-->
+        <!-- https://mvnrepository.com/artifact/org.actframework/act-excel -->
+        <!--<dependency>-->
+        <!--<groupId>org.actframework</groupId>-->
+        <!--<artifactId>act-excel</artifactId>-->
+        <!--<version>1.5.0</version>-->
+        <!--</dependency>-->
 
-  </dependencies>
+        <!--https://github.com/jwtk/jjwt -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api -->
+        <!--    <dependency>-->
+        <!--      <groupId>io.jsonwebtoken</groupId>-->
+        <!--      <artifactId>jjwt-api</artifactId>-->
+        <!--      <version>0.10.7</version>-->
+        <!--    </dependency>-->
+        <!--    <dependency>-->
+        <!--      <groupId>io.jsonwebtoken</groupId>-->
+        <!--      <artifactId>jjwt-impl</artifactId>-->
+        <!--      <version>0.10.7</version>-->
+        <!--      <scope>runtime</scope>-->
+        <!--    </dependency>-->
+        <!--    <dependency>-->
+        <!--      <groupId>io.jsonwebtoken</groupId>-->
+        <!--      <artifactId>jjwt-jackson</artifactId>-->
+        <!--      <version>0.10.7</version>-->
+        <!--      <scope>runtime</scope>-->
+        <!--    </dependency>-->
+        <!-- Uncomment this next dependency if you want to use RSASSA-PSS (PS256, PS384, PS512) algorithms:
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.60</version>
+            <scope>runtime</scope>
+        </dependency>
+        -->
+        <!--        https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava -->
+        <dependency>
+            <groupId>io.reactivex.rxjava2</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>2.2.15</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/com.github.votoanthuan/sigar -->
+        <dependency>
+            <groupId>com.github.votoanthuan</groupId>
+            <artifactId>sigar</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.2.2</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+            <!--            升级2.8.6报错-->
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-sts -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-sts</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-core -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>4.4.3</version>
+            <!--            4.4.3升级4.4.6报错-->
+        </dependency>
+        <!--        https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>org.avaje.ebeanorm</groupId>-->
+        <!--<artifactId>avaje-ebeanorm-elastic</artifactId>-->
+        <!--<version>1.3.1</version>-->
+        <!--</dependency>-->
+        <!-- https://github.com/actframework/actframework/issues/942 -->
+        <!--        https://mvnrepository.com/artifact/io.ebean/ebean-elastic -->
+        <!--        <dependency>-->
+        <!--            <groupId>io.ebean</groupId>-->
+        <!--            <artifactId>ebean-elastic</artifactId>-->
+        <!--            <version>11.39.1</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.github.davidmoten/geo -->
+        <dependency>
+            <groupId>com.github.davidmoten</groupId>
+            <artifactId>geo</artifactId>
+            <version>0.7.6</version>
+        </dependency>
+
+    </dependencies>
 
 </project>

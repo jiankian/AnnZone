@@ -73,9 +73,14 @@
     <appender-ref ref="FILE" />
     <appender-ref ref="STDOUT" />
   </logger>
-
+  <!--安浪日志输出，全部输出到文件-->
+  <logger name="ann" level="TRACE" additivity="false">
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+  </logger>
   <!-- By default, the level of the root level is set to DEBUG -->
   <root level="INFO">
     <appender-ref ref="STDOUT" />
   </root>
+
 </configuration>
