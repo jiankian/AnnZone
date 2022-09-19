@@ -1,6 +1,6 @@
 # 安浪个人工作站
 安浪个人工作站：与企业员工OA系统不同，本系统完全面向个人，创建一个属于自己的完全的云端空间！
-
+2020升级企业级项目，请移步：[https://gitee.com/jiankian/Ann-GMS](https://gitee.com/jiankian/Ann-GMS)
 ### 最新版本地址：
 码云地址[https://gitee.com/jiankian/AnnZone.git](https://gitee.com/jiankian/AnnZone.git)
 
