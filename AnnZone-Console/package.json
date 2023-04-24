@@ -30,7 +30,7 @@
         "core-js": "^2.4.1",
         "enhanced-resolve": "^3.3.0",
         "fundebug-javascript": "^0.3.4",
-        "jquery": "^3.2.1",
+        "jquery": "^3.5.0",
         "ng-recaptcha": "^3.0.0",
         "ng-zorro-antd": "^0.6.13",
         "ng-zorro-antd-extra": "^1.1.7",
