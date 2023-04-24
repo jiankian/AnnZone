@@ -100,7 +100,7 @@
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java</artifactId>
-            <version>13.0</version>
+            <version>17.4</version>
         </dependency>
         <!--        https://mvnrepository.com/artifact/org.actframework/act-storage -->
         <dependency>
